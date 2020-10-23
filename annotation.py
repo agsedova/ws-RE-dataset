@@ -6,6 +6,8 @@ import nl_api
 from spacy.lang.en import English
 import re
 
+import torch
+
 nlp = English()
 nlp.add_pipe(nlp.create_pipe('sentencizer'))
 
