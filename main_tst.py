@@ -1,4 +1,4 @@
-import annotation
+import parse_abstract
 import json
 import sys
 
@@ -12,7 +12,7 @@ def main(path_to_abstract):
                 if "may refer to" not in page["text"]:
                     # page["text"] = page["text"][page["text"].find("\n\n") + 2:]
 
-                    annotated_page = annotation.main(page)
+                    annotated_page = parse_abstract.main(page)
                     page["annotatedSentences"] = annotated_page
                     annotated_data.append(page)
         json.dump(annotated_data, output_file)

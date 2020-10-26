@@ -1,7 +1,0 @@
-# import WikiExtractor
-import filter_abstract_json
-
-if __name__ == "__main__":
-    # WikiExtractor.main()
-    filter_abstract_json.main("text_1")
-

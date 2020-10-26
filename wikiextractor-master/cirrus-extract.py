@@ -208,7 +208,7 @@ def main():
 
     groupS = parser.add_argument_group('Special')
     groupS.add_argument("-q", "--quiet", action="store_true",
-                        help="suppress reporting progress info")
+                        help="suppress reporting progress todo")
     groupS.add_argument("-v", "--version", action="version",
                         version='%(prog)s ' + version,
                         help="print program version")

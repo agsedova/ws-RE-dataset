@@ -1,0 +1,5217 @@
+{
+  "1914118:0:79": {
+    "sentenceId": "1914118:0:79",
+    "sentenceText": "Lviv-Holovnyi railway station () is the main railway terminal in Lviv, Ukraine.",
+    "sentenceStart": 0,
+    "sentenceEnd": 79,
+    "entities": [
+      {
+        "entityId": "1914118:0:79:45:52",
+        "entityInSentence": "railway",
+        "entityStart": 45,
+        "entityEnd": 52,
+        "entityReferences": [
+          {
+            "entityName": "rail transport",
+            "entityConfidence": 0.5782967,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q3565868"
+            ],
+            "entityTypes": [
+              "other"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1914118:0:79:65:78",
+        "entityInSentence": "Lviv, Ukraine",
+        "entityStart": 65,
+        "entityEnd": 78,
+        "entityReferences": [
+          {
+            "entityName": "Lviv",
+            "entityConfidence": 0.96835977,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q36036"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "city"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1914118:80:163": {
+    "sentenceId": "1914118:80:163",
+    "sentenceText": "It is one of the most notable pieces of Art Nouveau architecture in former Galicia.",
+    "sentenceStart": 80,
+    "sentenceEnd": 163,
+    "entities": [
+      {
+        "entityId": "1914118:80:163:120:131",
+        "entityInSentence": "Art Nouveau",
+        "entityStart": 120,
+        "entityEnd": 131,
+        "entityReferences": [
+          {
+            "entityName": "Art Nouveau",
+            "entityConfidence": 0.95850617,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q34636"
+            ],
+            "entityTypes": [
+              "other"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1914118:80:163:132:144",
+        "entityInSentence": "architecture",
+        "entityStart": 132,
+        "entityEnd": 144,
+        "entityReferences": [
+          {
+            "entityName": "architecture",
+            "entityConfidence": 0.5917203,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q12271"
+            ],
+            "entityTypes": [
+              "skill",
+              "field of work",
+              "industry"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1914118:80:163:155:162",
+        "entityInSentence": "Galicia",
+        "entityStart": 155,
+        "entityEnd": 162,
+        "entityReferences": [
+          {
+            "entityName": "Galicia",
+            "entityConfidence": 0.91096514,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q180086"
+            ],
+            "entityTypes": [
+              "location"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1914118:164:269": {
+    "sentenceId": "1914118:164:269",
+    "sentenceText": "The station was opened to the public in 1904, and celebrated its centennial anniversary on 26 March 2004.",
+    "sentenceStart": 164,
+    "sentenceEnd": 269,
+    "entities": []
+  },
+  "1914118:270:377": {
+    "sentenceId": "1914118:270:377",
+    "sentenceText": "On a monthly basis, the terminal handles over 1.2\u00a0million passengers and moves 16 thousand tons of freight.",
+    "sentenceStart": 270,
+    "sentenceEnd": 377,
+    "entities": []
+  },
+  "1914119:0:112": {
+    "sentenceId": "1914119:0:112",
+    "sentenceText": "Zygmunt Edward \"Ziggy\" Switkowski, (born 1948), is a Polish Australian business executive and nuclear physicist.",
+    "sentenceStart": 0,
+    "sentenceEnd": 112,
+    "entities": [
+      {
+        "entityId": "1914119:0:112:0:33",
+        "entityInSentence": "Zygmunt Edward \"Ziggy\" Switkowski",
+        "entityStart": 0,
+        "entityEnd": 33,
+        "entityReferences": [
+          {
+            "entityName": "Ziggy Switkowski",
+            "entityConfidence": 0.94343734,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q8071785"
+            ],
+            "entityTypes": [
+              "person"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1914119:0:112:53:70",
+        "entityInSentence": "Polish Australian",
+        "entityStart": 53,
+        "entityEnd": 70,
+        "entityReferences": [
+          {
+            "entityName": "Polish Australian",
+            "entityConfidence": 0.97120863,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q7209875"
+            ],
+            "entityTypes": [
+              "ethnic group"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1914119:0:112:94:111",
+        "entityInSentence": "nuclear physicist",
+        "entityStart": 94,
+        "entityEnd": 111,
+        "entityReferences": [
+          {
+            "entityName": "nuclear physics",
+            "entityConfidence": 0.83004475,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q81197"
+            ],
+            "entityTypes": [
+              "skill",
+              "field of work"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1914119:113:245": {
+    "sentenceId": "1914119:113:245",
+    "sentenceText": "His most public role was as the chief executive officer of Australia's largest telecommunications company Telstra from 1999 to 2004.",
+    "sentenceStart": 113,
+    "sentenceEnd": 245,
+    "entities": [
+      {
+        "entityId": "1914119:113:245:172:181",
+        "entityInSentence": "Australia",
+        "entityStart": 172,
+        "entityEnd": 181,
+        "entityReferences": [
+          {
+            "entityName": "Australia",
+            "entityConfidence": 0.9649992,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q408"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1914119:113:245:219:226",
+        "entityInSentence": "Telstra",
+        "entityStart": 219,
+        "entityEnd": 226,
+        "entityReferences": [
+          {
+            "entityName": "Telstra",
+            "entityConfidence": 0.9659318,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q721162"
+            ],
+            "entityTypes": [
+              "organization"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1914119:246:417": {
+    "sentenceId": "1914119:246:417",
+    "sentenceText": "During his tenure, he oversaw the privatisation of the then government-owned corporation through a series of public tranche sales (known as the \"T1\", \"T2\" and \"T3\" sales).",
+    "sentenceStart": 246,
+    "sentenceEnd": 417,
+    "entities": [
+      {
+        "entityId": "1914119:246:417:280:293",
+        "entityInSentence": "privatisation",
+        "entityStart": 280,
+        "entityEnd": 293,
+        "entityReferences": [
+          {
+            "entityName": "privatization",
+            "entityConfidence": 0.7424412,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q161500"
+            ],
+            "entityTypes": [
+              "skill",
+              "field of work"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1914119:246:417:306:334",
+        "entityInSentence": "government-owned corporation",
+        "entityStart": 306,
+        "entityEnd": 334,
+        "entityReferences": [
+          {
+            "entityName": "state-owned enterprise",
+            "entityConfidence": 0.70565665,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q270791"
+            ],
+            "entityTypes": [
+              "other"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1914119:418:610": {
+    "sentenceId": "1914119:418:610",
+    "sentenceText": "Currently, he is the chairman of both NBN Co and Suncorp, a director of Healthscope, Oil Search and Tabcorp and the Chancellor of the Royal Melbourne Institute of Technology (RMIT University).",
+    "sentenceStart": 418,
+    "sentenceEnd": 610,
+    "entities": [
+      {
+        "entityId": "1914119:418:610:439:447",
+        "entityInSentence": "chairman",
+        "entityStart": 439,
+        "entityEnd": 447,
+        "entityReferences": [
+          {
+            "entityName": "chairperson",
+            "entityConfidence": 0.6615153,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q140686"
+            ],
+            "entityTypes": [
+              "job title",
+              "award",
+              "occupation"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1914119:418:610:456:462",
+        "entityInSentence": "NBN Co",
+        "entityStart": 456,
+        "entityEnd": 462,
+        "entityReferences": [
+          {
+            "entityName": "NBN Co",
+            "entityConfidence": 0.97811913,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q6952833"
+            ],
+            "entityTypes": [
+              "organization"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1914119:418:610:467:474",
+        "entityInSentence": "Suncorp",
+        "entityStart": 467,
+        "entityEnd": 474,
+        "entityReferences": [
+          {
+            "entityName": "Suncorp Group",
+            "entityConfidence": 0.92787236,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q2366028"
+            ],
+            "entityTypes": [
+              "organization"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1914119:418:610:490:513",
+        "entityInSentence": "Healthscope, Oil Search",
+        "entityStart": 490,
+        "entityEnd": 513,
+        "entityReferences": [
+          {
+            "entityName": "Healthscope",
+            "entityConfidence": 0.927205,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q5691366"
+            ],
+            "entityTypes": [
+              "organization"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1914119:418:610:518:525",
+        "entityInSentence": "Tabcorp",
+        "entityStart": 518,
+        "entityEnd": 525,
+        "entityReferences": [
+          {
+            "entityName": "Tabcorp Holdings",
+            "entityConfidence": 0.9564729,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q2386447"
+            ],
+            "entityTypes": [
+              "organization"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1914119:418:610:552:591",
+        "entityInSentence": "Royal Melbourne Institute of Technology",
+        "entityStart": 552,
+        "entityEnd": 591,
+        "entityReferences": [
+          {
+            "entityName": "RMIT University",
+            "entityConfidence": 0.93749,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q1057890"
+            ],
+            "entityTypes": [
+              "organization",
+              "location"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1914119:418:610:593:608",
+        "entityInSentence": "RMIT University",
+        "entityStart": 593,
+        "entityEnd": 608,
+        "entityReferences": [
+          {
+            "entityName": "RMIT University",
+            "entityConfidence": 0.93749,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q1057890"
+            ],
+            "entityTypes": [
+              "organization",
+              "location"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1914194:0:240": {
+    "sentenceId": "1914194:0:240",
+    "sentenceText": "The SEPTA subway\u2013surface trolley lines are a collection of five SEPTA trolley lines that operate on street-level tracks in West Philadelphia and Delaware County, Pennsylvania, and also underneath Market Street in Philadelphia's Center City.",
+    "sentenceStart": 0,
+    "sentenceEnd": 240,
+    "entities": [
+      {
+        "entityId": "1914194:0:240:123:140",
+        "entityInSentence": "West Philadelphia",
+        "entityStart": 123,
+        "entityEnd": 140,
+        "entityReferences": [
+          {
+            "entityName": "West Philadelphia",
+            "entityConfidence": 0.95100385,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q767950"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "neighborhood"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1914194:0:240:145:174",
+        "entityInSentence": "Delaware County, Pennsylvania",
+        "entityStart": 145,
+        "entityEnd": 174,
+        "entityReferences": [
+          {
+            "entityName": "Delaware County",
+            "entityConfidence": 0.94586545,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q27844"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "county"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1914194:0:240:196:209",
+        "entityInSentence": "Market Street",
+        "entityStart": 196,
+        "entityEnd": 209,
+        "entityReferences": [
+          {
+            "entityName": "Market Street",
+            "entityConfidence": 0.9095538,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q6770747"
+            ],
+            "entityTypes": [
+              "location"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1914194:0:240:213:225",
+        "entityInSentence": "Philadelphia",
+        "entityStart": 213,
+        "entityEnd": 225,
+        "entityReferences": [
+          {
+            "entityName": "Philadelphia",
+            "entityConfidence": 0.98383814,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q1345"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "city"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1914194:0:240:228:239",
+        "entityInSentence": "Center City",
+        "entityStart": 228,
+        "entityEnd": 239,
+        "entityReferences": [
+          {
+            "entityName": "Center City",
+            "entityConfidence": 0.9339714,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q2739353"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "neighborhood"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1914194:0:240:4:9",
+        "entityInSentence": "SEPTA",
+        "entityStart": 4,
+        "entityEnd": 9,
+        "entityReferences": [
+          {
+            "entityName": "Southeastern Pennsylvania Transportation Authority",
+            "entityConfidence": 0.96451074,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q2037863"
+            ],
+            "entityTypes": [
+              "organization",
+              "location",
+              "administrative area"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1914194:0:240:64:69",
+        "entityInSentence": "SEPTA",
+        "entityStart": 64,
+        "entityEnd": 69,
+        "entityReferences": [
+          {
+            "entityName": "Southeastern Pennsylvania Transportation Authority",
+            "entityConfidence": 0.96451074,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q2037863"
+            ],
+            "entityTypes": [
+              "organization",
+              "location",
+              "administrative area"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1914194:241:322": {
+    "sentenceId": "1914194:241:322",
+    "sentenceText": "The lines, Routes 10, 11, 13, 34, and 36, collectively operate on about of route.",
+    "sentenceStart": 241,
+    "sentenceEnd": 322,
+    "entities": []
+  },
+  "1915189:0:93": {
+    "sentenceId": "1915189:0:93",
+    "sentenceText": "Pari passu is a Latin phrase that literally means \"with an equal step\" or \"on equal footing\".",
+    "sentenceStart": 0,
+    "sentenceEnd": 93,
+    "entities": [
+      {
+        "entityId": "1915189:0:93:0:4",
+        "entityInSentence": "Pari",
+        "entityStart": 0,
+        "entityEnd": 4,
+        "entityReferences": [
+          {
+            "entityName": "Pari",
+            "entityConfidence": 0.85,
+            "entityUri": [],
+            "entityTypes": [
+              "person"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1915189:0:93:16:21",
+        "entityInSentence": "Latin",
+        "entityStart": 16,
+        "entityEnd": 21,
+        "entityReferences": [
+          {
+            "entityName": "Latin",
+            "entityConfidence": 0.8092754,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q397"
+            ],
+            "entityTypes": [
+              "product",
+              "human language"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1915189:94:250": {
+    "sentenceId": "1915189:94:250",
+    "sentenceText": "It is sometimes translated as \"ranking equally\", \"hand-in-hand\", \"with equal force\", or \"moving together\", and by extension, \"fairly\", \"without partiality\".",
+    "sentenceStart": 94,
+    "sentenceEnd": 250,
+    "entities": []
+  },
+  "1915197:0:81": {
+    "sentenceId": "1915197:0:81",
+    "sentenceText": "Jim Grabb (born April 14, 1964) is an American former professional tennis player.",
+    "sentenceStart": 0,
+    "sentenceEnd": 81,
+    "entities": [
+      {
+        "entityId": "1915197:0:81:0:9",
+        "entityInSentence": "Jim Grabb",
+        "entityStart": 0,
+        "entityEnd": 9,
+        "entityReferences": [
+          {
+            "entityName": "Jim Grabb",
+            "entityConfidence": 0.97908115,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q112821"
+            ],
+            "entityTypes": [
+              "person"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1915197:0:81:38:46",
+        "entityInSentence": "American",
+        "entityStart": 38,
+        "entityEnd": 46,
+        "entityReferences": [
+          {
+            "entityName": "United States of America",
+            "entityConfidence": 0.9117321,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q30"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1915197:82:105": {
+    "sentenceId": "1915197:82:105",
+    "sentenceText": "He was ranked the world",
+    "sentenceStart": 82,
+    "sentenceEnd": 105,
+    "entities": []
+  },
+  "1915197:106:147": {
+    "sentenceId": "1915197:106:147",
+    "sentenceText": "No. 1 doubles player in 1989 and in 1993.",
+    "sentenceStart": 106,
+    "sentenceEnd": 147,
+    "entities": []
+  },
+  "1915197:148:181": {
+    "sentenceId": "1915197:148:181",
+    "sentenceText": "His best singles ranking of world",
+    "sentenceStart": 148,
+    "sentenceEnd": 181,
+    "entities": []
+  },
+  "1915197:182:222": {
+    "sentenceId": "1915197:182:222",
+    "sentenceText": "No. 24, Grabb achieved in February 1990.",
+    "sentenceStart": 182,
+    "sentenceEnd": 222,
+    "entities": [
+      {
+        "entityId": "1915197:182:222:190:195",
+        "entityInSentence": "Grabb",
+        "entityStart": 190,
+        "entityEnd": 195,
+        "entityReferences": [
+          {
+            "entityName": "Jim Grabb",
+            "entityConfidence": 0.97908115,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q112821"
+            ],
+            "entityTypes": [
+              "person"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1791084:0:74": {
+    "sentenceId": "1791084:0:74",
+    "sentenceText": "St. Mark's Eve is the day before the feast day of St. Mark the Evangelist.",
+    "sentenceStart": 0,
+    "sentenceEnd": 74,
+    "entities": [
+      {
+        "entityId": "1791084:0:74:0:14",
+        "entityInSentence": "St. Mark's Eve",
+        "entityStart": 0,
+        "entityEnd": 14,
+        "entityReferences": [
+          {
+            "entityName": "St Mark's Eve",
+            "entityConfidence": 0.7201264,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q7594164"
+            ],
+            "entityTypes": [
+              "event"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1791084:0:74:50:73",
+        "entityInSentence": "St. Mark the Evangelist",
+        "entityStart": 50,
+        "entityEnd": 73,
+        "entityReferences": [
+          {
+            "entityName": "Mark the Evangelist",
+            "entityConfidence": 0.952526,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q31966"
+            ],
+            "entityTypes": [
+              "person"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1791084:75:202": {
+    "sentenceId": "1791084:75:202",
+    "sentenceText": "In liturgical Christian churches, this feast of St. Mark is observed on 25 April of each year; thus St. Mark's Eve is 24 April.",
+    "sentenceStart": 75,
+    "sentenceEnd": 202,
+    "entities": [
+      {
+        "entityId": "1791084:75:202:123:131",
+        "entityInSentence": "St. Mark",
+        "entityStart": 123,
+        "entityEnd": 131,
+        "entityReferences": [
+          {
+            "entityName": "Mark the Evangelist",
+            "entityConfidence": 0.952526,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q31966"
+            ],
+            "entityTypes": [
+              "person"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1791084:75:202:175:189",
+        "entityInSentence": "St. Mark's Eve",
+        "entityStart": 175,
+        "entityEnd": 189,
+        "entityReferences": [
+          {
+            "entityName": "St Mark's Eve",
+            "entityConfidence": 0.7201264,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q7594164"
+            ],
+            "entityTypes": [
+              "event"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1791084:75:202:89:98",
+        "entityInSentence": "Christian",
+        "entityStart": 89,
+        "entityEnd": 98,
+        "entityReferences": [
+          {
+            "entityName": "Christian",
+            "entityConfidence": 0.89638484,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q106039"
+            ],
+            "entityTypes": [
+              "other"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1791084:75:202:99:107",
+        "entityInSentence": "churches",
+        "entityStart": 99,
+        "entityEnd": 107,
+        "entityReferences": [
+          {
+            "entityName": "church building",
+            "entityConfidence": 0.593626,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q16970"
+            ],
+            "entityTypes": [
+              "location",
+              "building"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1791085:0:119": {
+    "sentenceId": "1791085:0:119",
+    "sentenceText": "Mount Sopris is a twin-summit mountain in the northwestern Elk Mountains range of the Rocky Mountains of North America.",
+    "sentenceStart": 0,
+    "sentenceEnd": 119,
+    "entities": [
+      {
+        "entityId": "1791085:0:119:0:12",
+        "entityInSentence": "Mount Sopris",
+        "entityStart": 0,
+        "entityEnd": 12,
+        "entityReferences": [
+          {
+            "entityName": "Mount Sopris",
+            "entityConfidence": 0.95867395,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q6923754"
+            ],
+            "entityTypes": [
+              "location",
+              "landform"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1791085:0:119:105:118",
+        "entityInSentence": "North America",
+        "entityStart": 105,
+        "entityEnd": 118,
+        "entityReferences": [
+          {
+            "entityName": "North America",
+            "entityConfidence": 0.98132515,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q49"
+            ],
+            "entityTypes": [
+              "location"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1791085:0:119:30:38",
+        "entityInSentence": "mountain",
+        "entityStart": 30,
+        "entityEnd": 38,
+        "entityReferences": [
+          {
+            "entityName": "mountain",
+            "entityConfidence": 0.61566806,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q8502"
+            ],
+            "entityTypes": [
+              "landform"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1791085:0:119:59:72",
+        "entityInSentence": "Elk Mountains",
+        "entityStart": 59,
+        "entityEnd": 72,
+        "entityReferences": [
+          {
+            "entityName": "Elk Mountains",
+            "entityConfidence": 0.9870457,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q1331413"
+            ],
+            "entityTypes": [
+              "location",
+              "landform"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1791085:0:119:86:101",
+        "entityInSentence": "Rocky Mountains",
+        "entityStart": 86,
+        "entityEnd": 101,
+        "entityReferences": [
+          {
+            "entityName": "Rocky Mountains",
+            "entityConfidence": 0.9747288,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q5463"
+            ],
+            "entityTypes": [
+              "location",
+              "landform"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1791085:120:320": {
+    "sentenceId": "1791085:120:320",
+    "sentenceText": "The mountain is located in the Maroon Bells-Snowmass Wilderness of White River National Forest, north by northeast (bearing 30\u00b0) of the community of Redstone in Pitkin County, Colorado, United States.",
+    "sentenceStart": 120,
+    "sentenceEnd": 320,
+    "entities": [
+      {
+        "entityId": "1791085:120:320:124:132",
+        "entityInSentence": "mountain",
+        "entityStart": 124,
+        "entityEnd": 132,
+        "entityReferences": [
+          {
+            "entityName": "mountain",
+            "entityConfidence": 0.61566806,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q8502"
+            ],
+            "entityTypes": [
+              "landform"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1791085:120:320:151:183",
+        "entityInSentence": "Maroon Bells-Snowmass Wilderness",
+        "entityStart": 151,
+        "entityEnd": 183,
+        "entityReferences": [
+          {
+            "entityName": "Maroon Bells\u2013Snowmass Wilderness",
+            "entityConfidence": 0.88000834,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q6772357"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1791085:120:320:187:214",
+        "entityInSentence": "White River National Forest",
+        "entityStart": 187,
+        "entityEnd": 214,
+        "entityReferences": [
+          {
+            "entityName": "White River National Forest",
+            "entityConfidence": 0.9909795,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q2566990"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1791085:120:320:269:277",
+        "entityInSentence": "Redstone",
+        "entityStart": 269,
+        "entityEnd": 277,
+        "entityReferences": [
+          {
+            "entityName": "Redstone",
+            "entityConfidence": 0.91951156,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q3473147"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1791085:120:320:281:304",
+        "entityInSentence": "Pitkin County, Colorado",
+        "entityStart": 281,
+        "entityEnd": 304,
+        "entityReferences": [
+          {
+            "entityName": "Pitkin County",
+            "entityConfidence": 0.9606758,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q312475"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "county"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1791106:0:145": {
+    "sentenceId": "1791106:0:145",
+    "sentenceText": "The Sunburst Award for Canadian Literature of the Fantastic is an annual award given for a speculative fiction novel or a book-length collection.",
+    "sentenceStart": 0,
+    "sentenceEnd": 145,
+    "entities": [
+      {
+        "entityId": "1791106:0:145:23:42",
+        "entityInSentence": "Canadian Literature",
+        "entityStart": 23,
+        "entityEnd": 42,
+        "entityReferences": [
+          {
+            "entityName": "Canadian literature",
+            "entityConfidence": 0.92667496,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q1723523"
+            ],
+            "entityTypes": [
+              "other"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1791106:0:145:4:18",
+        "entityInSentence": "Sunburst Award",
+        "entityStart": 4,
+        "entityEnd": 18,
+        "entityReferences": [
+          {
+            "entityName": "Sunburst Award",
+            "entityConfidence": 0.9832525,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q2366000"
+            ],
+            "entityTypes": [
+              "award"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1791106:0:145:50:59",
+        "entityInSentence": "Fantastic",
+        "entityStart": 50,
+        "entityEnd": 59,
+        "entityReferences": [
+          {
+            "entityName": "fantastic",
+            "entityConfidence": 0.739028,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q5240628"
+            ],
+            "entityTypes": [
+              "skill",
+              "field of work",
+              "literary work"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1791106:0:145:73:78",
+        "entityInSentence": "award",
+        "entityStart": 73,
+        "entityEnd": 78,
+        "entityReferences": [
+          {
+            "entityName": "award",
+            "entityConfidence": 0.8236051,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q618779"
+            ],
+            "entityTypes": [
+              "other"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1791109:0:78": {
+    "sentenceId": "1791109:0:78",
+    "sentenceText": "Se\u00e1n Moore (19 May 1913 \u2013 1 October 1986) was an Irish Fianna F\u00e1il politician.",
+    "sentenceStart": 0,
+    "sentenceEnd": 78,
+    "entities": [
+      {
+        "entityId": "1791109:0:78:0:10",
+        "entityInSentence": "Se\u00e1n Moore",
+        "entityStart": 0,
+        "entityEnd": 10,
+        "entityReferences": [
+          {
+            "entityName": "Se\u00e1n Moore",
+            "entityConfidence": 0.99540013,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q1312995"
+            ],
+            "entityTypes": [
+              "person"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1791109:0:78:49:54",
+        "entityInSentence": "Irish",
+        "entityStart": 49,
+        "entityEnd": 54,
+        "entityReferences": [
+          {
+            "entityName": "Irish people",
+            "entityConfidence": 0.86595273,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q170826"
+            ],
+            "entityTypes": [
+              "ethnic group"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1791109:0:78:55:66",
+        "entityInSentence": "Fianna F\u00e1il",
+        "entityStart": 55,
+        "entityEnd": 66,
+        "entityReferences": [
+          {
+            "entityName": "Fianna F\u00e1il",
+            "entityConfidence": 0.992544,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q216517"
+            ],
+            "entityTypes": [
+              "organization",
+              "political party"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1791111:0:111": {
+    "sentenceId": "1791111:0:111",
+    "sentenceText": "Taner Sa\u011f\u0131r (born March 13, 1985 in Kardzhali, Bulgaria) is a Turkish world and Olympic weightlifting champion.",
+    "sentenceStart": 0,
+    "sentenceEnd": 111,
+    "entities": [
+      {
+        "entityId": "1791111:0:111:0:11",
+        "entityInSentence": "Taner Sa\u011f\u0131r",
+        "entityStart": 0,
+        "entityEnd": 11,
+        "entityReferences": [
+          {
+            "entityName": "Taner Sa\u011f\u0131r",
+            "entityConfidence": 0.99782324,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q936246"
+            ],
+            "entityTypes": [
+              "person"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1791111:0:111:102:110",
+        "entityInSentence": "champion",
+        "entityStart": 102,
+        "entityEnd": 110,
+        "entityReferences": [
+          {
+            "entityName": "champion",
+            "entityConfidence": 0.72067297,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q852061"
+            ],
+            "entityTypes": [
+              "award"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1791111:0:111:36:45",
+        "entityInSentence": "Kardzhali",
+        "entityStart": 36,
+        "entityEnd": 45,
+        "entityReferences": [
+          {
+            "entityName": "Kardzhali",
+            "entityConfidence": 0.9271164,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q192875"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1791111:0:111:47:55",
+        "entityInSentence": "Bulgaria",
+        "entityStart": 47,
+        "entityEnd": 55,
+        "entityReferences": [
+          {
+            "entityName": "Bulgaria",
+            "entityConfidence": 0.9752135,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q219"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1791111:0:111:80:101",
+        "entityInSentence": "Olympic weightlifting",
+        "entityStart": 80,
+        "entityEnd": 101,
+        "entityReferences": [
+          {
+            "entityName": "weightlifting",
+            "entityConfidence": 0.9533532,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q83462"
+            ],
+            "entityTypes": [
+              "event",
+              "sport"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1791111:112:281": {
+    "sentenceId": "1791111:112:281",
+    "sentenceText": "Coming into Athens as holder of all the junior world records at the age of only 19, he broke the Olympic records in the category \u201377\u00a0kg snatch, clean and jerk and total.",
+    "sentenceStart": 112,
+    "sentenceEnd": 281,
+    "entities": [
+      {
+        "entityId": "1791111:112:281:124:130",
+        "entityInSentence": "Athens",
+        "entityStart": 124,
+        "entityEnd": 130,
+        "entityReferences": [
+          {
+            "entityName": "Athens",
+            "entityConfidence": 0.95568234,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q1524"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "city"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1791111:112:281:152:164",
+        "entityInSentence": "junior world",
+        "entityStart": 152,
+        "entityEnd": 164,
+        "entityReferences": [
+          {
+            "entityName": "World Junior Figure Skating Championships",
+            "entityConfidence": 0.5787382,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q1318642"
+            ],
+            "entityTypes": [
+              "event"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1791111:112:281:209:216",
+        "entityInSentence": "Olympic",
+        "entityStart": 209,
+        "entityEnd": 216,
+        "entityReferences": [
+          {
+            "entityName": "Olympic Games",
+            "entityConfidence": 0.6476282,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q5389"
+            ],
+            "entityTypes": [
+              "event"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1791111:282:326": {
+    "sentenceId": "1791111:282:326",
+    "sentenceText": "He is seen as a great talent by authorities.",
+    "sentenceStart": 282,
+    "sentenceEnd": 326,
+    "entities": []
+  },
+  "1791112:0:64": {
+    "sentenceId": "1791112:0:64",
+    "sentenceText": "Line 6 is a musical instrument and audio equipment manufacturer.",
+    "sentenceStart": 0,
+    "sentenceEnd": 64,
+    "entities": [
+      {
+        "entityId": "1791112:0:64:0:6",
+        "entityInSentence": "Line 6",
+        "entityStart": 0,
+        "entityEnd": 6,
+        "entityReferences": [
+          {
+            "entityName": "Line 6",
+            "entityConfidence": 0.95388776,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q1826381"
+            ],
+            "entityTypes": [
+              "organization"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1791112:0:64:12:30",
+        "entityInSentence": "musical instrument",
+        "entityStart": 12,
+        "entityEnd": 30,
+        "entityReferences": [
+          {
+            "entityName": "musical instrument",
+            "entityConfidence": 0.6791189,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q34379"
+            ],
+            "entityTypes": [
+              "product",
+              "tool"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1791112:65:229": {
+    "sentenceId": "1791112:65:229",
+    "sentenceText": "Their product lines include electric and acoustic guitars, basses, guitar and bass amplifiers, effects units, USB audio interfaces and guitar/bass wireless systems.",
+    "sentenceStart": 65,
+    "sentenceEnd": 229,
+    "entities": [
+      {
+        "entityId": "1791112:65:229:175:178",
+        "entityInSentence": "USB",
+        "entityStart": 175,
+        "entityEnd": 178,
+        "entityReferences": [
+          {
+            "entityName": "Universal Serial Bus",
+            "entityConfidence": 0.7581426,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q42378"
+            ],
+            "entityTypes": [
+              "product"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1791112:230:308": {
+    "sentenceId": "1791112:230:308",
+    "sentenceText": "The company was founded in 1996 and is headquartered in Calabasas, California.",
+    "sentenceStart": 230,
+    "sentenceEnd": 308,
+    "entities": [
+      {
+        "entityId": "1791112:230:308:286:307",
+        "entityInSentence": "Calabasas, California",
+        "entityStart": 286,
+        "entityEnd": 307,
+        "entityReferences": [
+          {
+            "entityName": "Calabasas",
+            "entityConfidence": 0.9348157,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q629088"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "city"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1791100:0:94": {
+    "sentenceId": "1791100:0:94",
+    "sentenceText": "Henry Preserved Smith (October 12, 1847 \u2013 February 26, 1927) was an American biblical scholar.",
+    "sentenceStart": 0,
+    "sentenceEnd": 94,
+    "entities": [
+      {
+        "entityId": "1791100:0:94:0:21",
+        "entityInSentence": "Henry Preserved Smith",
+        "entityStart": 0,
+        "entityEnd": 21,
+        "entityReferences": [
+          {
+            "entityName": "Henry Preserved Smith",
+            "entityConfidence": 0.9935226,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q5727207"
+            ],
+            "entityTypes": [
+              "person"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1791100:0:94:68:76",
+        "entityInSentence": "American",
+        "entityStart": 68,
+        "entityEnd": 76,
+        "entityReferences": [
+          {
+            "entityName": "United States of America",
+            "entityConfidence": 0.88554364,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q30"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1791100:0:94:77:93",
+        "entityInSentence": "biblical scholar",
+        "entityStart": 77,
+        "entityEnd": 93,
+        "entityReferences": [
+          {
+            "entityName": "biblical studies",
+            "entityConfidence": 0.8782207,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q794605"
+            ],
+            "entityTypes": [
+              "skill",
+              "academic major",
+              "field of work"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1791102:0:211": {
+    "sentenceId": "1791102:0:211",
+    "sentenceText": "Arthur Seldon, (29 May 1916\u00a0\u2013 11 October 2005) was joint founder president, with Ralph Harris, of the Institute of Economic Affairs, where he directed editorial affairs and publishing for more than thirty years.",
+    "sentenceStart": 0,
+    "sentenceEnd": 211,
+    "entities": [
+      {
+        "entityId": "1791102:0:211:0:13",
+        "entityInSentence": "Arthur Seldon",
+        "entityStart": 0,
+        "entityEnd": 13,
+        "entityReferences": [
+          {
+            "entityName": "Arthur Seldon",
+            "entityConfidence": 0.9968777,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q711495"
+            ],
+            "entityTypes": [
+              "person"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1791102:0:211:102:131",
+        "entityInSentence": "Institute of Economic Affairs",
+        "entityStart": 102,
+        "entityEnd": 131,
+        "entityReferences": [
+          {
+            "entityName": "Institute of Economic Affairs",
+            "entityConfidence": 0.97705305,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q1665155"
+            ],
+            "entityTypes": [
+              "organization"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1791102:0:211:151:160",
+        "entityInSentence": "editorial",
+        "entityStart": 151,
+        "entityEnd": 160,
+        "entityReferences": [
+          {
+            "entityName": "editorial",
+            "entityConfidence": 0.56017804,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q871232"
+            ],
+            "entityTypes": [
+              "skill",
+              "field of work"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1791102:0:211:65:74",
+        "entityInSentence": "president",
+        "entityStart": 65,
+        "entityEnd": 74,
+        "entityReferences": [
+          {
+            "entityName": "president",
+            "entityConfidence": 0.659622,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q1255921"
+            ],
+            "entityTypes": [
+              "job title",
+              "award",
+              "occupation"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1791102:0:211:81:93",
+        "entityInSentence": "Ralph Harris",
+        "entityStart": 81,
+        "entityEnd": 93,
+        "entityReferences": [
+          {
+            "entityName": "Ralph Harris, Baron Harris of High Cross",
+            "entityConfidence": 0.88622624,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q3418261"
+            ],
+            "entityTypes": [
+              "person"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1791102:212:264": {
+    "sentenceId": "1791102:212:264",
+    "sentenceText": "He is the father of political author Anthony Seldon.",
+    "sentenceStart": 212,
+    "sentenceEnd": 264,
+    "entities": [
+      {
+        "entityId": "1791102:212:264:249:263",
+        "entityInSentence": "Anthony Seldon",
+        "entityStart": 249,
+        "entityEnd": 263,
+        "entityReferences": [
+          {
+            "entityName": "Anthony Seldon",
+            "entityConfidence": 0.98101085,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q4773439"
+            ],
+            "entityTypes": [
+              "person"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792247:0:69": {
+    "sentenceId": "1792247:0:69",
+    "sentenceText": "Lorenzo Campeggio (1474\u20131539) was an Italian cardinal and politician.",
+    "sentenceStart": 0,
+    "sentenceEnd": 69,
+    "entities": [
+      {
+        "entityId": "1792247:0:69:0:17",
+        "entityInSentence": "Lorenzo Campeggio",
+        "entityStart": 0,
+        "entityEnd": 17,
+        "entityReferences": [
+          {
+            "entityName": "Lorenzo Campeggio",
+            "entityConfidence": 0.99653006,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q222941"
+            ],
+            "entityTypes": [
+              "person"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792247:0:69:37:44",
+        "entityInSentence": "Italian",
+        "entityStart": 37,
+        "entityEnd": 44,
+        "entityReferences": [
+          {
+            "entityName": "Italy",
+            "entityConfidence": 0.8654338,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q38"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792247:0:69:45:53",
+        "entityInSentence": "cardinal",
+        "entityStart": 45,
+        "entityEnd": 53,
+        "entityReferences": [
+          {
+            "entityName": "cardinal",
+            "entityConfidence": 0.8560142,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q45722"
+            ],
+            "entityTypes": [
+              "job title",
+              "award",
+              "occupation"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792247:70:116": {
+    "sentenceId": "1792247:70:116",
+    "sentenceText": "He was the last cardinal protector of England.",
+    "sentenceStart": 70,
+    "sentenceEnd": 116,
+    "entities": [
+      {
+        "entityId": "1792247:70:116:108:115",
+        "entityInSentence": "England",
+        "entityStart": 108,
+        "entityEnd": 115,
+        "entityReferences": [
+          {
+            "entityName": "England",
+            "entityConfidence": 0.89200556,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q21"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country",
+              "country subdivision",
+              "constituent state"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792247:70:116:86:94",
+        "entityInSentence": "cardinal",
+        "entityStart": 86,
+        "entityEnd": 94,
+        "entityReferences": [
+          {
+            "entityName": "cardinal",
+            "entityConfidence": 0.8560142,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q45722"
+            ],
+            "entityTypes": [
+              "job title",
+              "award",
+              "occupation"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792250:0:189": {
+    "sentenceId": "1792250:0:189",
+    "sentenceText": "Abdul Aziz Said is a Syrian-born writer and senior-ranking professor of international relations in the School of International Service at American University where he has taught since 1957.",
+    "sentenceStart": 0,
+    "sentenceEnd": 189,
+    "entities": [
+      {
+        "entityId": "1792250:0:189:0:15",
+        "entityInSentence": "Abdul Aziz Said",
+        "entityStart": 0,
+        "entityEnd": 15,
+        "entityReferences": [
+          {
+            "entityName": "Abdul Aziz Said",
+            "entityConfidence": 0.99307704,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q4665284"
+            ],
+            "entityTypes": [
+              "person"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792250:0:189:103:134",
+        "entityInSentence": "School of International Service",
+        "entityStart": 103,
+        "entityEnd": 134,
+        "entityReferences": [
+          {
+            "entityName": "School of International Service",
+            "entityConfidence": 0.982654,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q7432481"
+            ],
+            "entityTypes": [
+              "organization",
+              "location"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792250:0:189:138:157",
+        "entityInSentence": "American University",
+        "entityStart": 138,
+        "entityEnd": 157,
+        "entityReferences": [
+          {
+            "entityName": "American University",
+            "entityConfidence": 0.90018,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q168000"
+            ],
+            "entityTypes": [
+              "organization",
+              "location"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792250:0:189:59:68",
+        "entityInSentence": "professor",
+        "entityStart": 59,
+        "entityEnd": 68,
+        "entityReferences": [
+          {
+            "entityName": "professor",
+            "entityConfidence": 0.80118585,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q121594"
+            ],
+            "entityTypes": [
+              "job title",
+              "academic title",
+              "award",
+              "occupation"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792250:0:189:72:95",
+        "entityInSentence": "international relations",
+        "entityStart": 72,
+        "entityEnd": 95,
+        "entityReferences": [
+          {
+            "entityName": "international relations",
+            "entityConfidence": 0.8719899,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q166542"
+            ],
+            "entityTypes": [
+              "job title",
+              "skill",
+              "academic title",
+              "academic major",
+              "award",
+              "field of work"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792250:190:552": {
+    "sentenceId": "1792250:190:552",
+    "sentenceText": "He is the first occupant of the endowed Mohammed Said Farsi Chair of Islamic Peace; director-emeritus and founder of AU's Center for Global Peace, which undertakes a range of activities aimed at advancing the understanding of world peace; and founding director of the International Peace and Conflict Resolution department at the School of International Service.",
+    "sentenceStart": 190,
+    "sentenceEnd": 552,
+    "entities": [
+      {
+        "entityId": "1792250:190:552:230:249",
+        "entityInSentence": "Mohammed Said Farsi",
+        "entityStart": 230,
+        "entityEnd": 249,
+        "entityReferences": [
+          {
+            "entityName": "Mohammed Said Farsi",
+            "entityConfidence": 0.85,
+            "entityUri": [],
+            "entityTypes": [
+              "person"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792250:190:552:259:272",
+        "entityInSentence": "Islamic Peace",
+        "entityStart": 259,
+        "entityEnd": 272,
+        "entityReferences": [
+          {
+            "entityName": "Islamic Peace",
+            "entityConfidence": 0.85,
+            "entityUri": [],
+            "entityTypes": [
+              "organization"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792250:190:552:307:309",
+        "entityInSentence": "AU",
+        "entityStart": 307,
+        "entityEnd": 309,
+        "entityReferences": [
+          {
+            "entityName": "American University",
+            "entityConfidence": 0.90018,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q168000"
+            ],
+            "entityTypes": [
+              "organization",
+              "location"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792250:190:552:312:335",
+        "entityInSentence": "Center for Global Peace",
+        "entityStart": 312,
+        "entityEnd": 335,
+        "entityReferences": [
+          {
+            "entityName": "Center for Global Peace",
+            "entityConfidence": 0.85,
+            "entityUri": [],
+            "entityTypes": [
+              "organization"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792250:190:552:454:501",
+        "entityInSentence": "the International Peace and Conflict Resolution",
+        "entityStart": 454,
+        "entityEnd": 501,
+        "entityReferences": [
+          {
+            "entityName": "the International Peace and Conflict Resolution",
+            "entityConfidence": 0.85,
+            "entityUri": [],
+            "entityTypes": [
+              "organization"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792250:190:552:520:551",
+        "entityInSentence": "School of International Service",
+        "entityStart": 520,
+        "entityEnd": 551,
+        "entityReferences": [
+          {
+            "entityName": "School of International Service",
+            "entityConfidence": 0.982654,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q7432481"
+            ],
+            "entityTypes": [
+              "organization",
+              "location"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792254:0:256": {
+    "sentenceId": "1792254:0:256",
+    "sentenceText": "Autoroute 20 is a Quebec Autoroute, following the Saint Lawrence River through one of the more densely populated parts of Canada, with its central section forming the main route of the Trans-Canada Highway from the A-25 interchange to the A-85 interchange.",
+    "sentenceStart": 0,
+    "sentenceEnd": 256,
+    "entities": [
+      {
+        "entityId": "1792254:0:256:0:12",
+        "entityInSentence": "Autoroute 20",
+        "entityStart": 0,
+        "entityEnd": 12,
+        "entityReferences": [
+          {
+            "entityName": "Quebec Autoroute 20",
+            "entityConfidence": 0.95752,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q788622"
+            ],
+            "entityTypes": [
+              "location"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792254:0:256:122:128",
+        "entityInSentence": "Canada",
+        "entityStart": 122,
+        "entityEnd": 128,
+        "entityReferences": [
+          {
+            "entityName": "Canada",
+            "entityConfidence": 0.9482534,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q16"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792254:0:256:185:205",
+        "entityInSentence": "Trans-Canada Highway",
+        "entityStart": 185,
+        "entityEnd": 205,
+        "entityReferences": [
+          {
+            "entityName": "Trans-Canada Highway",
+            "entityConfidence": 0.9692632,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q1061576"
+            ],
+            "entityTypes": [
+              "location"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792254:0:256:18:34",
+        "entityInSentence": "Quebec Autoroute",
+        "entityStart": 18,
+        "entityEnd": 34,
+        "entityReferences": [
+          {
+            "entityName": "Autoroutes of Quebec",
+            "entityConfidence": 0.8474207,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q2873026"
+            ],
+            "entityTypes": [
+              "location"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792254:0:256:215:219",
+        "entityInSentence": "A-25",
+        "entityStart": 215,
+        "entityEnd": 219,
+        "entityReferences": [
+          {
+            "entityName": "Quebec Autoroute 25",
+            "entityConfidence": 0.94664794,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q788621"
+            ],
+            "entityTypes": [
+              "location"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792254:0:256:50:70",
+        "entityInSentence": "Saint Lawrence River",
+        "entityStart": 50,
+        "entityEnd": 70,
+        "entityReferences": [
+          {
+            "entityName": "Saint Lawrence River",
+            "entityConfidence": 0.9811225,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q134750"
+            ],
+            "entityTypes": [
+              "location",
+              "body of water"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792254:257:300": {
+    "sentenceId": "1792254:257:300",
+    "sentenceText": "At , it is the longest Autoroute in Quebec.",
+    "sentenceStart": 257,
+    "sentenceEnd": 300,
+    "entities": [
+      {
+        "entityId": "1792254:257:300:280:289",
+        "entityInSentence": "Autoroute",
+        "entityStart": 280,
+        "entityEnd": 289,
+        "entityReferences": [
+          {
+            "entityName": "Autoroutes of Quebec",
+            "entityConfidence": 0.8474207,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q2873026"
+            ],
+            "entityTypes": [
+              "location"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792254:257:300:293:299",
+        "entityInSentence": "Quebec",
+        "entityStart": 293,
+        "entityEnd": 299,
+        "entityReferences": [
+          {
+            "entityName": "Quebec",
+            "entityConfidence": 0.9514907,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q176"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country subdivision",
+              "constituent state",
+              "province"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792254:301:385": {
+    "sentenceId": "1792254:301:385",
+    "sentenceText": "It is one of two main links between Montreal and Quebec City; the other is the A-40.",
+    "sentenceStart": 301,
+    "sentenceEnd": 385,
+    "entities": [
+      {
+        "entityId": "1792254:301:385:337:345",
+        "entityInSentence": "Montreal",
+        "entityStart": 337,
+        "entityEnd": 345,
+        "entityReferences": [
+          {
+            "entityName": "Montreal",
+            "entityConfidence": 0.92421293,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q340"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "city"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792254:301:385:350:361",
+        "entityInSentence": "Quebec City",
+        "entityStart": 350,
+        "entityEnd": 361,
+        "entityReferences": [
+          {
+            "entityName": "Quebec City",
+            "entityConfidence": 0.9612631,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q2145"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "city"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792254:301:385:380:384",
+        "entityInSentence": "A-40",
+        "entityStart": 380,
+        "entityEnd": 384,
+        "entityReferences": [
+          {
+            "entityName": "Quebec Autoroute 40",
+            "entityConfidence": 0.94944394,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q788625"
+            ],
+            "entityTypes": [
+              "location"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792264:0:67": {
+    "sentenceId": "1792264:0:67",
+    "sentenceText": "General Paolo Crescenzo Martino Avitabile ; (\"\u0627\u0628\u0648\u062a\u0628\u06cc\u0644\u0627 Abu Tabela\")",
+    "sentenceStart": 0,
+    "sentenceEnd": 67,
+    "entities": [
+      {
+        "entityId": "1792264:0:67:55:65",
+        "entityInSentence": "Abu Tabela",
+        "entityStart": 55,
+        "entityEnd": 65,
+        "entityReferences": [
+          {
+            "entityName": "Paolo Avitabile",
+            "entityConfidence": 0.96534216,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q794013"
+            ],
+            "entityTypes": [
+              "person"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792264:0:67:8:41",
+        "entityInSentence": "Paolo Crescenzo Martino Avitabile",
+        "entityStart": 8,
+        "entityEnd": 41,
+        "entityReferences": [
+          {
+            "entityName": "Paolo Avitabile",
+            "entityConfidence": 0.96534216,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q794013"
+            ],
+            "entityTypes": [
+              "person"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792264:68:151": {
+    "sentenceId": "1792264:68:151",
+    "sentenceText": "(25 October 1791 \u2013 28 March 1850) was an Italian soldier, mercenary and adventurer.",
+    "sentenceStart": 68,
+    "sentenceEnd": 151,
+    "entities": [
+      {
+        "entityId": "1792264:68:151:109:116",
+        "entityInSentence": "Italian",
+        "entityStart": 109,
+        "entityEnd": 116,
+        "entityReferences": [
+          {
+            "entityName": "Italy",
+            "entityConfidence": 0.97855717,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q38"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792264:152:270": {
+    "sentenceId": "1792264:152:270",
+    "sentenceText": "A peasant's son born in Agerola, near Amalfi in Italy, he served in the Neapolitan militia during the Napoleonic wars.",
+    "sentenceStart": 152,
+    "sentenceEnd": 270,
+    "entities": [
+      {
+        "entityId": "1792264:152:270:176:183",
+        "entityInSentence": "Agerola",
+        "entityStart": 176,
+        "entityEnd": 183,
+        "entityReferences": [
+          {
+            "entityName": "Agerola",
+            "entityConfidence": 0.97345483,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q71614"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792264:152:270:190:196",
+        "entityInSentence": "Amalfi",
+        "entityStart": 190,
+        "entityEnd": 196,
+        "entityReferences": [
+          {
+            "entityName": "Amalfi",
+            "entityConfidence": 0.9206496,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q80563"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792264:152:270:200:205",
+        "entityInSentence": "Italy",
+        "entityStart": 200,
+        "entityEnd": 205,
+        "entityReferences": [
+          {
+            "entityName": "Italy",
+            "entityConfidence": 0.97855717,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q38"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792264:152:270:224:234",
+        "entityInSentence": "Neapolitan",
+        "entityStart": 224,
+        "entityEnd": 234,
+        "entityReferences": [
+          {
+            "entityName": "Naples",
+            "entityConfidence": 0.7057044,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q2634"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "city"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792264:152:270:254:264",
+        "entityInSentence": "Napoleonic",
+        "entityStart": 254,
+        "entityEnd": 264,
+        "entityReferences": [
+          {
+            "entityName": "Napoleon",
+            "entityConfidence": 0.8644074,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q517"
+            ],
+            "entityTypes": [
+              "person"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792264:271:339": {
+    "sentenceId": "1792264:271:339",
+    "sentenceText": "After Waterloo he drifted east like many other adventurous soldiers.",
+    "sentenceStart": 271,
+    "sentenceEnd": 339,
+    "entities": [
+      {
+        "entityId": "1792264:271:339:277:285",
+        "entityInSentence": "Waterloo",
+        "entityStart": 277,
+        "entityEnd": 285,
+        "entityReferences": [
+          {
+            "entityName": "Waterloo",
+            "entityConfidence": 0.85,
+            "entityUri": [],
+            "entityTypes": [
+              "location"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792264:340:488": {
+    "sentenceId": "1792264:340:488",
+    "sentenceText": "In 1820 he joined the army of the Shah of Persia, attaining the rank of colonel and receiving several decorations before returning to Italy in 1824.",
+    "sentenceStart": 340,
+    "sentenceEnd": 488,
+    "entities": [
+      {
+        "entityId": "1792264:340:488:362:366",
+        "entityInSentence": "army",
+        "entityStart": 362,
+        "entityEnd": 366,
+        "entityReferences": [
+          {
+            "entityName": "army",
+            "entityConfidence": 0.55376226,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q37726"
+            ],
+            "entityTypes": [
+              "other"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792264:340:488:374:388",
+        "entityInSentence": "Shah of Persia",
+        "entityStart": 374,
+        "entityEnd": 388,
+        "entityReferences": [
+          {
+            "entityName": "Qajar dynasty",
+            "entityConfidence": 0.6035521,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q189326"
+            ],
+            "entityTypes": [
+              "organization"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792264:340:488:474:479",
+        "entityInSentence": "Italy",
+        "entityStart": 474,
+        "entityEnd": 479,
+        "entityReferences": [
+          {
+            "entityName": "Italy",
+            "entityConfidence": 0.97855717,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q38"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792278:0:118": {
+    "sentenceId": "1792278:0:118",
+    "sentenceText": "\"I Will Remember You\" is episode 8 of season 1 in the television show \"Angel\", originally broadcast on the WB network.",
+    "sentenceStart": 0,
+    "sentenceEnd": 118,
+    "entities": [
+      {
+        "entityId": "1792278:0:118:107:109",
+        "entityInSentence": "WB",
+        "entityStart": 107,
+        "entityEnd": 109,
+        "entityReferences": [
+          {
+            "entityName": "The WB",
+            "entityConfidence": 0.75388926,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q844972"
+            ],
+            "entityTypes": [
+              "organization",
+              "product"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792278:0:118:1:20",
+        "entityInSentence": "I Will Remember You",
+        "entityStart": 1,
+        "entityEnd": 20,
+        "entityReferences": [
+          {
+            "entityName": "I Will Remember You",
+            "entityConfidence": 0.6948982,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q3163479"
+            ],
+            "entityTypes": [
+              "audiovisual work"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792278:0:118:71:76",
+        "entityInSentence": "Angel",
+        "entityStart": 71,
+        "entityEnd": 76,
+        "entityReferences": [
+          {
+            "entityName": "Angel",
+            "entityConfidence": 0.89586544,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q2005341"
+            ],
+            "entityTypes": [
+              "fictional entity"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792278:119:254": {
+    "sentenceId": "1792278:119:254",
+    "sentenceText": "In this episode, Buffy follows Angel back to Los Angeles, where she confronts him about his surreptitious assistance back in Sunnydale.",
+    "sentenceStart": 119,
+    "sentenceEnd": 254,
+    "entities": [
+      {
+        "entityId": "1792278:119:254:136:141",
+        "entityInSentence": "Buffy",
+        "entityStart": 136,
+        "entityEnd": 141,
+        "entityReferences": [
+          {
+            "entityName": "Buffy Summers",
+            "entityConfidence": 0.90651745,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q1799459"
+            ],
+            "entityTypes": [
+              "person",
+              "fictional entity"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792278:119:254:150:155",
+        "entityInSentence": "Angel",
+        "entityStart": 150,
+        "entityEnd": 155,
+        "entityReferences": [
+          {
+            "entityName": "Angel",
+            "entityConfidence": 0.89586544,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q2005341"
+            ],
+            "entityTypes": [
+              "fictional entity"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792278:119:254:164:175",
+        "entityInSentence": "Los Angeles",
+        "entityStart": 164,
+        "entityEnd": 175,
+        "entityReferences": [
+          {
+            "entityName": "Los Angeles",
+            "entityConfidence": 0.97350466,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q65"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "city"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792278:119:254:244:253",
+        "entityInSentence": "Sunnydale",
+        "entityStart": 244,
+        "entityEnd": 253,
+        "entityReferences": [
+          {
+            "entityName": "Sunnydale",
+            "entityConfidence": 0.94278634,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q2479024"
+            ],
+            "entityTypes": [
+              "fictional entity"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792278:255:363": {
+    "sentenceId": "1792278:255:363",
+    "sentenceText": "They are attacked by a Mohra demon; when Angel kills the demon he is restored to life by its powerful blood.",
+    "sentenceStart": 255,
+    "sentenceEnd": 363,
+    "entities": [
+      {
+        "entityId": "1792278:255:363:278:283",
+        "entityInSentence": "Mohra",
+        "entityStart": 278,
+        "entityEnd": 283,
+        "entityReferences": [
+          {
+            "entityName": "Mohra",
+            "entityConfidence": 0.61817974,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q6894320"
+            ],
+            "entityTypes": [
+              "skill",
+              "field of work",
+              "audiovisual work",
+              "film"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792278:255:363:296:301",
+        "entityInSentence": "Angel",
+        "entityStart": 296,
+        "entityEnd": 301,
+        "entityReferences": [
+          {
+            "entityName": "Angel",
+            "entityConfidence": 0.89586544,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q2005341"
+            ],
+            "entityTypes": [
+              "fictional entity"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792278:364:490": {
+    "sentenceId": "1792278:364:490",
+    "sentenceText": "After The Oracles \u2014 a link to The Powers That Be \u2014 confirm he is human again, Angel and Buffy spend a blissful night together.",
+    "sentenceStart": 364,
+    "sentenceEnd": 490,
+    "entities": [
+      {
+        "entityId": "1792278:364:490:370:381",
+        "entityInSentence": "The Oracles",
+        "entityStart": 370,
+        "entityEnd": 381,
+        "entityReferences": [
+          {
+            "entityName": "The Oracles",
+            "entityConfidence": 0.56268036,
+            "entityUri": [
+              "http://www.linkedin.com/company/theoracles"
+            ],
+            "entityTypes": [
+              "organization"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792278:364:490:394:412",
+        "entityInSentence": "The Powers That Be",
+        "entityStart": 394,
+        "entityEnd": 412,
+        "entityReferences": [
+          {
+            "entityName": "Angel",
+            "entityConfidence": 0.7257692,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q212156"
+            ],
+            "entityTypes": [
+              "skill",
+              "field of work",
+              "audiovisual work",
+              "television program"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792278:364:490:442:447",
+        "entityInSentence": "Angel",
+        "entityStart": 442,
+        "entityEnd": 447,
+        "entityReferences": [
+          {
+            "entityName": "Angel",
+            "entityConfidence": 0.89586544,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q2005341"
+            ],
+            "entityTypes": [
+              "fictional entity"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792278:364:490:452:457",
+        "entityInSentence": "Buffy",
+        "entityStart": 452,
+        "entityEnd": 457,
+        "entityReferences": [
+          {
+            "entityName": "Buffy Summers",
+            "entityConfidence": 0.90651745,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q1799459"
+            ],
+            "entityTypes": [
+              "person",
+              "fictional entity"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792278:491:599": {
+    "sentenceId": "1792278:491:599",
+    "sentenceText": "When Doyle receives a vision that the Mohra has regenerated itself, Angel leaves to kill the demon for good.",
+    "sentenceStart": 491,
+    "sentenceEnd": 599,
+    "entities": [
+      {
+        "entityId": "1792278:491:599:496:501",
+        "entityInSentence": "Doyle",
+        "entityStart": 496,
+        "entityEnd": 501,
+        "entityReferences": [
+          {
+            "entityName": "Allen Francis Doyle",
+            "entityConfidence": 0.5649792,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q2395957"
+            ],
+            "entityTypes": [
+              "person",
+              "fictional entity"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792278:491:599:529:534",
+        "entityInSentence": "Mohra",
+        "entityStart": 529,
+        "entityEnd": 534,
+        "entityReferences": [
+          {
+            "entityName": "Mohra",
+            "entityConfidence": 0.85,
+            "entityUri": [],
+            "entityTypes": [
+              "person"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792278:491:599:559:564",
+        "entityInSentence": "Angel",
+        "entityStart": 559,
+        "entityEnd": 564,
+        "entityReferences": [
+          {
+            "entityName": "Angel",
+            "entityConfidence": 0.89586544,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q2005341"
+            ],
+            "entityTypes": [
+              "fictional entity"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792278:600:744": {
+    "sentenceId": "1792278:600:744",
+    "sentenceText": "In the ensuing battle, Angel discovers the consequences of having only human strength; Buffy must come to his rescue and slay the demon herself.",
+    "sentenceStart": 600,
+    "sentenceEnd": 744,
+    "entities": [
+      {
+        "entityId": "1792278:600:744:623:628",
+        "entityInSentence": "Angel",
+        "entityStart": 623,
+        "entityEnd": 628,
+        "entityReferences": [
+          {
+            "entityName": "Angel",
+            "entityConfidence": 0.89586544,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q2005341"
+            ],
+            "entityTypes": [
+              "fictional entity"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792278:600:744:687:692",
+        "entityInSentence": "Buffy",
+        "entityStart": 687,
+        "entityEnd": 692,
+        "entityReferences": [
+          {
+            "entityName": "Buffy Summers",
+            "entityConfidence": 0.90651745,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q1799459"
+            ],
+            "entityTypes": [
+              "person",
+              "fictional entity"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792278:745:912": {
+    "sentenceId": "1792278:745:912",
+    "sentenceText": "Angel returns to The Oracles, who agree to turn back time so that Angel, accepting the entire cost of the bargain, can kill the Mohra before its blood makes him human.",
+    "sentenceStart": 745,
+    "sentenceEnd": 912,
+    "entities": [
+      {
+        "entityId": "1792278:745:912:745:750",
+        "entityInSentence": "Angel",
+        "entityStart": 745,
+        "entityEnd": 750,
+        "entityReferences": [
+          {
+            "entityName": "Angel",
+            "entityConfidence": 0.89586544,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q2005341"
+            ],
+            "entityTypes": [
+              "fictional entity"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792278:745:912:762:773",
+        "entityInSentence": "The Oracles",
+        "entityStart": 762,
+        "entityEnd": 773,
+        "entityReferences": [
+          {
+            "entityName": "The Oracles",
+            "entityConfidence": 0.56268036,
+            "entityUri": [
+              "http://www.linkedin.com/company/theoracles"
+            ],
+            "entityTypes": [
+              "organization"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792278:745:912:811:816",
+        "entityInSentence": "Angel",
+        "entityStart": 811,
+        "entityEnd": 816,
+        "entityReferences": [
+          {
+            "entityName": "Angel",
+            "entityConfidence": 0.89586544,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q2005341"
+            ],
+            "entityTypes": [
+              "fictional entity"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792278:745:912:873:878",
+        "entityInSentence": "Mohra",
+        "entityStart": 873,
+        "entityEnd": 878,
+        "entityReferences": [
+          {
+            "entityName": "Mohra",
+            "entityConfidence": 0.61817974,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q6894320"
+            ],
+            "entityTypes": [
+              "skill",
+              "field of work",
+              "audiovisual work",
+              "film"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792278:913:993": {
+    "sentenceId": "1792278:913:993",
+    "sentenceText": "This episode is #78 on the \"TV Guide\" list of TV's Top 100 Episodes of all time.",
+    "sentenceStart": 913,
+    "sentenceEnd": 993,
+    "entities": [
+      {
+        "entityId": "1792278:913:993:941:949",
+        "entityInSentence": "TV Guide",
+        "entityStart": 941,
+        "entityEnd": 949,
+        "entityReferences": [
+          {
+            "entityName": "TV Guide",
+            "entityConfidence": 0.9755275,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q849887"
+            ],
+            "entityTypes": [
+              "organization",
+              "product"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792278:913:993:959:961",
+        "entityInSentence": "TV",
+        "entityStart": 959,
+        "entityEnd": 961,
+        "entityReferences": [
+          {
+            "entityName": "television",
+            "entityConfidence": 0.88228095,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q289"
+            ],
+            "entityTypes": [
+              "skill",
+              "product",
+              "field of work"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792278:913:993:972:980",
+        "entityInSentence": "Episodes",
+        "entityStart": 972,
+        "entityEnd": 980,
+        "entityReferences": [
+          {
+            "entityName": "Episodes",
+            "entityConfidence": 0.5843208,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q1164742"
+            ],
+            "entityTypes": [
+              "skill",
+              "field of work",
+              "audiovisual work",
+              "television program"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792281:0:76": {
+    "sentenceId": "1792281:0:76",
+    "sentenceText": "Blue Mink were a British six-piece pop group that existed from 1969 to 1974.",
+    "sentenceStart": 0,
+    "sentenceEnd": 76,
+    "entities": [
+      {
+        "entityId": "1792281:0:76:0:9",
+        "entityInSentence": "Blue Mink",
+        "entityStart": 0,
+        "entityEnd": 9,
+        "entityReferences": [
+          {
+            "entityName": "Blue Mink",
+            "entityConfidence": 0.97473115,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q885770"
+            ],
+            "entityTypes": [
+              "organization"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792281:0:76:17:24",
+        "entityInSentence": "British",
+        "entityStart": 17,
+        "entityEnd": 24,
+        "entityReferences": [
+          {
+            "entityName": "United Kingdom",
+            "entityConfidence": 0.93804073,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q145"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792281:0:76:35:38",
+        "entityInSentence": "pop",
+        "entityStart": 35,
+        "entityEnd": 38,
+        "entityReferences": [
+          {
+            "entityName": "pop music",
+            "entityConfidence": 0.67760384,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q37073"
+            ],
+            "entityTypes": [
+              "skill",
+              "field of work",
+              "industry"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792281:77:189": {
+    "sentenceId": "1792281:77:189",
+    "sentenceText": "Over that period they had six Top 20 hit singles in the UK Singles Chart, and released five studio based albums.",
+    "sentenceStart": 77,
+    "sentenceEnd": 189,
+    "entities": [
+      {
+        "entityId": "1792281:77:189:118:125",
+        "entityInSentence": "singles",
+        "entityStart": 118,
+        "entityEnd": 125,
+        "entityReferences": [
+          {
+            "entityName": "single",
+            "entityConfidence": 0.8611345,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q134556"
+            ],
+            "entityTypes": [
+              "skill",
+              "field of work",
+              "industry"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792281:77:189:133:149",
+        "entityInSentence": "UK Singles Chart",
+        "entityStart": 133,
+        "entityEnd": 149,
+        "entityReferences": [
+          {
+            "entityName": "Official Charts Company",
+            "entityConfidence": 0.82584834,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q2072376"
+            ],
+            "entityTypes": [
+              "organization"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792281:190:405": {
+    "sentenceId": "1792281:190:405",
+    "sentenceText": "According to AllMusic: \"they have been immortalised on a string of compilation albums, each recounting the string of effervescent hits that established them among Britain's best-loved pop groups of the early 1970s.\"",
+    "sentenceStart": 190,
+    "sentenceEnd": 405,
+    "entities": [
+      {
+        "entityId": "1792281:190:405:203:211",
+        "entityInSentence": "AllMusic",
+        "entityStart": 203,
+        "entityEnd": 211,
+        "entityReferences": [
+          {
+            "entityName": "AllMusic",
+            "entityConfidence": 0.97566706,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q31181"
+            ],
+            "entityTypes": [
+              "product"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792281:190:405:257:268",
+        "entityInSentence": "compilation",
+        "entityStart": 257,
+        "entityEnd": 268,
+        "entityReferences": [
+          {
+            "entityName": "compilation album",
+            "entityConfidence": 0.7288599,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q222910"
+            ],
+            "entityTypes": [
+              "skill",
+              "field of work",
+              "musical album",
+              "industry"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792281:190:405:353:360",
+        "entityInSentence": "Britain",
+        "entityStart": 353,
+        "entityEnd": 360,
+        "entityReferences": [
+          {
+            "entityName": "United Kingdom",
+            "entityConfidence": 0.93804073,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q145"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792281:190:405:374:377",
+        "entityInSentence": "pop",
+        "entityStart": 374,
+        "entityEnd": 377,
+        "entityReferences": [
+          {
+            "entityName": "pop music",
+            "entityConfidence": 0.67760384,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q37073"
+            ],
+            "entityTypes": [
+              "skill",
+              "field of work",
+              "industry"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792286:0:120": {
+    "sentenceId": "1792286:0:120",
+    "sentenceText": "The Newbury by-election, in West Berkshire, England, was held on 6 May 1993 after Conservative Member of Parliament (MP)",
+    "sentenceStart": 0,
+    "sentenceEnd": 120,
+    "entities": [
+      {
+        "entityId": "1792286:0:120:28:42",
+        "entityInSentence": "West Berkshire",
+        "entityStart": 28,
+        "entityEnd": 42,
+        "entityReferences": [
+          {
+            "entityName": "West Berkshire",
+            "entityConfidence": 0.97638375,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q1473780"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "county"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792286:0:120:4:11",
+        "entityInSentence": "Newbury",
+        "entityStart": 4,
+        "entityEnd": 11,
+        "entityReferences": [
+          {
+            "entityName": "Newbury",
+            "entityConfidence": 0.81242067,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q1053007"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792286:0:120:82:115",
+        "entityInSentence": "Conservative Member of Parliament",
+        "entityStart": 82,
+        "entityEnd": 115,
+        "entityReferences": [
+          {
+            "entityName": "Conservative Member of Parliament",
+            "entityConfidence": 0.85,
+            "entityUri": [],
+            "entityTypes": [
+              "organization"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792286:121:185": {
+    "sentenceId": "1792286:121:185",
+    "sentenceText": "Judith Chaplin died, after only being elected the previous year.",
+    "sentenceStart": 121,
+    "sentenceEnd": 185,
+    "entities": [
+      {
+        "entityId": "1792286:121:185:121:135",
+        "entityInSentence": "Judith Chaplin",
+        "entityStart": 121,
+        "entityEnd": 135,
+        "entityReferences": [
+          {
+            "entityName": "Judith Chaplin",
+            "entityConfidence": 0.9922192,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q13529870"
+            ],
+            "entityTypes": [
+              "person"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792286:186:331": {
+    "sentenceId": "1792286:186:331",
+    "sentenceText": "It was won by David Rendel of the Liberal Democrats with a large swing of 28.4%, and well over twice as many votes as the Conservative candidate.",
+    "sentenceStart": 186,
+    "sentenceEnd": 331,
+    "entities": [
+      {
+        "entityId": "1792286:186:331:200:212",
+        "entityInSentence": "David Rendel",
+        "entityStart": 200,
+        "entityEnd": 212,
+        "entityReferences": [
+          {
+            "entityName": "David Rendel",
+            "entityConfidence": 0.9888014,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q5238989"
+            ],
+            "entityTypes": [
+              "person"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792286:186:331:220:237",
+        "entityInSentence": "Liberal Democrats",
+        "entityStart": 220,
+        "entityEnd": 237,
+        "entityReferences": [
+          {
+            "entityName": "Liberal Democrats",
+            "entityConfidence": 0.96931833,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q9624"
+            ],
+            "entityTypes": [
+              "organization",
+              "political party"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792286:186:331:308:320",
+        "entityInSentence": "Conservative",
+        "entityStart": 308,
+        "entityEnd": 320,
+        "entityReferences": [
+          {
+            "entityName": "Conservative Party",
+            "entityConfidence": 0.97702223,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q9626"
+            ],
+            "entityTypes": [
+              "organization",
+              "political party"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792286:332:474": {
+    "sentenceId": "1792286:332:474",
+    "sentenceText": "As with the overwhelming majority of UK by-elections, turnout was lower than at the general election \u2014 here falling from 83% to 71% (rounded).",
+    "sentenceStart": 332,
+    "sentenceEnd": 474,
+    "entities": [
+      {
+        "entityId": "1792286:332:474:369:371",
+        "entityInSentence": "UK",
+        "entityStart": 369,
+        "entityEnd": 371,
+        "entityReferences": [
+          {
+            "entityName": "United Kingdom",
+            "entityConfidence": 0.85693556,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q145"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792286:332:474:424:432",
+        "entityInSentence": "election",
+        "entityStart": 424,
+        "entityEnd": 432,
+        "entityReferences": [
+          {
+            "entityName": "election",
+            "entityConfidence": 0.5815427,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q40231"
+            ],
+            "entityTypes": [
+              "event"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792288:0:113": {
+    "sentenceId": "1792288:0:113",
+    "sentenceText": "The Soviet Union (USSR) competed, for the last time before its dissolution, at the 1988 Summer Olympics in Seoul.",
+    "sentenceStart": 0,
+    "sentenceEnd": 113,
+    "entities": [
+      {
+        "entityId": "1792288:0:113:0:16",
+        "entityInSentence": "The Soviet Union",
+        "entityStart": 0,
+        "entityEnd": 16,
+        "entityReferences": [
+          {
+            "entityName": "Soviet Union",
+            "entityConfidence": 0.7716476,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q15180"
+            ],
+            "entityTypes": [
+              "organization",
+              "location",
+              "administrative area",
+              "country"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792288:0:113:107:112",
+        "entityInSentence": "Seoul",
+        "entityStart": 107,
+        "entityEnd": 112,
+        "entityReferences": [
+          {
+            "entityName": "Seoul",
+            "entityConfidence": 0.94291455,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q8684"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "city",
+              "country subdivision"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792288:0:113:88:103",
+        "entityInSentence": "Summer Olympics",
+        "entityStart": 88,
+        "entityEnd": 103,
+        "entityReferences": [
+          {
+            "entityName": "1988 Summer Olympics",
+            "entityConfidence": 0.6567689,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q8470"
+            ],
+            "entityTypes": [
+              "event"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792288:114:191": {
+    "sentenceId": "1792288:114:191",
+    "sentenceText": "481 competitors, 319 men and 162 women, took part in 221 events in 27 sports.",
+    "sentenceStart": 114,
+    "sentenceEnd": 191,
+    "entities": []
+  },
+  "1792288:192:365": {
+    "sentenceId": "1792288:192:365",
+    "sentenceText": "Athletes from 12 of the ex-Soviet republics would compete as the Unified Team at the 1992 Summer Olympics, and each nation would field independent teams in subsequent Games.",
+    "sentenceStart": 192,
+    "sentenceEnd": 365,
+    "entities": [
+      {
+        "entityId": "1792288:192:365:257:269",
+        "entityInSentence": "Unified Team",
+        "entityStart": 257,
+        "entityEnd": 269,
+        "entityReferences": [
+          {
+            "entityName": "Unified Team at the 1992 Summer Olympics",
+            "entityConfidence": 0.66323936,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q606834"
+            ],
+            "entityTypes": [
+              "organization",
+              "skill",
+              "product",
+              "event",
+              "field of work",
+              "literary work"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792288:192:365:282:297",
+        "entityInSentence": "Summer Olympics",
+        "entityStart": 282,
+        "entityEnd": 297,
+        "entityReferences": [
+          {
+            "entityName": "Summer Olympic Games",
+            "entityConfidence": 0.75129193,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q159821"
+            ],
+            "entityTypes": [
+              "event"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792297:0:3": {
+    "sentenceId": "1792297:0:3",
+    "sentenceText": "No.",
+    "sentenceStart": 0,
+    "sentenceEnd": 3,
+    "entities": [
+      {
+        "entityId": "1792297:0:3:0:7",
+        "entityInSentence": "No. 300",
+        "entityStart": 0,
+        "entityEnd": 7,
+        "entityReferences": [
+          {
+            "entityName": "No. 300 Polish Bomber Squadron",
+            "entityConfidence": 0.77191514,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q9248100"
+            ],
+            "entityTypes": [
+              "organization"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792297:4:7": {
+    "sentenceId": "1792297:4:7",
+    "sentenceText": "300",
+    "sentenceStart": 4,
+    "sentenceEnd": 7,
+    "entities": [
+      {
+        "entityId": "1792297:4:7:0:7",
+        "entityInSentence": "No. 300",
+        "entityStart": 0,
+        "entityEnd": 7,
+        "entityReferences": [
+          {
+            "entityName": "No. 300 Polish Bomber Squadron",
+            "entityConfidence": 0.77191514,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q9248100"
+            ],
+            "entityTypes": [
+              "organization"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792297:8:18": {
+    "sentenceId": "1792297:8:18",
+    "sentenceText": "(Polish) \"",
+    "sentenceStart": 8,
+    "sentenceEnd": 18,
+    "entities": [
+      {
+        "entityId": "1792297:8:18:9:15",
+        "entityInSentence": "Polish",
+        "entityStart": 9,
+        "entityEnd": 15,
+        "entityReferences": [
+          {
+            "entityName": "Poland",
+            "entityConfidence": 0.9791705,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q36"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792297:18:147": {
+    "sentenceId": "1792297:18:147",
+    "sentenceText": "Land of Masovia\" Bomber Squadron () was one of several Polish squadrons in the Royal Air Force (RAF) during the Second World War.",
+    "sentenceStart": 18,
+    "sentenceEnd": 147,
+    "entities": [
+      {
+        "entityId": "1792297:18:147:130:146",
+        "entityInSentence": "Second World War",
+        "entityStart": 130,
+        "entityEnd": 146,
+        "entityReferences": [
+          {
+            "entityName": "World War II",
+            "entityConfidence": 0.96408707,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q362"
+            ],
+            "entityTypes": [
+              "armed conflict"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792297:18:147:26:33",
+        "entityInSentence": "Masovia",
+        "entityStart": 26,
+        "entityEnd": 33,
+        "entityReferences": [
+          {
+            "entityName": "Masovian Voivodeship",
+            "entityConfidence": 0.581107,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q2845900"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792297:18:147:42:50",
+        "entityInSentence": "Squadron",
+        "entityStart": 42,
+        "entityEnd": 50,
+        "entityReferences": [
+          {
+            "entityName": "squadron",
+            "entityConfidence": 0.58148235,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q955920"
+            ],
+            "entityTypes": [
+              "other"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792297:18:147:73:79",
+        "entityInSentence": "Polish",
+        "entityStart": 73,
+        "entityEnd": 79,
+        "entityReferences": [
+          {
+            "entityName": "Poland",
+            "entityConfidence": 0.9791705,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q36"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792297:18:147:97:118",
+        "entityInSentence": "Royal Air Force (RAF)",
+        "entityStart": 97,
+        "entityEnd": 118,
+        "entityReferences": [
+          {
+            "entityName": "Royal Air Force",
+            "entityConfidence": 0.8133702,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q165862"
+            ],
+            "entityTypes": [
+              "organization"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792297:148:256": {
+    "sentenceId": "1792297:148:256",
+    "sentenceText": "It was formed as part of an agreement between the Polish Government in Exile and the United Kingdom in 1940.",
+    "sentenceStart": 148,
+    "sentenceEnd": 256,
+    "entities": [
+      {
+        "entityId": "1792297:148:256:198:224",
+        "entityInSentence": "Polish Government in Exile",
+        "entityStart": 198,
+        "entityEnd": 224,
+        "entityReferences": [
+          {
+            "entityName": "Polish government-in-exile",
+            "entityConfidence": 0.93177325,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q210846"
+            ],
+            "entityTypes": [
+              "organization"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792297:148:256:233:247",
+        "entityInSentence": "United Kingdom",
+        "entityStart": 233,
+        "entityEnd": 247,
+        "entityReferences": [
+          {
+            "entityName": "United Kingdom",
+            "entityConfidence": 0.96381265,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q145"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792297:257:416": {
+    "sentenceId": "1792297:257:416",
+    "sentenceText": "300 Squadron is now represented by 300 (Isle of Axholme) Squadron of the Royal Air Force Air Cadets, which made the alliance with the Polish Air Force is 1994.",
+    "sentenceStart": 257,
+    "sentenceEnd": 416,
+    "entities": [
+      {
+        "entityId": "1792297:257:416:257:269",
+        "entityInSentence": "300 Squadron",
+        "entityStart": 257,
+        "entityEnd": 269,
+        "entityReferences": [
+          {
+            "entityName": "300 Squadron",
+            "entityConfidence": 0.85,
+            "entityUri": [],
+            "entityTypes": [
+              "organization"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792297:257:416:297:322",
+        "entityInSentence": "Isle of Axholme) Squadron",
+        "entityStart": 297,
+        "entityEnd": 322,
+        "entityReferences": [
+          {
+            "entityName": "Isle of Axholme) Squadron",
+            "entityConfidence": 0.85,
+            "entityUri": [],
+            "entityTypes": [
+              "organization"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792297:257:416:330:356",
+        "entityInSentence": "Royal Air Force Air Cadets",
+        "entityStart": 330,
+        "entityEnd": 356,
+        "entityReferences": [
+          {
+            "entityName": "Royal Air Force Air Cadets",
+            "entityConfidence": 0.5869227,
+            "entityUri": [
+              "http://www.linkedin.com/company/air-cadet-organisation"
+            ],
+            "entityTypes": [
+              "organization"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792297:257:416:391:407",
+        "entityInSentence": "Polish Air Force",
+        "entityStart": 391,
+        "entityEnd": 407,
+        "entityReferences": [
+          {
+            "entityName": "Polish Air Forces in France and Great Britain",
+            "entityConfidence": 0.7090394,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q7209859"
+            ],
+            "entityTypes": [
+              "organization"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792301:0:171": {
+    "sentenceId": "1792301:0:171",
+    "sentenceText": "Frederick Adrian DeLuca (October 3, 1947 \u2013 September 14, 2015) was an Italian-American businessman, best known as the co-founder of the Subway franchise of sandwich shops.",
+    "sentenceStart": 0,
+    "sentenceEnd": 171,
+    "entities": [
+      {
+        "entityId": "1792301:0:171:0:23",
+        "entityInSentence": "Frederick Adrian DeLuca",
+        "entityStart": 0,
+        "entityEnd": 23,
+        "entityReferences": [
+          {
+            "entityName": "Fred DeLuca",
+            "entityConfidence": 0.98489344,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q863316"
+            ],
+            "entityTypes": [
+              "person"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792301:0:171:136:142",
+        "entityInSentence": "Subway",
+        "entityStart": 136,
+        "entityEnd": 142,
+        "entityReferences": [
+          {
+            "entityName": "Subway",
+            "entityConfidence": 0.90972465,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q244457"
+            ],
+            "entityTypes": [
+              "organization",
+              "skill",
+              "product",
+              "field of work"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792301:0:171:156:164",
+        "entityInSentence": "sandwich",
+        "entityStart": 156,
+        "entityEnd": 164,
+        "entityReferences": [
+          {
+            "entityName": "sandwich",
+            "entityConfidence": 0.81341547,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q28803"
+            ],
+            "entityTypes": [
+              "product",
+              "food"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792301:0:171:70:86",
+        "entityInSentence": "Italian-American",
+        "entityStart": 70,
+        "entityEnd": 86,
+        "entityReferences": [
+          {
+            "entityName": "Italian American",
+            "entityConfidence": 0.92668945,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q974693"
+            ],
+            "entityTypes": [
+              "ethnic group"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792302:0:243": {
+    "sentenceId": "1792302:0:243",
+    "sentenceText": "Pachyrhinosaurus (meaning in Greek \"thick-nosed lizard\", from \"\u03a0\u03b1\u03c7\u03c5\" (pachy), thick; \"\u03c1\u03b9\u03bd\u03cc\" (rin\u00f3), nose; and \"\u03c3\u03b1\u03c5\u03c1\u03bf\u03c2\" (sauros), lizard) is an extinct genus of centrosaurine ceratopsid dinosaur from the Late Cretaceous period of North America.",
+    "sentenceStart": 0,
+    "sentenceEnd": 243,
+    "entities": [
+      {
+        "entityId": "1792302:0:243:229:242",
+        "entityInSentence": "North America",
+        "entityStart": 229,
+        "entityEnd": 242,
+        "entityReferences": [
+          {
+            "entityName": "North America",
+            "entityConfidence": 0.96975744,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q49"
+            ],
+            "entityTypes": [
+              "location"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792302:0:243:29:34",
+        "entityInSentence": "Greek",
+        "entityStart": 29,
+        "entityEnd": 34,
+        "entityReferences": [
+          {
+            "entityName": "Greece",
+            "entityConfidence": 0.7928179,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q41"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792302:244:350": {
+    "sentenceId": "1792302:244:350",
+    "sentenceText": "The first examples were discovered by Charles M. Sternberg in Alberta, Canada, in 1946, and named in 1950.",
+    "sentenceStart": 244,
+    "sentenceEnd": 350,
+    "entities": [
+      {
+        "entityId": "1792302:244:350:282:302",
+        "entityInSentence": "Charles M. Sternberg",
+        "entityStart": 282,
+        "entityEnd": 302,
+        "entityReferences": [
+          {
+            "entityName": "Charles Mortram Sternberg",
+            "entityConfidence": 0.98235154,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q1065421"
+            ],
+            "entityTypes": [
+              "person"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792302:244:350:306:321",
+        "entityInSentence": "Alberta, Canada",
+        "entityStart": 306,
+        "entityEnd": 321,
+        "entityReferences": [
+          {
+            "entityName": "Alberta",
+            "entityConfidence": 0.97886443,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q1951"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country subdivision",
+              "constituent state",
+              "province"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792302:351:478": {
+    "sentenceId": "1792302:351:478",
+    "sentenceText": "Over a dozen partial skulls and a large assortment of other fossils from various species have been found in Alberta and Alaska.",
+    "sentenceStart": 351,
+    "sentenceEnd": 478,
+    "entities": [
+      {
+        "entityId": "1792302:351:478:459:466",
+        "entityInSentence": "Alberta",
+        "entityStart": 459,
+        "entityEnd": 466,
+        "entityReferences": [
+          {
+            "entityName": "Alberta",
+            "entityConfidence": 0.97886443,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q1951"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country subdivision",
+              "constituent state",
+              "province"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792302:351:478:471:477",
+        "entityInSentence": "Alaska",
+        "entityStart": 471,
+        "entityEnd": 477,
+        "entityReferences": [
+          {
+            "entityName": "Alaska",
+            "entityConfidence": 0.9482039,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q797"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country subdivision",
+              "constituent state"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792302:479:616": {
+    "sentenceId": "1792302:479:616",
+    "sentenceText": "A great number were not available for study until the 1980s, resulting in a relatively recent increase of interest in \"Pachyrhinosaurus\".",
+    "sentenceStart": 479,
+    "sentenceEnd": 616,
+    "entities": []
+  },
+  "1792317:0:67": {
+    "sentenceId": "1792317:0:67",
+    "sentenceText": "James Wilkinson (1757\u20131825) was an American general and politician.",
+    "sentenceStart": 0,
+    "sentenceEnd": 67,
+    "entities": [
+      {
+        "entityId": "1792317:0:67:0:15",
+        "entityInSentence": "James Wilkinson",
+        "entityStart": 0,
+        "entityEnd": 15,
+        "entityReferences": [
+          {
+            "entityName": "James Wilkinson",
+            "entityConfidence": 0.957225,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q888614"
+            ],
+            "entityTypes": [
+              "person"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792317:0:67:35:43",
+        "entityInSentence": "American",
+        "entityStart": 35,
+        "entityEnd": 43,
+        "entityReferences": [
+          {
+            "entityName": "United States of America",
+            "entityConfidence": 0.8635608,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q30"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792319:0:122": {
+    "sentenceId": "1792319:0:122",
+    "sentenceText": "The rope dart or rope javelin (), also known as J\u014dhy\u014d in Japanese, is one of the flexible weapons in Chinese martial arts.",
+    "sentenceStart": 0,
+    "sentenceEnd": 122,
+    "entities": [
+      {
+        "entityId": "1792319:0:122:101:108",
+        "entityInSentence": "Chinese",
+        "entityStart": 101,
+        "entityEnd": 108,
+        "entityReferences": [
+          {
+            "entityName": "People's Republic of China",
+            "entityConfidence": 0.9571447,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q148"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792319:0:122:109:121",
+        "entityInSentence": "martial arts",
+        "entityStart": 109,
+        "entityEnd": 121,
+        "entityReferences": [
+          {
+            "entityName": "martial arts",
+            "entityConfidence": 0.8575097,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q11417"
+            ],
+            "entityTypes": [
+              "sport"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792319:0:122:57:65",
+        "entityInSentence": "Japanese",
+        "entityStart": 57,
+        "entityEnd": 65,
+        "entityReferences": [
+          {
+            "entityName": "Japan",
+            "entityConfidence": 0.95136625,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q17"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792319:123:231": {
+    "sentenceId": "1792319:123:231",
+    "sentenceText": "Other weapons in this family include the meteor hammer, flying claws, Fei Tou flying weight, and chain whip.",
+    "sentenceStart": 123,
+    "sentenceEnd": 231,
+    "entities": [
+      {
+        "entityId": "1792319:123:231:193:200",
+        "entityInSentence": "Fei Tou",
+        "entityStart": 193,
+        "entityEnd": 200,
+        "entityReferences": [
+          {
+            "entityName": "Fei Tou",
+            "entityConfidence": 0.85,
+            "entityUri": [],
+            "entityTypes": [
+              "person"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792319:232:331": {
+    "sentenceId": "1792319:232:331",
+    "sentenceText": "Although the flexible weapons share similar movements, each weapon has its own specific techniques.",
+    "sentenceStart": 232,
+    "sentenceEnd": 331,
+    "entities": []
+  },
+  "1792333:0:144": {
+    "sentenceId": "1792333:0:144",
+    "sentenceText": "The Grand National Curling Club, also known as the GNCC, is the union of curling clubs in New England and the Mid-Atlantic of the United States.",
+    "sentenceStart": 0,
+    "sentenceEnd": 144,
+    "entities": [
+      {
+        "entityId": "1792333:0:144:110:122",
+        "entityInSentence": "Mid-Atlantic",
+        "entityStart": 110,
+        "entityEnd": 122,
+        "entityReferences": [
+          {
+            "entityName": "Mid-Atlantic",
+            "entityConfidence": 0.64466834,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q632014"
+            ],
+            "entityTypes": [
+              "location"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792333:0:144:130:143",
+        "entityInSentence": "United States",
+        "entityStart": 130,
+        "entityEnd": 143,
+        "entityReferences": [
+          {
+            "entityName": "United States of America",
+            "entityConfidence": 0.9884184,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q30"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792333:0:144:4:31",
+        "entityInSentence": "Grand National Curling Club",
+        "entityStart": 4,
+        "entityEnd": 31,
+        "entityReferences": [
+          {
+            "entityName": "Grand National Curling Club",
+            "entityConfidence": 0.9750498,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q5594827"
+            ],
+            "entityTypes": [
+              "organization",
+              "sports club"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792333:0:144:51:55",
+        "entityInSentence": "GNCC",
+        "entityStart": 51,
+        "entityEnd": 55,
+        "entityReferences": [
+          {
+            "entityName": "Grand National Curling Club",
+            "entityConfidence": 0.9750498,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q5594827"
+            ],
+            "entityTypes": [
+              "organization",
+              "sports club"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792333:0:144:64:69",
+        "entityInSentence": "union",
+        "entityStart": 64,
+        "entityEnd": 69,
+        "entityReferences": [
+          {
+            "entityName": "trade union",
+            "entityConfidence": 0.72271824,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q178790"
+            ],
+            "entityTypes": [
+              "other"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792333:0:144:81:86",
+        "entityInSentence": "clubs",
+        "entityStart": 81,
+        "entityEnd": 86,
+        "entityReferences": [
+          {
+            "entityName": "nightclub",
+            "entityConfidence": 0.63613623,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q622425"
+            ],
+            "entityTypes": [
+              "location",
+              "building"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792333:0:144:90:101",
+        "entityInSentence": "New England",
+        "entityStart": 90,
+        "entityEnd": 101,
+        "entityReferences": [
+          {
+            "entityName": "New England",
+            "entityConfidence": 0.9702047,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q18389"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792333:145:172": {
+    "sentenceId": "1792333:145:172",
+    "sentenceText": "It was established in 1867.",
+    "sentenceStart": 145,
+    "sentenceEnd": 172,
+    "entities": []
+  },
+  "1792333:173:258": {
+    "sentenceId": "1792333:173:258",
+    "sentenceText": "In recent years, the GNCC's territory has expanded to include clubs in the Southeast.",
+    "sentenceStart": 173,
+    "sentenceEnd": 258,
+    "entities": [
+      {
+        "entityId": "1792333:173:258:194:198",
+        "entityInSentence": "GNCC",
+        "entityStart": 194,
+        "entityEnd": 198,
+        "entityReferences": [
+          {
+            "entityName": "Grand National Curling Club",
+            "entityConfidence": 0.9750498,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q5594827"
+            ],
+            "entityTypes": [
+              "organization",
+              "sports club"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792333:259:524": {
+    "sentenceId": "1792333:259:524",
+    "sentenceText": "As of 2019, it includes 69 clubs in seventeen states, including Alabama, Connecticut, Delaware, Florida, Georgia, Maine, Maryland, Massachusetts, New Hampshire, New Jersey, New York, North Carolina, Pennsylvania, Rhode Island, South Carolina, Vermont, and Virginia.",
+    "sentenceStart": 259,
+    "sentenceEnd": 524,
+    "entities": [
+      {
+        "entityId": "1792333:259:524:323:330",
+        "entityInSentence": "Alabama",
+        "entityStart": 323,
+        "entityEnd": 330,
+        "entityReferences": [
+          {
+            "entityName": "Alabama",
+            "entityConfidence": 0.9623027,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q173"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country subdivision",
+              "constituent state"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792333:259:524:332:343",
+        "entityInSentence": "Connecticut",
+        "entityStart": 332,
+        "entityEnd": 343,
+        "entityReferences": [
+          {
+            "entityName": "Connecticut",
+            "entityConfidence": 0.97098714,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q779"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country subdivision",
+              "constituent state"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792333:259:524:345:353",
+        "entityInSentence": "Delaware",
+        "entityStart": 345,
+        "entityEnd": 353,
+        "entityReferences": [
+          {
+            "entityName": "Delaware",
+            "entityConfidence": 0.95302236,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q1393"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country subdivision",
+              "constituent state"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792333:259:524:355:362",
+        "entityInSentence": "Florida",
+        "entityStart": 355,
+        "entityEnd": 362,
+        "entityReferences": [
+          {
+            "entityName": "Florida",
+            "entityConfidence": 0.94963807,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q812"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country subdivision",
+              "constituent state"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792333:259:524:364:371",
+        "entityInSentence": "Georgia",
+        "entityStart": 364,
+        "entityEnd": 371,
+        "entityReferences": [
+          {
+            "entityName": "Georgia",
+            "entityConfidence": 0.95283127,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q1428"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country subdivision",
+              "constituent state"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792333:259:524:373:378",
+        "entityInSentence": "Maine",
+        "entityStart": 373,
+        "entityEnd": 378,
+        "entityReferences": [
+          {
+            "entityName": "Maine",
+            "entityConfidence": 0.92106843,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q724"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country subdivision",
+              "constituent state"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792333:259:524:380:388",
+        "entityInSentence": "Maryland",
+        "entityStart": 380,
+        "entityEnd": 388,
+        "entityReferences": [
+          {
+            "entityName": "Maryland",
+            "entityConfidence": 0.95837563,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q1391"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country subdivision",
+              "constituent state"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792333:259:524:390:403",
+        "entityInSentence": "Massachusetts",
+        "entityStart": 390,
+        "entityEnd": 403,
+        "entityReferences": [
+          {
+            "entityName": "Massachusetts",
+            "entityConfidence": 0.97320837,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q771"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country subdivision",
+              "constituent state"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792333:259:524:405:418",
+        "entityInSentence": "New Hampshire",
+        "entityStart": 405,
+        "entityEnd": 418,
+        "entityReferences": [
+          {
+            "entityName": "New Hampshire",
+            "entityConfidence": 0.964039,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q759"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country subdivision",
+              "constituent state"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792333:259:524:420:430",
+        "entityInSentence": "New Jersey",
+        "entityStart": 420,
+        "entityEnd": 430,
+        "entityReferences": [
+          {
+            "entityName": "New Jersey",
+            "entityConfidence": 0.9561023,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q1408"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country subdivision",
+              "constituent state"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792333:259:524:432:440",
+        "entityInSentence": "New York",
+        "entityStart": 432,
+        "entityEnd": 440,
+        "entityReferences": [
+          {
+            "entityName": "New York",
+            "entityConfidence": 0.84475446,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q1384"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country subdivision",
+              "constituent state"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792333:259:524:442:456",
+        "entityInSentence": "North Carolina",
+        "entityStart": 442,
+        "entityEnd": 456,
+        "entityReferences": [
+          {
+            "entityName": "North Carolina",
+            "entityConfidence": 0.9833664,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q1454"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country subdivision",
+              "constituent state"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792333:259:524:458:470",
+        "entityInSentence": "Pennsylvania",
+        "entityStart": 458,
+        "entityEnd": 470,
+        "entityReferences": [
+          {
+            "entityName": "Pennsylvania",
+            "entityConfidence": 0.9764085,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q1400"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country subdivision",
+              "constituent state"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792333:259:524:472:484",
+        "entityInSentence": "Rhode Island",
+        "entityStart": 472,
+        "entityEnd": 484,
+        "entityReferences": [
+          {
+            "entityName": "Rhode Island",
+            "entityConfidence": 0.9764217,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q1387"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country subdivision",
+              "constituent state"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792333:259:524:486:500",
+        "entityInSentence": "South Carolina",
+        "entityStart": 486,
+        "entityEnd": 500,
+        "entityReferences": [
+          {
+            "entityName": "South Carolina",
+            "entityConfidence": 0.97771,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q1456"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country subdivision",
+              "constituent state"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792333:259:524:502:509",
+        "entityInSentence": "Vermont",
+        "entityStart": 502,
+        "entityEnd": 509,
+        "entityReferences": [
+          {
+            "entityName": "Vermont",
+            "entityConfidence": 0.94859964,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q16551"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country subdivision",
+              "constituent state"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792333:259:524:515:523",
+        "entityInSentence": "Virginia",
+        "entityStart": 515,
+        "entityEnd": 523,
+        "entityReferences": [
+          {
+            "entityName": "Virginia",
+            "entityConfidence": 0.97137415,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q1370"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country subdivision",
+              "constituent state"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792336:0:91": {
+    "sentenceId": "1792336:0:91",
+    "sentenceText": "3CG Records is an independent record label started by the pop group Hanson in October 2003.",
+    "sentenceStart": 0,
+    "sentenceEnd": 91,
+    "entities": [
+      {
+        "entityId": "1792336:0:91:0:11",
+        "entityInSentence": "3CG Records",
+        "entityStart": 0,
+        "entityEnd": 11,
+        "entityReferences": [
+          {
+            "entityName": "3CG Records",
+            "entityConfidence": 0.966789,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q4354527"
+            ],
+            "entityTypes": [
+              "organization"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792336:0:91:58:61",
+        "entityInSentence": "pop",
+        "entityStart": 58,
+        "entityEnd": 61,
+        "entityReferences": [
+          {
+            "entityName": "pop music",
+            "entityConfidence": 0.84039617,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q37073"
+            ],
+            "entityTypes": [
+              "skill",
+              "field of work",
+              "industry"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792336:0:91:68:74",
+        "entityInSentence": "Hanson",
+        "entityStart": 68,
+        "entityEnd": 74,
+        "entityReferences": [
+          {
+            "entityName": "Hanson",
+            "entityConfidence": 0.94568235,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q768621"
+            ],
+            "entityTypes": [
+              "organization"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792336:92:263": {
+    "sentenceId": "1792336:92:263",
+    "sentenceText": "\"3CG\" is an acronym \"3 Car Garage\" that refers to the building the band used as a recording studio and to the compilation album the band released before its chart success.",
+    "sentenceStart": 92,
+    "sentenceEnd": 263,
+    "entities": [
+      {
+        "entityId": "1792336:92:263:113:125",
+        "entityInSentence": "3 Car Garage",
+        "entityStart": 113,
+        "entityEnd": 125,
+        "entityReferences": [
+          {
+            "entityName": "3 Car Garage",
+            "entityConfidence": 0.9379759,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q3282399"
+            ],
+            "entityTypes": [
+              "skill",
+              "field of work",
+              "musical album"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792336:92:263:202:219",
+        "entityInSentence": "compilation album",
+        "entityStart": 202,
+        "entityEnd": 219,
+        "entityReferences": [
+          {
+            "entityName": "compilation album",
+            "entityConfidence": 0.74954855,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q222910"
+            ],
+            "entityTypes": [
+              "skill",
+              "field of work",
+              "musical album",
+              "industry"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792336:92:263:93:96",
+        "entityInSentence": "3CG",
+        "entityStart": 93,
+        "entityEnd": 96,
+        "entityReferences": [
+          {
+            "entityName": "3CG Records",
+            "entityConfidence": 0.966789,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q4354527"
+            ],
+            "entityTypes": [
+              "organization"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792337:0:201": {
+    "sentenceId": "1792337:0:201",
+    "sentenceText": "Jean-Baptiste (Giovanni Battista) Ventura, born Rubino ben Torah (25 May 1794\u20133 April 1858), was an Italian soldier, mercenary in India, and early archaeologist of the Punjab region of the Sikh Empire.",
+    "sentenceStart": 0,
+    "sentenceEnd": 201,
+    "entities": [
+      {
+        "entityId": "1792337:0:201:0:13",
+        "entityInSentence": "Jean-Baptiste",
+        "entityStart": 0,
+        "entityEnd": 13,
+        "entityReferences": [
+          {
+            "entityName": "Jean-Baptiste Ventura",
+            "entityConfidence": 0.9395529,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q3942165"
+            ],
+            "entityTypes": [
+              "person"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792337:0:201:100:107",
+        "entityInSentence": "Italian",
+        "entityStart": 100,
+        "entityEnd": 107,
+        "entityReferences": [
+          {
+            "entityName": "Italy",
+            "entityConfidence": 0.9764121,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q38"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792337:0:201:130:135",
+        "entityInSentence": "India",
+        "entityStart": 130,
+        "entityEnd": 135,
+        "entityReferences": [
+          {
+            "entityName": "India",
+            "entityConfidence": 0.88802445,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q668"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792337:0:201:147:160",
+        "entityInSentence": "archaeologist",
+        "entityStart": 147,
+        "entityEnd": 160,
+        "entityReferences": [
+          {
+            "entityName": "archaeology",
+            "entityConfidence": 0.6544009,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q23498"
+            ],
+            "entityTypes": [
+              "skill",
+              "academic major",
+              "field of work"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792337:0:201:15:32",
+        "entityInSentence": "Giovanni Battista",
+        "entityStart": 15,
+        "entityEnd": 32,
+        "entityReferences": [
+          {
+            "entityName": "Giovanni Battista",
+            "entityConfidence": 0.85,
+            "entityUri": [],
+            "entityTypes": [
+              "person"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792337:0:201:168:174",
+        "entityInSentence": "Punjab",
+        "entityStart": 168,
+        "entityEnd": 174,
+        "entityReferences": [
+          {
+            "entityName": "Punjab",
+            "entityConfidence": 0.7666411,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q4478"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country subdivision"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792337:0:201:189:200",
+        "entityInSentence": "Sikh Empire",
+        "entityStart": 189,
+        "entityEnd": 200,
+        "entityReferences": [
+          {
+            "entityName": "Sikh Empire",
+            "entityConfidence": 0.98268807,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q83572"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792337:0:201:34:41",
+        "entityInSentence": "Ventura",
+        "entityStart": 34,
+        "entityEnd": 41,
+        "entityReferences": [
+          {
+            "entityName": "Ventura",
+            "entityConfidence": 0.6373459,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q490434"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "city"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792337:0:201:48:64",
+        "entityInSentence": "Rubino ben Torah",
+        "entityStart": 48,
+        "entityEnd": 64,
+        "entityReferences": [
+          {
+            "entityName": "Jean-Baptiste Ventura",
+            "entityConfidence": 0.9395529,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q3942165"
+            ],
+            "entityTypes": [
+              "person"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792340:0:86": {
+    "sentenceId": "1792340:0:86",
+    "sentenceText": "Stishovite is an extremely hard, dense tetragonal form (polymorph) of silicon dioxide.",
+    "sentenceStart": 0,
+    "sentenceEnd": 86,
+    "entities": []
+  },
+  "1792340:87:229": {
+    "sentenceId": "1792340:87:229",
+    "sentenceText": "It is very rare on the Earth's surface, however, it may be a predominant form of silicon dioxide in the Earth, especially in the lower mantle.",
+    "sentenceStart": 87,
+    "sentenceEnd": 229,
+    "entities": [
+      {
+        "entityId": "1792340:87:229:110:115",
+        "entityInSentence": "Earth",
+        "entityStart": 110,
+        "entityEnd": 115,
+        "entityReferences": [
+          {
+            "entityName": "Earth",
+            "entityConfidence": 0.91665417,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q2"
+            ],
+            "entityTypes": [
+              "location"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792340:87:229:191:196",
+        "entityInSentence": "Earth",
+        "entityStart": 191,
+        "entityEnd": 196,
+        "entityReferences": [
+          {
+            "entityName": "Earth",
+            "entityConfidence": 0.91665417,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q2"
+            ],
+            "entityTypes": [
+              "location"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792352:0:93": {
+    "sentenceId": "1792352:0:93",
+    "sentenceText": "South Korea was the host nation and competed as \"Korea\" at the 1988 Summer Olympics in Seoul.",
+    "sentenceStart": 0,
+    "sentenceEnd": 93,
+    "entities": [
+      {
+        "entityId": "1792352:0:93:0:11",
+        "entityInSentence": "South Korea",
+        "entityStart": 0,
+        "entityEnd": 11,
+        "entityReferences": [
+          {
+            "entityName": "South Korea",
+            "entityConfidence": 0.9838466,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q884"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792352:0:93:49:54",
+        "entityInSentence": "Korea",
+        "entityStart": 49,
+        "entityEnd": 54,
+        "entityReferences": [
+          {
+            "entityName": "Korea",
+            "entityConfidence": 0.890131,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q18097"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "country"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792352:0:93:68:83",
+        "entityInSentence": "Summer Olympics",
+        "entityStart": 68,
+        "entityEnd": 83,
+        "entityReferences": [
+          {
+            "entityName": "1988 Summer Olympics",
+            "entityConfidence": 0.5649089,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q8470"
+            ],
+            "entityTypes": [
+              "event"
+            ]
+          }
+        ]
+      },
+      {
+        "entityId": "1792352:0:93:87:92",
+        "entityInSentence": "Seoul",
+        "entityStart": 87,
+        "entityEnd": 92,
+        "entityReferences": [
+          {
+            "entityName": "Seoul",
+            "entityConfidence": 0.9737676,
+            "entityUri": [
+              "http://www.wikidata.org/entity/Q8684"
+            ],
+            "entityTypes": [
+              "location",
+              "administrative area",
+              "city",
+              "country subdivision"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "1792352:94:171": {
+    "sentenceId": "1792352:94:171",
+    "sentenceText": "401 competitors, 269 men and 132 women, took part in 218 events in 27 sports.",
+    "sentenceStart": 94,
+    "sentenceEnd": 171,
+    "entities": []
+  }
+}

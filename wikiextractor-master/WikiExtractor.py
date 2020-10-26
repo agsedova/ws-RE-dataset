@@ -1346,7 +1346,7 @@ def if_empty(*rest):
        <ns>828</ns>
        <text>local p = {}
 
-    function p.main(frame)
+    function p.main.py(frame)
             local args = require('Module:Arguments').getArgs(frame, {wrappers = 'Template:If empty', removeBlanks = false})
 
             -- For backwards compatibility reasons, the first 8 parameters can be unset instead of being blank,
@@ -1516,7 +1516,7 @@ modules = {
     },
 
     'If empty': {
-        'main': if_empty
+        'main.py': if_empty
     },
 
     'String': {
@@ -1530,11 +1530,11 @@ modules = {
     },
 
     'Roman': {
-        'main': roman_main
+        'main.py': roman_main
     },
 
     'Numero romano': {
-        'main': roman_main
+        'main.py': roman_main
     }
 }
 
@@ -1693,7 +1693,7 @@ def fullyQualifiedTemplateTitle(templateTitle):
     mechanism
     """
     if templateTitle.startswith(':'):
-        # Leading colon by itself implies main namespace, so strip this colon
+        # Leading colon by itself implies main.py namespace, so strip this colon
         return ucfirst(templateTitle[1:])
     else:
         m = re.match('([^:]*)(:.*)', templateTitle)
@@ -1703,7 +1703,7 @@ def fullyQualifiedTemplateTitle(templateTitle):
             prefix = normalizeNamespace(m.group(1))
             if prefix in options.knownNamespaces:
                 return prefix + ucfirst(m.group(2))
-    # The title of the page being included is NOT in the main namespace and
+    # The title of the page being included is NOT in the main.py namespace and
     # lacks any other explicit designation of the namespace - therefore, it
     # is resolved to the Template namespace (that's the default for the
     # template inclusion mechanism).
@@ -3159,13 +3159,13 @@ def main():
 
     groupS = parser.add_argument_group('Special')
     groupS.add_argument("-q", "--quiet", action="store_true",
-                        help="suppress reporting progress info")
+                        help="suppress reporting progress todo")
     groupS.add_argument("--debug", action="store_true",
-                        help="print debug info")
+                        help="print debug todo")
     groupS.add_argument("-a", "--article", action="store_true",
                         help="analyze a file containing a single article (debug option)")
     groupS.add_argument("--log_file",
-                        help="path to save the log info")
+                        help="path to save the log todo")
     groupS.add_argument("-v", "--version", action="version",
                         version='%(prog)s ' + version,
                         help="print program version")

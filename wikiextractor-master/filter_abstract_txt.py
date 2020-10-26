@@ -6,7 +6,7 @@ import os
 def main(root_dir):
     for filename in glob.iglob(root_dir + '**/**/wiki_*', recursive=True):
         paths = filename.split("/")
-        path_to_abstracts = os.path.join(paths[0], paths[1], "abstracts")
+        path_to_abstracts = os.path.join(paths[0], paths[1], "abstracts_AA")
         os.makedirs(path_to_abstracts, exist_ok=True)
         with open(path_to_abstracts + "/" + paths[2] + "_abstract", 'w+', encoding="UTF-8") as output_file:
             with open(filename, 'r') as input_file:

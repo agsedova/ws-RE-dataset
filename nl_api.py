@@ -11,10 +11,12 @@ def main(text):
 
     page = requests.post(url="https://nl.diffbot.com/v1/", params=params, json=body, headers=headers)
 
-    page.url
-
-    # here the parsed json with annotations
-    return page.json()
+    try:
+        page.url
+        # here the parsed json with annotations
+        return page.json()
+    except ValueError:  # includes simplejson.decoder.JSONDecodeError
+        print('Decoding JSON has failed, the abstract is skipped')
 
     # with open('ann_test.json5', 'w') as outfile:
     #     json.dump(page.json(), outfile)
