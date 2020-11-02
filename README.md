@@ -10,3 +10,11 @@ Parcing the wikipedia abstract. Class AbstractParser creates the objects of clas
 
 ## [extract_entities.py](https://github.com/agsedova/DiffBot_Corpus/blob/master/extract_entities.py)
 Extract the entities from the sentences and add them to Sentence.Entities. Class EntityExtractor analyses the wiki abstracts with Diffbot and Spacy, compares the received entities and create the objects of class Entities with all entities information.
+
+## [WikiDumpProcesser.py](https://github.com/agsedova/DiffBot_Corpus/blob/master/WikiDumpProcesser.py)
+Parse the Wikipedia pages saved as wiki dump. 
+
+## [WikiDataCollector.py](https://github.com/agsedova/DiffBot_Corpus/blob/master/WikiDataCollector.py)
+(deprecated) another way to collect wikipedia data: using Wikipedia package for python.
+
+
