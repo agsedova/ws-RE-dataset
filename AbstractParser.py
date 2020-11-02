@@ -2,26 +2,15 @@
 
 import nl_api
 import spacy
-from extract_entities import EntityExtractor
+from EntityExtractor import EntityExtractor
+from qqq import Sentence
+
 
 nlp = spacy.load("en_core_web_sm")
 sentence_index = []
 
 # todo: substitute "(" with "( " etc
 # todo: check mistakes with substituting the entities with _! some of the final sentences are wrong --> retrieved.json
-
-
-class Sentence:
-    def __init__(self, sentenceId, sentenceText, sentenceStart, sentenceEnd, entities):
-        self.sentenceId = sentenceId
-        self.sentenceText = sentenceText
-        self.sentenceStart = sentenceStart
-        self.sentenceEnd = sentenceEnd
-        self.entities = entities
-
-    def as_dict(self):  # old ann_sent
-        return {"sentenceId": self.sentenceId, "sentenceText": self.sentenceText, "sentenceStart": self.sentenceStart,
-                "sentenceEnd": self.sentenceEnd, "entities": [ent.__dict__ for ent in self.entities]}
 
 
 class AbstractParser:

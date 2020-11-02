@@ -2,8 +2,8 @@ import json
 import sys
 import re
 
-from extract_entities import Entity
-from parse_abstract import Sentence
+from EntityExtractor import Entity
+from AbstractParser import Sentence
 from elasticsearch import Elasticsearch
 from elasticsearch import helpers
 

@@ -5,6 +5,10 @@ import utils
 
 
 class WikiDataCollector:
+    """
+    Collects Wikipedia pages with wikipedia pack and save them to dictionary
+    {"id": page_id, "title": page_name, "url": page_url, "abstract": page_abstract}
+    """
 
     def __init__(self, num_of_pages, output_path):
         self.num_of_pages = int(num_of_pages)
