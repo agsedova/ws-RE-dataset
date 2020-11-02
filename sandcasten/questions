@@ -3,3 +3,19 @@
         should we still perserve all variants of entities from diffbot?)
         --> what about reference resolution with DiffBot when we passed the entire abstract as input?
 2) [for me] when joining the tokens with underscore: join all entries? only the first?
+
+
+Zygmunt Edward as "Ziggy" *was born in* 1963
+
+* as *
+
+
+
+Zygmunt_Edward_"Ziggy"_Switkowski, (born 1948), is a Polish_Australian business executive and nuclear_physicist.
+
+DiffBot:
+nuclear + type
+physicist + type
+nuclear_physicist + type
+
+SpaCy:

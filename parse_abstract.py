@@ -7,6 +7,9 @@ from extract_entities import EntityExtractor
 nlp = spacy.load("en_core_web_sm")
 sentence_index = []
 
+# todo: substitute "(" with "( " etc
+# todo: check mistakes with substituting the entities with _! some of the final sentences are wrong --> retrieved.json
+
 
 class Sentence:
     def __init__(self, sentenceId, sentenceText, sentenceStart, sentenceEnd, entities):
