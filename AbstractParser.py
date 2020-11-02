@@ -3,7 +3,7 @@
 import nl_api
 import spacy
 from EntityExtractor import EntityExtractor
-from qqq import Sentence
+from commons import Sentence
 
 
 nlp = spacy.load("en_core_web_sm")

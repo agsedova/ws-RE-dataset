@@ -42,6 +42,26 @@ class WikiDumpProcesser:
                     print("Page {}/{} is skipped because it is a 'may refer to' page".format(num, file_length))
         return all_abstracts, all_sentences
 
+    def save_to_json(self, filename, new_entry):
+        """ Create a json file and save data in it or add new entries to already existing json file"""
+        path_to_output_file = self.root_dir + filename
+        if os.path.isfile(path_to_output_file):
+            with open(path_to_output_file, 'r+', encoding="UTF-8") as output_file:
+                data = json.load(output_file)
+                updated_data = {**data, **new_entry}
+                output_file.seek(0)
+                json.dump(updated_data, output_file)
+                # json.dumps(updated_data, output_file)
+                output_file.truncate()
+                print("New entries are added to the existing {} file".format(filename))
+        else:
+            with open(path_to_output_file, 'w+', encoding="UTF-8") as output_file:
+                json.dump(new_entry, output_file)
+                print("New entries are saved to the newly created {} file".format(filename))
+        # with open(path_to_output_file, 'w+', encoding="UTF-8") as output_file:
+        #     json.dump(new_abstract, output_file)
+        #     print("New .json file is created, abstracts_test are saved")
+
     def main(self):
         for dir, _, files in os.walk(self.root_dir):
             for file in files:
@@ -50,8 +70,8 @@ class WikiDumpProcesser:
                 if "wiki" in path_to_input_file:
                     all_abstracts, all_sentences = self.process_wikidump_file(path_to_input_file)
                     if all_abstracts is not None and all_sentences is not None:
-                        utils.save_to_json(self.root_dir, "/abstracts.json", all_abstracts)
-                        utils.save_to_json(self.root_dir, "/sentences.json", all_sentences)
+                        self.save_to_json("/abstracts.json", all_abstracts)
+                        self.save_to_json("/sentences.json", all_sentences)
                     print("================================================")
 
 
