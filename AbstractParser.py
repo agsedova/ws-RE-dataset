@@ -9,7 +9,7 @@ from commons import Sentence
 nlp = spacy.load("en_core_web_sm")
 sentence_index = []
 
-# todo: substitute "(" with "( " etc
+# todo: substitute "(" with "( " etc - check how it works
 # todo: check mistakes with substituting the entities with _! some of the final sentences are wrong --> retrieved.json
 
 

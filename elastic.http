@@ -1,0 +1,128 @@
+###
+GET localhost:9200/foo/_search?search_type=scan&scroll=10m&size=50
+Content-Type: application/x-www-form-urlencoded
+
+###
+
+DELETE localhost:9200/test-index
+
+###
+
+GET localhost:9200/test-index/_doc/G883hXUBQrreSDgo_iC6
+
+###
+
+PUT localhost:9200/test-index
+Content-Type: application/json
+
+{
+  "mappings": {
+    "properties": {
+      "entities": {
+        "type": "nested"
+      },
+      "sentenceText": {
+        "type": "text",
+        "analyzer": "whitespace",
+        "search_analyzer": "simple"
+      }
+    }
+  }
+}
+
+###
+
+POST localhost:9200/test-index/_doc
+Content-Type: application/json
+
+{
+  "sentenceId": "1914118:0:79",
+  "sentenceText": "Lviv-Holovnyi railway station () is the main railway terminal in Lviv,_Ukraine.",
+  "sentenceStart": 0,
+  "sentenceEnd": 79,
+  "entities": [
+    {
+      "entityId": "1914118:0:79:0:13",
+      "entityInSentence": "Lviv-Holovnyi",
+      "entityStart": 0,
+      "entityEnd": 13,
+      "entityType": "PERSON",
+      "entityReferences": []
+    },
+    {
+      "entityId": "1914118:0:79:65:69",
+      "entityInSentence": "Lviv",
+      "entityStart": 65,
+      "entityEnd": 69,
+      "entityType": "GPE",
+      "entityReferences": []
+    },
+    {
+      "entityId": "1914118:0:79:71:78",
+      "entityInSentence": "Ukraine",
+      "entityStart": 71,
+      "entityEnd": 78,
+      "entityType": "GPE",
+      "entityReferences": []
+    }
+  ]
+}
+
+###
+
+GET localhost:9200/test-index/_search
+
+{
+  "query": {
+    "regexp": {
+      "sentenceText": {
+        "value": "\\w+\\s*\\(\\s*born\\s.+\\s*\\)"
+      }
+    }
+  }
+}
+
+###
+
+# curl -X GET "localhost:9200/_search?pretty" -H 'Content-Type: application/json' -d'
+#{
+#  "query": {
+#    "regexp": {
+#      "user.id": {
+#        "value": "k.*y",
+#        "flags": "ALL",
+#        "max_determinized_states": 10000,
+#        "rewrite": "constant_score"
+#      }
+#    }
+#  }
+#}
+#'
+GET localhost:9200/_search?pretty
+Content-Type: application/json
+
+{
+  "query": {
+    "regexp": {
+      "sentenceText": {
+        "value": ".*\\(born\\w*\\)"
+      }
+    }
+  }
+}
+
+###
+
+GET localhost:9200/_search?pretty
+Content-Type: application/json
+
+{
+  "query": {
+    "match_phrase": {
+      "sentenceText": {
+        "query": "( born )"
+      }
+    }
+  }
+}
+

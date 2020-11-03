@@ -17,7 +17,7 @@ class WikiDataCollector:
     def collect_wiki_data(self):
         ret = []
         if int(self.num_of_pages) > 0:
-            page_names = set(utils.flatten([wikipedia.random(page) for page in range(self.num_of_pages)]))
+            page_names = set(self.flatten([wikipedia.random(page) for page in range(self.num_of_pages)]))
             i = 0
             print("Total number of pages to be collected:", len(page_names))
             for page_name in page_names:
@@ -43,6 +43,9 @@ class WikiDataCollector:
         except wikipedia.exceptions.PageError:
             print("PageError; page is skipped")
             pass
+
+    def flatten(self, x):
+        return [a for i in x for a in self.flatten(i)] if type(x) is list else [x]
 
 
 if __name__ == '__main__':

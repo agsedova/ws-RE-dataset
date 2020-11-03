@@ -1,10 +1,12 @@
-# import WikiExtractor
-import WikiDumpProcesser
-from retrieve_patterns import PatternSearch
+import WikiExtractor
+from WikiDumpProcesser import WikiDumpProcesser
+from PatternSearch import PatternSearch
 import sys
+import os
 
 if __name__ == "__main__":
-    file_input, file_output = sys.argv[1], sys.argv[2]
-    WikiDumpProcesser.main(file_input)
-    PatternSearch().retrieve_patterns()
+    # WikiExtractor.main()
+    file_input, path_to_patterns = sys.argv[1], sys.argv[2]
+    WikiDumpProcesser(file_input).main()
+    PatternSearch(os.path.join(file_input, "sentences.json"), path_to_patterns).main()
 

@@ -1,5 +1,5 @@
 /virtualenv_diffbot_corpus/
 /.idea
 __pycache__
-/sandcasten/questions
-/sandcasten/hilfdocs/todo
+/sandcasten/
+/junk/

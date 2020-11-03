@@ -4,8 +4,8 @@ extract abstracts_AA from wiki pages; save it to json with "id", "url", "title",
 import sys
 import os
 import json
-import utils
 from AbstractParser import AbstractParser
+import re
 
 
 class WikiDumpProcesser:
@@ -32,7 +32,8 @@ class WikiDumpProcesser:
             for num, line in enumerate(input_file, 1):
                 wiki_input = json.loads(line)
                 if "may refer to" not in wiki_input["text"]:
-                    wiki_input["text"] = utils.extract_abstract(wiki_input["text"])   # extract abstracts_test only
+                    # extract abstracts only
+                    wiki_input["text"] = self.clear_punctuation(self.extract_abstract(wiki_input["text"]))
                     ann = AbstractParser(wiki_input).parse()  # get parsed abstracts_test
                     if ann is not None:
                         print("Page {}/{} is annotated".format(num, file_length))
@@ -41,6 +42,22 @@ class WikiDumpProcesser:
                 else:
                     print("Page {}/{} is skipped because it is a 'may refer to' page".format(num, file_length))
         return all_abstracts, all_sentences
+
+    def clear_punctuation(self, text):
+        """ Add additional whitespaces after the punctuation symbols; needed for correct pattern search """
+        text = re.sub("\\(", "\\( ", text)
+        text = re.sub("\\)", "\\) ", text)
+        text = re.sub(",", ", ", text)
+        text = re.sub("\\.", "\\. ", text)
+        return text
+
+    def extract_abstract(self, page):
+        """ takes an entire Wiki pages as input and returns its abstract"""
+        return page[self.find_nth(page, "\n\n", 1) + 2:self.find_nth(page, "\n\n", 2) + 2]
+
+    def find_nth(self, string, substring, n):
+        """ Find index of the nth element in the string"""
+        return string.find(substring) if n == 1 else string.find(substring, self.find_nth(string, substring, n - 1) + 1)
 
     def save_to_json(self, filename, new_entry):
         """ Create a json file and save data in it or add new entries to already existing json file"""
