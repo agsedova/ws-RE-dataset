@@ -1,9 +1,10 @@
 # coding=<UTF-8>
 
-import nl_api
+import scripts.nl_api as nl_api
 import spacy
-from EntityExtractor import EntityExtractor
-from commons import Sentence
+from scripts.EntityExtractor import EntityExtractor
+from scripts.commons import Sentence
+import re
 
 
 nlp = spacy.load("en_core_web_sm")
@@ -27,6 +28,7 @@ class AbstractParser:
         if type(annotation) is list and len(annotation) == 1 and "entities" in annotation[0].keys():
             sentences = [sent.string.strip() for sent in nlp(self.text).sents if sent.string.strip() is not ""]
             for sent in sentences:
+                sent = re.sub(".", "", sent)
                 sent_idx_begin, sent_idx_end, sent_offset = self.calculate_sentence_offset(sent)
                 # create sentence object
                 sentence_object = Sentence(sent_offset, sent, sent_idx_begin, sent_idx_end, [])
@@ -43,3 +45,8 @@ class AbstractParser:
         idx_end = idx_begin + len(sent)
         offset = self.page_offset + ":" + str(idx_begin) + ":" + str(idx_end)
         return idx_begin, idx_end, offset
+
+'''
+A-B-C (; born in [year])
+A-B-C (, born in [year])
+'''

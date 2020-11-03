@@ -4,7 +4,7 @@ extract abstracts_AA from wiki pages; save it to json with "id", "url", "title",
 import sys
 import os
 import json
-from AbstractParser import AbstractParser
+from scripts.AbstractParser import AbstractParser
 import re
 
 

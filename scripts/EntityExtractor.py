@@ -1,7 +1,7 @@
-import nl_api
+import scripts.nl_api
 import spacy
 import re
-from commons import Entity
+from scripts.commons import Entity
 
 
 nlp = spacy.load("en_core_web_sm")
