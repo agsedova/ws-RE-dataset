@@ -1,6 +1,6 @@
-import WikiExtractor
-from WikiDumpProcesser import WikiDumpProcesser
-from PatternSearch import PatternSearch
+import scripts.WikiExtractor
+from scripts.WikiDumpProcesser import WikiDumpProcesser
+from scripts.PatternSearch import PatternSearch
 import sys
 import os
 
