@@ -621,6 +621,17 @@ org:political_religious_affiliation $ARG1 and other $ARG2 organizations
 org:political_religious_affiliation $ARG1 and other $ARG2 groups
 org:political_religious_affiliation $ARG1 is an affiliate of $ARG2
 
+# todo: per:political_religious_affiliation
+per:political_religious_affiliation $ARG1 , representing the $ARG2
+per:political_religious_affiliation $ARG1 , representing the * $ARG2
+per:political_religious_affiliation $ARG1 chaired the $ARG2
+per:political_religious_affiliation $ARG1 was a $ARG2 politician
+per:political_religious_affiliation $ARG1 joined the $ARG2
+per:political_religious_affiliation $ARG1 is the $ARG2 member
+per:political_religious_affiliation $ARG1 was the $ARG2 member
+
+# todo: per: nationality
+
 # TODO: Uppercae/lowercase would matter most here.
 org:top_members_employees $ARG2 leads $ARG1
 org:top_members_employees $ARG2 commands $ARG1
