@@ -24,6 +24,7 @@ per:alternate_names $ARG1 is also known as $ARG2
 per:alternate_names $ARG1 is known as $ARG2
 per:alternate_names $ARG1 , also known as $ARG2
 per:alternate_names $ARG1 , better known as $ARG2
+per:alternate_names $ARG1 ( * ) , better known as $ARG2
 per:alternate_names $ARG1 , best known as $ARG2
 per:alternate_names $ARG1 , aka $ARG2
 per:alternate_names $ARG1 , a.k.a. $ARG2
@@ -113,6 +114,8 @@ per:origin $ARG1 was born in $ARG2
 # TODO: automatically expand "Xed" -> "who Xed" , " , who Xed"
 # 'on'/'in' part of date string
 per:date_of_death $ARG1 died $ARG2
+per:date_of_death $ARG1 , died $ARG2
+per:date_of_death $ARG1 , died in $ARG2
 per:date_of_death $ARG1 ( died $ARG2 )
 per:date_of_death $ARG1 succumbed to * $ARG2
 per:date_of_death $ARG1 passed away $ARG2
@@ -426,16 +429,16 @@ per:spouse $ARG0 and $ARG0 are married
 per:spouse $ARG0 is married to $ARG0
 per:spouse $ARG0 is the wife of $ARG0
 per:spouse $ARG0 's wife , $ARG0
-per:spouse $ARG0' wife , $ARG0
+per:spouse $ARG0 ' wife , $ARG0
 per:spouse $ARG0 , $ARG0 's wife
-per:spouse $ARG0 , $ARG0' wife
+per:spouse $ARG0 , $ARG0 ' wife
 per:spouse $ARG0 , the wife of $ARG0
 per:spouse $ARG0 and his wife $ARG0
 per:spouse $ARG0 is the husband of $ARG0
 per:spouse $ARG0 's husband , $ARG0
-per:spouse $ARG0' husband , $ARG0
+per:spouse $ARG0 ' husband , $ARG0
 per:spouse $ARG0 , $ARG0 's husband
-per:spouse $ARG0 , $ARG0' husband
+per:spouse $ARG0 , $ARG0 ' husband
 per:spouse $ARG0 , the husband of $ARG0
 per:spouse $ARG0 and her husband $ARG0
 
@@ -500,27 +503,27 @@ per:parents $ARG1 ' mother $ARG2
 per:siblings $ARG0 is the brother of $ARG0
 per:siblings $ARG0 is a brother of $ARG0
 per:siblings $ARG0 's brother , $ARG0
-per:siblings $ARG0' brother , $ARG0
+per:siblings $ARG0 ' brother , $ARG0
 per:siblings $ARG0 's brother $ARG0
-per:siblings $ARG0' brother $ARG0
+per:siblings $ARG0 ' brother $ARG0
 per:siblings $ARG0 is the younger brother of $ARG0
 per:siblings $ARG0 's younger brother , $ARG0
-per:siblings $ARG0' younger brother , $ARG0
+per:siblings $ARG0 ' younger brother , $ARG0
 per:siblings $ARG0 is the older brother of $ARG0
 per:siblings $ARG0 's older brother , $ARG0
-per:siblings $ARG0' older brother , $ARG0
+per:siblings $ARG0 ' older brother , $ARG0
 per:siblings $ARG0 is the sister of $ARG0
 per:siblings $ARG0 is a sister of $ARG0
 per:siblings $ARG0 's sister $ARG0
-per:siblings $ARG0' sister $ARG0
+per:siblings $ARG0 ' sister $ARG0
 per:siblings $ARG0 's sister , $ARG0
-per:siblings $ARG0' sister , $ARG0
+per:siblings $ARG0 ' sister , $ARG0
 per:siblings $ARG0 is the younger sister of $ARG0
 per:siblings $ARG0 's younger sister , $ARG0
-per:siblings $ARG0' younger sister , $ARG0
+per:siblings $ARG0 ' younger sister , $ARG0
 per:siblings $ARG0 is the older sister of $ARG0
 per:siblings $ARG0 's older sister , $ARG0
-per:siblings $ARG0' older sister , $ARG0
+per:siblings $ARG0 ' older sister , $ARG0
 
 per:other_family $ARG0 's grandson $ARG0
 per:other_family $ARG0 's granddaughter $ARG0

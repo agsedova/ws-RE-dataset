@@ -1,163 +1,126 @@
-import json
-import sys
+from scripts.commons import RELATION_TO_TYPES
 import re
-import os
-from elasticsearch import Elasticsearch
-from scripts.commons import TYPES_PER_RELATION
-
-es = Elasticsearch(host="localhost", port=9200)
-es = Elasticsearch()
-
-# todo: filter out relations that do not have correpondings in diffbot
+import json
+import itertools
 
 
 class PatternSearch:
-
-    def __init__(self, path_to_data, path_to_patterns, path_to_entity_types):
+    def __init__(self, path_to_data, path_to_patterns):
         self.path_to_data = path_to_data
         self.path_to_patterns = path_to_patterns
-        self.path_to_entity_types = path_to_entity_types
-        self.index = "wiki_sentences"
 
-    def collect_patterns(self):
-        """ Get patterns from file"""
-        patterns = []  # {(pattern, pattern_as_regex, argument_order) : relation}
-        with open(self.path_to_patterns) as input:
+    def read_data(self):
+        with open(self.path_to_data + "/annotated_pages.json") as input_file:
+            data = json.load(input_file)
+        return data
+
+    # prepare patterns
+    def get_patterns(self):
+        """ Read patterns from file and save them to a dictionary {relation : [patterns]}"""
+        relation_to_patterns = {}  # {relation : [patterns]}
+        with open(self.path_to_patterns, encoding="UTF-8") as input:
             for line in input.readlines():
                 if not line.startswith("#") and line != "\n":
-                    relation, pattern = line.replace("\n", "").split(" ", 1)
-                    pattern_rgx, arg_ord = self.turn_pattern_to_regex(pattern)
-                    pattern = re.sub("\\$ARG1", "(.*)", pattern)
-                    pattern = re.sub("\\$ARG2", "(.*)", pattern)
-                    patterns.append({"text": pattern, "pattern_rgx": pattern_rgx, "argument_order": arg_ord,
-                                     "relation": relation})
-        return patterns
+                    relation, raw_pattern = line.replace("\n", "").split(" ", 1)
+                    pattern = self.preprocess_patterns(raw_pattern)
+                    if relation in relation_to_patterns.keys():
+                        relation_to_patterns[relation].append(pattern)
+                    else:
+                        relation_to_patterns[relation] = [pattern]
+        return relation_to_patterns
 
-    def turn_pattern_to_regex(self, pattern):
-        """ Turns patterns into regex expressions """
-        # pattern = "( born )"  # search regex for pattern "$ARG1 ( born $ARG2 )"
-        # pattern_rgx = ".*\\s*\\(\\s*.*born\\s.*\\s*\\)"
-        if "$ARG0" in pattern:
-            arg_order = "12"
-        elif int(pattern.find("$ARG1")) < int(pattern.find("$ARG2")):
-            arg_order = "12"
-        elif int(pattern.find("$ARG1")) > int(pattern.find("$ARG2")):
-            arg_order = "21"
-        else:
-            print("Error! Pattern doesn't contain arguments")
-        pattern = re.sub("\\*", ".*", pattern)
-        pattern = re.sub(" ", "\\\\s*", pattern)
-        pattern = re.sub("\\(", "\\\\(", pattern)
-        pattern = re.sub("\\)", "\\\\)", pattern)
-        pattern = re.sub("\\$ARG1", "([\\\\S]+)", pattern)
-        pattern = re.sub("\\$ARG2", "([\\\\S]+)", pattern)
-        return pattern, arg_order
+    def preprocess_patterns(self, pattern):
+        """ Turn raw patterns into good-looking regexes"""
+        pattern = re.escape(pattern)
+        prepr_pattern = re.sub("\\\\\\*", "[^ ]+([^ ]+){0,3}", pattern)  # * --> match 1 to 4 tokens
+        # prepr_pattern = re.sub("\\$ARG", "\\\\$ARG", prepr_pattern)  # escape $ in $ARG1 and $ARG2
+        return prepr_pattern
 
-    def create_index(self, index):
-        """ Creates elasticsearch index"""
-        body = '{"mappings":{"properties":{"entities":{"type":"nested"},"sentenceText":{"type":"text",' \
-               '"analyzer":"whitespace","search_analyzer":"simple"}}}}'
-        es.indices.create(index=index, body=body, ignore=400)
-
-    def delete_index(self, index):
-        """ Delete elasticsearch index"""
-        es.indices.delete(index=index)
-
-    def insert_one_data(self, _index, data):
-        """ Add one data sample to index. Index will return insert info: like as created is True or False """
-        return es.index(index=_index, doc_type='sentences', id=5, body=data)
-
-    def insert_data(self, _index, data):
-        """ Add data to index. """
-        print("Start indexing data...")
-        for _, sent in data.items():
-            es.index(index=_index, body=sent)
-        print("Indexing is finished")
-
-    # def insert_data_by_bulk(self, data):
-    #     res = helpers.bulk(es, data)
-    #     print(res)
-
-    # def regex_search(self, pat, index, field):
-    #     """ Search regex pattern in a field of all instances in index """
-    #     return es.search(index=index, body={"query": {"regexp": {field: pat}}})
-
-    def match_query(self, pat, field):
-        """ Search a pattern in a field of all instances in index """
-        return es.search(index=self.index, body={"query": {"match_phrase": {field: {"query": pat}}}})["hits"]["hits"]
-
-    def clean_hits(self, hits, pattern):
-        """ Filter out the instances that exactly match the pattern """
-        clean_hits = []
-        for hit in hits:
-            sent = hit["_source"]["sentenceText"]
-            m = re.match(pattern["pattern_rgx"], sent)
-            if m:
-                if pattern["argument_order"] == "12":
-                    clean_hits.append({"sentence": hit["_source"], "$ARG1": m[1], "$ARG2": m[2],
-                                       "relation": pattern["relation"], "pattern": pattern["text"]})
-                else:
-                    clean_hits.append({"sentence": hit["_source"], "$ARG1": m[2], "$ARG2": m[1],
-                                       "relation": pattern["relation"], "pattern": pattern["text"]})
+    def get_types_to_entities(self, doc):
+        types_to_entities = {}       # type: [ent_list]
+        for ent in doc["ents"]:
+            # curr_ent = doc["text"][ent["start"]:ent["end"]]
+            curr_label = ent["label"]
+            if ent["label"] in types_to_entities.keys():
+                types_to_entities[curr_label].append(ent)
             else:
-                print("The sentence was excluded since it does not perfectly match the pattern. Pattern: {}, "
-                      "sentence: {}".format(pattern["pattern_rgx"], sent))
-        return clean_hits
+                types_to_entities[curr_label] = [ent]
+        return types_to_entities
 
-    def check_types(self, sentences):
-        proper_sentences = []
-        for sentence in sentences:
-            sentence["$ARG1_type"], sentence["$ARG2_type"] = '', ''
-            expected_types = TYPES_PER_RELATION[sentence["relation"]]
-            # matched_arg1_entity = filter(lambda ent: ent['entityInSentence'] == sentence["$ARG1"],
-            #               sentence["sentence"]["entities"])
-            # matched_arg2_entity = filter(lambda ent: ent['entityInSentence'] == sentence["$ARG2"],
-            #                              sentence["sentence"]["entities"])
-            for entity in sentence["sentence"]["entities"]:
-                if entity["entityInSentence"] == sentence["$ARG1"]:
-                    sentence["$ARG1_type"] = entity["entityType"]
-                    if sentence["$ARG1_type"] != expected_types[0]:
-                        break
-                elif entity["entityInSentence"] == sentence["$ARG2"]:
-                    sentence["$ARG2_type"] = entity["entityType"]
-                    if sentence["$ARG2_type"] != expected_types[1]:
-                        break
-            if sentence["$ARG1_type"] == expected_types[0] and sentence["$ARG2_type"] == expected_types[1]:
-                proper_sentences.append(sentence)
-        return proper_sentences
+    def get_abstract_for_comparing(self, doc, ent1, ent2):
+        """ Substitute entiies with "$ARG1" and "$ARG2" and do some refactoring needed for correct search """
+        to_compare = doc["text"][:ent1["start"]] + "$ARG1" + doc["text"][ent1["end"]:ent2["start"]] + "$ARG2" + \
+                     doc["text"][ent2["end"]:]
+        to_compare = re.sub(u'\\(', u"( ", to_compare)
+        to_compare = re.sub(u'\\)', u" )", to_compare)
+        to_compare = re.sub(u'\\,', ' ,', to_compare)
+        to_compare = re.sub(u"\\'s", " 's", to_compare)
+        to_compare = re.sub(u"\\'", " '", to_compare)
+        return to_compare
 
-    def main(self):
-        with open(self.path_to_data, 'r') as input_file:
-            sentences = json.loads(input_file.read())
-        patterns = self.collect_patterns()
+    def get_sentence_matches(self, args_output):
+        matches = []
+        for rel, match in args_output.items():
+            if len(match) > 0:
+                for m in match:
+                    m.append(rel)
+                    matches.append(m)
+        return matches
 
-        # create elasticsearch index
-        self.delete_index(self.index)
-        self.create_index(self.index)
-        self.insert_data(self.index, sentences)
+    def prepare_output_dygie(self, args_output, doc):
+        matches = self.get_sentence_matches(args_output)
+        doc_ent, doc_rel, doc_idx, doc_rel_ann, doc_pattern = [], [], [], [], []
+        for sent in doc["sents"]:
+            sent_ent, sent_rel, sent_idx, sent_rel_ann, sent_pattern = [], [], [], [], []
+            for token in doc["tokens"]:
+                if int(token["start"]) >= int(sent["start"]) and int(token["end"]) <= int(sent["end"]):
+                    sent_ent.append(doc["text"][token["start"]:token["end"]])
+                    sent_idx.append([token["start"], token["end"]])
+            for match in matches:
+                if match[0] >= int(sent["start"]) and match[3] <= int(sent["end"]):
+                    sent_rel.append(match)
+                    sent_rel_ann.append(match[5])
+                    sent_pattern.append(match[4])
+            doc_idx.append(sent_idx)
+            doc_ent.append(sent_ent)
+            doc_rel.append(sent_rel)
+            doc_rel_ann.append(sent_rel_ann)
+            doc_pattern.append(sent_pattern)
+        doc_entry = {"doc_key": doc["doc_id"], "tokenisedSentences": doc_ent, "relations": doc_rel,
+                     "tokensToOriginalIndices": doc_idx, "annotatedPredicates": doc_rel_ann,
+                     "patterns": doc_pattern}
+        return doc_entry
 
-        # search
-        final_res = []
-        for pattern in patterns:
-            hits = self.match_query(pattern["text"], "sentenceText")
-            clean_hits = self.clean_hits(hits, pattern)
-            proper_sentences = self.check_types(clean_hits)
-            if len(proper_sentences) > 0:
-                final_res += proper_sentences
-
-        with open('retrieved.json', 'w') as outfile:
-            json.dump(final_res, outfile)
-
-    # def read_input_data(self):
-    #     sentences = {}
-    #     with open(self.path_to_data, 'r') as input_file:
-    #         sent_json = json.loads(input_file.read())
-    #         # for _, sent in sent_json.items():
-    #             # sent_obj = Sentence(**sent)
-    #             # sent_obj.entities = [Entity(**ent) for ent in sent_obj.entities]
-    #             # sentences[sent_obj.sentenceId] = sent_obj
-    #         return sent_json
-
-
-if __name__ == "__main__":
-    PatternSearch(sys.argv[1], sys.argv[2], sys.argx[3]).main()
+    def search_patterns(self):
+        data = self.read_data()
+        relation_to_patterns = self.get_patterns()
+        all_docs = []
+        i = 0
+        for doc in data:
+            types_to_entities = self.get_types_to_entities(doc)
+            curr_args_output = {}
+            for rel, patterns in relation_to_patterns.items():
+                if rel in RELATION_TO_TYPES.keys():
+                    curr_args_output[rel] = []
+                    types = RELATION_TO_TYPES[rel]
+                    if types[0] in types_to_entities.keys() and types[1] in types_to_entities.keys():
+                        for ent1, ent2 in itertools.product(types_to_entities[types[0]], types_to_entities[types[1]]):
+                            if ent1["start"] < ent2["start"]:
+                                # todo more checks about argument order!
+                                to_compare = self.get_abstract_for_comparing(doc, ent1, ent2)
+                                for pattern in patterns:
+                                    match = re.search(pattern, to_compare)
+                                    if match:
+                                        curr_args_output[rel].append([ent1["start"], ent1["end"], ent2["start"],
+                                                                      ent2["end"], pattern])
+                                        # print("New match! Relation:{}; entity1: {}; entity2: {}; pattern {}; "
+                                        #       "Sentence: {}".format(rel, doc["text"][ent1["start"]:ent1["end"]],
+                                        #                 doc["text"][ent2["start"]:ent2["end"]], pattern, doc["text"]))
+                                        i += 1
+                            elif ent1["start"] > ent2["start"]:
+                                # todo more checks about argument order!
+                                pass
+            all_docs.append(self.prepare_output_dygie(curr_args_output, doc))
+        print("Total match:", i)
+        with open(self.path_to_data + "/annotated_data_with_matched_info.json", "w+") as output_json:
+            json.dump(all_docs, output_json)
