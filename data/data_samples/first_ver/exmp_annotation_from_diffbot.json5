@@ -1,0 +1,184 @@
+[
+  {
+    'entities': [
+      {
+        'name': 'Wikipedia',
+        'diffbotUri': 'https://diffbot.com/entity/XllxhS5RJPd-tnSbc0W70XA',
+        'confidence': 0.46801227,
+        'salience': 0.9388411,
+        'allUris': [
+          'http://www.wikidata.org/entity/Q52'
+        ],
+        'allTypes': [
+          {
+            'name': 'Wikimedia project',
+            'diffbotUri': 'https://diffbot.com/entity/X7fWKfADVMYGzoHYsiPBmgw'
+          },
+          {
+            'name': 'open content',
+            'diffbotUri': 'https://diffbot.com/entity/Xbp7RLqyePAy84aNhlFttZg'
+          },
+          {
+            'name': 'Internet encyclopedia',
+            'diffbotUri': 'https://diffbot.com/entity/X4VIl4hAKMYOtlWWQO-EiTw'
+          },
+          {
+            'name': 'field of work',
+            'diffbotUri': 'https://diffbot.com/entity/XjGOLMsQZOGSg549SwYfFyQ'
+          },
+          {
+            'name': 'product',
+            'diffbotUri': 'https://diffbot.com/entity/XgSPUye7QPcyQoPylO8biMQ'
+          },
+          {
+            'name': 'skill',
+            'diffbotUri': 'https://diffbot.com/entity/XvfbHngnSNVOh7ZBM5XTywQ'
+          },
+          {
+            'name': 'MediaWiki encyclopedia',
+            'diffbotUri': 'https://diffbot.com/entity/XnbGBsRfhPPuQDR0V-WuETw'
+          },
+          {
+            'name': 'miscellaneous'
+          }
+        ],
+        'mentions': [
+          {
+            'text': 'Wikipedia',
+            'beginOffset': 0,
+            'endOffset': 9,
+            'confidence': 0.46801227
+          }
+        ]
+      },
+      {
+        'name': 'Diffbot',
+        'diffbotUri': 'https://diffbot.com/entity/CYX1i02YVPsuT7fPLUYgRhQ',
+        'confidence': 0.98250884,
+        'salience': 0.8342834,
+        'allUris': [
+          'http://www.wikidata.org/entity/Q17052069'
+        ],
+        'allTypes': [
+          {
+            'name': 'corporation',
+            'diffbotUri': 'https://diffbot.com/entity/XDTbH_DMGPZy8V2Wg7s1h1A'
+          },
+          {
+            'name': 'organization',
+            'diffbotUri': 'https://diffbot.com/entity/XN1ClYEdMMQCxB6AWTkT3mA'
+          },
+          {
+            'name': 'business',
+            'diffbotUri': 'https://diffbot.com/entity/XzXAauQO2P1mzuFqHtfsS3Q'
+          }
+        ],
+        'mentions': [
+          {
+            'text': 'Diffbot',
+            'beginOffset': 36,
+            'endOffset': 43,
+            'confidence': 0.98250884
+          }
+        ],
+        'location': {
+          'latitude': 37.456104,
+          'longitude': -122.1763,
+          'precision': 0.1
+        }
+      },
+      {
+        'name': 'organizational founder',
+        'diffbotUri': 'https://diffbot.com/entity/XsA5Szo6sO2q-EXSb2Cb_mA',
+        'confidence': 0.5358206,
+        'salience': 0.702587,
+        'allUris': [
+          'http://www.wikidata.org/entity/Q26950764'
+        ],
+        'allTypes': [
+          {
+            'name': 'creator',
+            'diffbotUri': 'https://diffbot.com/entity/X9yLLjgTkMcme4j7MWLA4gA'
+          },
+          {
+            'name': 'position',
+            'diffbotUri': 'https://diffbot.com/entity/Xs4X2DOjBPHmqwnZJEqihDQ'
+          },
+          {
+            'name': 'role',
+            'diffbotUri': 'https://diffbot.com/entity/X_E130Nm6M6OXvI6hVras_g'
+          },
+          {
+            'name': 'occupation',
+            'diffbotUri': 'https://diffbot.com/entity/XrZNo5eLfM4mNIiqiMORbhA'
+          },
+          {
+            'name': 'miscellaneous'
+          }
+        ],
+        'mentions': [
+          {
+            'text': 'founder',
+            'beginOffset': 17,
+            'endOffset': 24,
+            'confidence': 0.5358206
+          }
+        ]
+      },
+      {
+        'name': 'chief executive officer',
+        'diffbotUri': 'https://diffbot.com/entity/XL0BVGrUkNuW8fpPGlr7rTA',
+        'confidence': 0.8452493,
+        'salience': 0.81709206,
+        'allUris': [
+          'http://www.wikidata.org/entity/Q484876'
+        ],
+        'allTypes': [
+          {
+            'name': 'profession',
+            'diffbotUri': 'https://diffbot.com/entity/XJpi8UPOQNR-E9ZwK9B--qg'
+          },
+          {
+            'name': 'chief officer',
+            'diffbotUri': 'https://diffbot.com/entity/XF5eEf98MPJaIZdsrW8YuiQ'
+          },
+          {
+            'name': 'leader of organisation',
+            'diffbotUri': 'https://diffbot.com/entity/X3oyT0H-BOGe_I5tZWTayeA'
+          },
+          {
+            'name': 'corporate title',
+            'diffbotUri': 'https://diffbot.com/entity/X1h2gjDveOGOgfxdveTQR-w'
+          },
+          {
+            'name': 'role',
+            'diffbotUri': 'https://diffbot.com/entity/X_E130Nm6M6OXvI6hVras_g'
+          },
+          {
+            'name': 'field of work',
+            'diffbotUri': 'https://diffbot.com/entity/XjGOLMsQZOGSg549SwYfFyQ'
+          },
+          {
+            'name': 'legal concept',
+            'diffbotUri': 'https://diffbot.com/entity/X1lsAHAu6NOaaunsCx9ZEqA'
+          },
+          {
+            'name': 'skill',
+            'diffbotUri': 'https://diffbot.com/entity/XvfbHngnSNVOh7ZBM5XTywQ'
+          },
+          {
+            'name': 'miscellaneous'
+          }
+        ],
+        'mentions': [
+          {
+            'text': 'CEO',
+            'beginOffset': 29,
+            'endOffset': 32,
+            'confidence': 0.8452493
+          }
+        ]
+      }
+    ]
+  }
+]

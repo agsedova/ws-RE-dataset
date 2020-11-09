@@ -62,6 +62,6 @@ class WikiDumpProcesser:
                 if "wiki" in path_to_input_file:
                     preprocessed_wiki_dump += self.process_wikidump_file(path_to_input_file)
                     print("File {} is preprocessed".format(path_to_input_file))
-        with open(self.root_dir + "/annotated_pages.json", "w+", encoding="UTF-8") as o_json:
+        with open(self.root_dir + "/spacy_annotated_pages.json", "w+", encoding="UTF-8") as o_json:
             json.dump(preprocessed_wiki_dump, o_json)
         print("================================================")

@@ -10,7 +10,7 @@ class PatternSearch:
         self.path_to_patterns = path_to_patterns
 
     def read_data(self):
-        with open(self.path_to_data + "/annotated_pages.json") as input_file:
+        with open(self.path_to_data + "/spacy_annotated_pages.json") as input_file:
             data = json.load(input_file)
         return data
 

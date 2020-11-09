@@ -1,0 +1,1395 @@
+[
+  {
+    "id": "1791084",
+    "url": "https://en.wikipedia.org/wiki?curid=1791084",
+    "title": "St Mark's Eve",
+    "text": "St. Mark's Eve is the day before the feast day of St. Mark the Evangelist. In liturgical Christian churches, this feast of St. Mark is observed on 25 April of each year; thus St. Mark's Eve is 24 April.",
+    "annotatedSentences": [
+      {
+        "sentenceId": "1791084:0:74",
+        "sentenceText": "St. Mark's Eve is the day before the feast day of St. Mark the Evangelist.",
+        "sentenceStart": 0,
+        "sentenceEnd": 74,
+        "entities": [
+          {
+            "entityId": "1791084:0:74:0:14",
+            "entityInSentence": "St. Mark's Eve",
+            "entityStart": 0,
+            "entityEnd": 14,
+            "entityReferences": [
+              {
+                "entityName": "St Mark's Eve",
+                "entityConfidence": 0.67946815,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q7594164"
+                ],
+                "entityTypes": [
+                  "event"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791084:0:74:50:73",
+            "entityInSentence": "St. Mark the Evangelist",
+            "entityStart": 50,
+            "entityEnd": 73,
+            "entityReferences": [
+              {
+                "entityName": "Mark the Evangelist",
+                "entityConfidence": 0.9219384,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q31966"
+                ],
+                "entityTypes": [
+                  "person"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sentenceId": "1791084:75:202",
+        "sentenceText": "In liturgical Christian churches, this feast of St. Mark is observed on 25 April of each year; thus St. Mark's Eve is 24 April.",
+        "sentenceStart": 75,
+        "sentenceEnd": 202,
+        "entities": [
+          {
+            "entityId": "1791084:75:202:123:131",
+            "entityInSentence": "St. Mark",
+            "entityStart": 123,
+            "entityEnd": 131,
+            "entityReferences": [
+              {
+                "entityName": "Mark the Evangelist",
+                "entityConfidence": 0.9219384,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q31966"
+                ],
+                "entityTypes": [
+                  "person"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791084:75:202:175:189",
+            "entityInSentence": "St. Mark's Eve",
+            "entityStart": 175,
+            "entityEnd": 189,
+            "entityReferences": [
+              {
+                "entityName": "St Mark's Eve",
+                "entityConfidence": 0.67946815,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q7594164"
+                ],
+                "entityTypes": [
+                  "event"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791084:75:202:89:98",
+            "entityInSentence": "Christian",
+            "entityStart": 89,
+            "entityEnd": 98,
+            "entityReferences": [
+              {
+                "entityName": "Christianity",
+                "entityConfidence": 0.8199641,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q5043"
+                ],
+                "entityTypes": [
+                  "religion"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "1791085",
+    "url": "https://en.wikipedia.org/wiki?curid=1791085",
+    "title": "Mount Sopris",
+    "text": "Mount Sopris is a twin-summit mountain in the northwestern Elk Mountains range of the Rocky Mountains of North America. The mountain is located in the Maroon Bells-Snowmass Wilderness of White River National Forest, north by northeast (bearing 30\u00b0) of the community of Redstone in Pitkin County, Colorado, United States.",
+    "annotatedSentences": [
+      {
+        "sentenceId": "1791085:0:119",
+        "sentenceText": "Mount Sopris is a twin-summit mountain in the northwestern Elk Mountains range of the Rocky Mountains of North America.",
+        "sentenceStart": 0,
+        "sentenceEnd": 119,
+        "entities": [
+          {
+            "entityId": "1791085:0:119:0:12",
+            "entityInSentence": "Mount Sopris",
+            "entityStart": 0,
+            "entityEnd": 12,
+            "entityReferences": [
+              {
+                "entityName": "Mount Sopris",
+                "entityConfidence": 0.96192956,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q6923754"
+                ],
+                "entityTypes": [
+                  "location",
+                  "landform"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791085:0:119:105:118",
+            "entityInSentence": "North America",
+            "entityStart": 105,
+            "entityEnd": 118,
+            "entityReferences": [
+              {
+                "entityName": "North America",
+                "entityConfidence": 0.9599472,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q49"
+                ],
+                "entityTypes": [
+                  "location"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791085:0:119:30:38",
+            "entityInSentence": "mountain",
+            "entityStart": 30,
+            "entityEnd": 38,
+            "entityReferences": [
+              {
+                "entityName": "mountain",
+                "entityConfidence": 0.64875466,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q8502"
+                ],
+                "entityTypes": [
+                  "landform"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791085:0:119:59:72",
+            "entityInSentence": "Elk Mountains",
+            "entityStart": 59,
+            "entityEnd": 72,
+            "entityReferences": [
+              {
+                "entityName": "Elk Mountains",
+                "entityConfidence": 0.99373543,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q1331413"
+                ],
+                "entityTypes": [
+                  "location",
+                  "landform"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791085:0:119:86:101",
+            "entityInSentence": "Rocky Mountains",
+            "entityStart": 86,
+            "entityEnd": 101,
+            "entityReferences": [
+              {
+                "entityName": "Rocky Mountains",
+                "entityConfidence": 0.982082,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q5463"
+                ],
+                "entityTypes": [
+                  "location",
+                  "landform"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sentenceId": "1791085:120:320",
+        "sentenceText": "The mountain is located in the Maroon Bells-Snowmass Wilderness of White River National Forest, north by northeast (bearing 30\u00b0) of the community of Redstone in Pitkin County, Colorado, United States.",
+        "sentenceStart": 120,
+        "sentenceEnd": 320,
+        "entities": [
+          {
+            "entityId": "1791085:120:320:124:132",
+            "entityInSentence": "mountain",
+            "entityStart": 124,
+            "entityEnd": 132,
+            "entityReferences": [
+              {
+                "entityName": "mountain",
+                "entityConfidence": 0.64875466,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q8502"
+                ],
+                "entityTypes": [
+                  "landform"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791085:120:320:151:183",
+            "entityInSentence": "Maroon Bells-Snowmass Wilderness",
+            "entityStart": 151,
+            "entityEnd": 183,
+            "entityReferences": [
+              {
+                "entityName": "Maroon Bells\u2013Snowmass Wilderness",
+                "entityConfidence": 0.9471466,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q6772357"
+                ],
+                "entityTypes": [
+                  "location",
+                  "administrative area"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791085:120:320:187:214",
+            "entityInSentence": "White River National Forest",
+            "entityStart": 187,
+            "entityEnd": 214,
+            "entityReferences": [
+              {
+                "entityName": "White River National Forest",
+                "entityConfidence": 0.99543774,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q2566990"
+                ],
+                "entityTypes": [
+                  "location",
+                  "administrative area"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791085:120:320:269:277",
+            "entityInSentence": "Redstone",
+            "entityStart": 269,
+            "entityEnd": 277,
+            "entityReferences": [
+              {
+                "entityName": "Redstone",
+                "entityConfidence": 0.9335657,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q3473147"
+                ],
+                "entityTypes": [
+                  "location",
+                  "administrative area"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791085:120:320:281:304",
+            "entityInSentence": "Pitkin County, Colorado",
+            "entityStart": 281,
+            "entityEnd": 304,
+            "entityReferences": [
+              {
+                "entityName": "Pitkin County",
+                "entityConfidence": 0.9330051,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q312475"
+                ],
+                "entityTypes": [
+                  "location",
+                  "administrative area",
+                  "county"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "1791100",
+    "url": "https://en.wikipedia.org/wiki?curid=1791100",
+    "title": "Henry Preserved Smith",
+    "text": "Henry Preserved Smith (October 12, 1847 \u2013 February 26, 1927) was an American biblical scholar.",
+    "annotatedSentences": [
+      {
+        "sentenceId": "1791100:0:94",
+        "sentenceText": "Henry Preserved Smith (October 12, 1847 \u2013 February 26, 1927) was an American biblical scholar.",
+        "sentenceStart": 0,
+        "sentenceEnd": 94,
+        "entities": [
+          {
+            "entityId": "1791100:0:94:0:21",
+            "entityInSentence": "Henry Preserved Smith",
+            "entityStart": 0,
+            "entityEnd": 21,
+            "entityReferences": [
+              {
+                "entityName": "Henry Preserved Smith",
+                "entityConfidence": 0.9986594,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q5727207"
+                ],
+                "entityTypes": [
+                  "person"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791100:0:94:68:76",
+            "entityInSentence": "American",
+            "entityStart": 68,
+            "entityEnd": 76,
+            "entityReferences": [
+              {
+                "entityName": "United States of America",
+                "entityConfidence": 0.9547483,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q30"
+                ],
+                "entityTypes": [
+                  "location",
+                  "administrative area",
+                  "country"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791100:0:94:77:93",
+            "entityInSentence": "biblical scholar",
+            "entityStart": 77,
+            "entityEnd": 93,
+            "entityReferences": [
+              {
+                "entityName": "biblical studies",
+                "entityConfidence": 0.79778844,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q794605"
+                ],
+                "entityTypes": [
+                  "skill",
+                  "academic major",
+                  "field of work"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "1791102",
+    "url": "https://en.wikipedia.org/wiki?curid=1791102",
+    "title": "Arthur Seldon",
+    "text": "Arthur Seldon, (29 May 1916\u00a0\u2013 11 October 2005) was joint founder president, with Ralph Harris, of the Institute of Economic Affairs, where he directed editorial affairs and publishing for more than thirty years. He is the father of political author Anthony Seldon.",
+    "annotatedSentences": [
+      {
+        "sentenceId": "1791102:0:211",
+        "sentenceText": "Arthur Seldon, (29 May 1916\u00a0\u2013 11 October 2005) was joint founder president, with Ralph Harris, of the Institute of Economic Affairs, where he directed editorial affairs and publishing for more than thirty years.",
+        "sentenceStart": 0,
+        "sentenceEnd": 211,
+        "entities": [
+          {
+            "entityId": "1791102:0:211:0:13",
+            "entityInSentence": "Arthur Seldon",
+            "entityStart": 0,
+            "entityEnd": 13,
+            "entityReferences": [
+              {
+                "entityName": "Arthur Seldon",
+                "entityConfidence": 0.99627143,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q711495"
+                ],
+                "entityTypes": [
+                  "person"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791102:0:211:102:131",
+            "entityInSentence": "Institute of Economic Affairs",
+            "entityStart": 102,
+            "entityEnd": 131,
+            "entityReferences": [
+              {
+                "entityName": "Institute of Economic Affairs",
+                "entityConfidence": 0.98212266,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q1665155"
+                ],
+                "entityTypes": [
+                  "organization"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791102:0:211:151:160",
+            "entityInSentence": "editorial",
+            "entityStart": 151,
+            "entityEnd": 160,
+            "entityReferences": [
+              {
+                "entityName": "editorial",
+                "entityConfidence": 0.6208106,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q871232"
+                ],
+                "entityTypes": [
+                  "skill",
+                  "field of work"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791102:0:211:65:74",
+            "entityInSentence": "president",
+            "entityStart": 65,
+            "entityEnd": 74,
+            "entityReferences": [
+              {
+                "entityName": "president",
+                "entityConfidence": 0.65357107,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q1255921"
+                ],
+                "entityTypes": [
+                  "job title",
+                  "award",
+                  "occupation"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791102:0:211:81:93",
+            "entityInSentence": "Ralph Harris",
+            "entityStart": 81,
+            "entityEnd": 93,
+            "entityReferences": [
+              {
+                "entityName": "Ralph Harris, Baron Harris of High Cross",
+                "entityConfidence": 0.8379005,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q3418261"
+                ],
+                "entityTypes": [
+                  "person"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sentenceId": "1791102:212:264",
+        "sentenceText": "He is the father of political author Anthony Seldon.",
+        "sentenceStart": 212,
+        "sentenceEnd": 264,
+        "entities": [
+          {
+            "entityId": "1791102:212:264:249:263",
+            "entityInSentence": "Anthony Seldon",
+            "entityStart": 249,
+            "entityEnd": 263,
+            "entityReferences": [
+              {
+                "entityName": "Anthony Seldon",
+                "entityConfidence": 0.98510754,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q4773439"
+                ],
+                "entityTypes": [
+                  "person"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "1791106",
+    "url": "https://en.wikipedia.org/wiki?curid=1791106",
+    "title": "Sunburst Award",
+    "text": "The Sunburst Award for Canadian Literature of the Fantastic is an annual award given for a speculative fiction novel or a book-length collection.",
+    "annotatedSentences": [
+      {
+        "sentenceId": "1791106:0:145",
+        "sentenceText": "The Sunburst Award for Canadian Literature of the Fantastic is an annual award given for a speculative fiction novel or a book-length collection.",
+        "sentenceStart": 0,
+        "sentenceEnd": 145,
+        "entities": [
+          {
+            "entityId": "1791106:0:145:23:42",
+            "entityInSentence": "Canadian Literature",
+            "entityStart": 23,
+            "entityEnd": 42,
+            "entityReferences": [
+              {
+                "entityName": "Canadian Literature",
+                "entityConfidence": 0.8840748,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q5030290"
+                ],
+                "entityTypes": [
+                  "organization",
+                  "product"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791106:0:145:4:18",
+            "entityInSentence": "Sunburst Award",
+            "entityStart": 4,
+            "entityEnd": 18,
+            "entityReferences": [
+              {
+                "entityName": "Sunburst Award",
+                "entityConfidence": 0.9446648,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q2366000"
+                ],
+                "entityTypes": [
+                  "award"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791106:0:145:50:59",
+            "entityInSentence": "Fantastic",
+            "entityStart": 50,
+            "entityEnd": 59,
+            "entityReferences": [
+              {
+                "entityName": "fantastic",
+                "entityConfidence": 0.7053192,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q5240628"
+                ],
+                "entityTypes": [
+                  "skill",
+                  "field of work",
+                  "literary work"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "1791109",
+    "url": "https://en.wikipedia.org/wiki?curid=1791109",
+    "title": "Se\u00e1n Moore (Irish politician)",
+    "text": "Se\u00e1n Moore (19 May 1913 \u2013 1 October 1986) was an Irish Fianna F\u00e1il politician.",
+    "annotatedSentences": [
+      {
+        "sentenceId": "1791109:0:78",
+        "sentenceText": "Se\u00e1n Moore (19 May 1913 \u2013 1 October 1986) was an Irish Fianna F\u00e1il politician.",
+        "sentenceStart": 0,
+        "sentenceEnd": 78,
+        "entities": [
+          {
+            "entityId": "1791109:0:78:0:10",
+            "entityInSentence": "Se\u00e1n Moore",
+            "entityStart": 0,
+            "entityEnd": 10,
+            "entityReferences": [
+              {
+                "entityName": "Se\u00e1n Moore",
+                "entityConfidence": 0.9913885,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q1312995"
+                ],
+                "entityTypes": [
+                  "person"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791109:0:78:49:54",
+            "entityInSentence": "Irish",
+            "entityStart": 49,
+            "entityEnd": 54,
+            "entityReferences": [
+              {
+                "entityName": "Irish",
+                "entityConfidence": 0.8661633,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q9142"
+                ],
+                "entityTypes": [
+                  "product",
+                  "human language"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791109:0:78:55:66",
+            "entityInSentence": "Fianna F\u00e1il",
+            "entityStart": 55,
+            "entityEnd": 66,
+            "entityReferences": [
+              {
+                "entityName": "Fianna F\u00e1il",
+                "entityConfidence": 0.9985107,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q216517"
+                ],
+                "entityTypes": [
+                  "organization",
+                  "political party"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "1791111",
+    "url": "https://en.wikipedia.org/wiki?curid=1791111",
+    "title": "Taner Sa\u011f\u0131r",
+    "text": "Taner Sa\u011f\u0131r (born March 13, 1985 in Kardzhali, Bulgaria) is a Turkish world and Olympic weightlifting champion. Coming into Athens as holder of all the junior world records at the age of only 19, he broke the Olympic records in the category \u201377\u00a0kg snatch, clean and jerk and total. He is seen as a great talent by authorities.",
+    "annotatedSentences": [
+      {
+        "sentenceId": "1791111:0:111",
+        "sentenceText": "Taner Sa\u011f\u0131r (born March 13, 1985 in Kardzhali, Bulgaria) is a Turkish world and Olympic weightlifting champion.",
+        "sentenceStart": 0,
+        "sentenceEnd": 111,
+        "entities": [
+          {
+            "entityId": "1791111:0:111:0:11",
+            "entityInSentence": "Taner Sa\u011f\u0131r",
+            "entityStart": 0,
+            "entityEnd": 11,
+            "entityReferences": [
+              {
+                "entityName": "Taner Sa\u011f\u0131r",
+                "entityConfidence": 0.9957042,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q936246"
+                ],
+                "entityTypes": [
+                  "person"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791111:0:111:102:110",
+            "entityInSentence": "champion",
+            "entityStart": 102,
+            "entityEnd": 110,
+            "entityReferences": [
+              {
+                "entityName": "champion",
+                "entityConfidence": 0.6860764,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q852061"
+                ],
+                "entityTypes": [
+                  "award"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791111:0:111:36:45",
+            "entityInSentence": "Kardzhali",
+            "entityStart": 36,
+            "entityEnd": 45,
+            "entityReferences": [
+              {
+                "entityName": "Kardzhali",
+                "entityConfidence": 0.8920223,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q192875"
+                ],
+                "entityTypes": [
+                  "location",
+                  "administrative area"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791111:0:111:47:55",
+            "entityInSentence": "Bulgaria",
+            "entityStart": 47,
+            "entityEnd": 55,
+            "entityReferences": [
+              {
+                "entityName": "Bulgaria",
+                "entityConfidence": 0.9807269,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q219"
+                ],
+                "entityTypes": [
+                  "location",
+                  "administrative area",
+                  "country"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791111:0:111:80:101",
+            "entityInSentence": "Olympic weightlifting",
+            "entityStart": 80,
+            "entityEnd": 101,
+            "entityReferences": [
+              {
+                "entityName": "weightlifting",
+                "entityConfidence": 0.9799221,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q83462"
+                ],
+                "entityTypes": [
+                  "event",
+                  "sport"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sentenceId": "1791111:112:281",
+        "sentenceText": "Coming into Athens as holder of all the junior world records at the age of only 19, he broke the Olympic records in the category \u201377\u00a0kg snatch, clean and jerk and total.",
+        "sentenceStart": 112,
+        "sentenceEnd": 281,
+        "entities": [
+          {
+            "entityId": "1791111:112:281:124:130",
+            "entityInSentence": "Athens",
+            "entityStart": 124,
+            "entityEnd": 130,
+            "entityReferences": [
+              {
+                "entityName": "Athens",
+                "entityConfidence": 0.9368249,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q1524"
+                ],
+                "entityTypes": [
+                  "location",
+                  "administrative area",
+                  "city"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791111:112:281:152:164",
+            "entityInSentence": "junior world",
+            "entityStart": 152,
+            "entityEnd": 164,
+            "entityReferences": [
+              {
+                "entityName": "World Junior Figure Skating Championships",
+                "entityConfidence": 0.5638076,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q1318642"
+                ],
+                "entityTypes": [
+                  "event"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791111:112:281:209:216",
+            "entityInSentence": "Olympic",
+            "entityStart": 209,
+            "entityEnd": 216,
+            "entityReferences": [
+              {
+                "entityName": "Olympic Games",
+                "entityConfidence": 0.6499294,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q5389"
+                ],
+                "entityTypes": [
+                  "event"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sentenceId": "1791111:282:326",
+        "sentenceText": "He is seen as a great talent by authorities.",
+        "sentenceStart": 282,
+        "sentenceEnd": 326,
+        "entities": []
+      }
+    ]
+  },
+  {
+    "id": "1791112",
+    "url": "https://en.wikipedia.org/wiki?curid=1791112",
+    "title": "Line 6 (company)",
+    "text": "Line 6 is a musical instrument and audio equipment manufacturer. Their product lines include electric and acoustic guitars, basses, guitar and bass amplifiers, effects units, USB audio interfaces and guitar/bass wireless systems. The company was founded in 1996 and is headquartered in Calabasas, California.",
+    "annotatedSentences": [
+      {
+        "sentenceId": "1791112:0:64",
+        "sentenceText": "Line 6 is a musical instrument and audio equipment manufacturer.",
+        "sentenceStart": 0,
+        "sentenceEnd": 64,
+        "entities": [
+          {
+            "entityId": "1791112:0:64:0:6",
+            "entityInSentence": "Line 6",
+            "entityStart": 0,
+            "entityEnd": 6,
+            "entityReferences": [
+              {
+                "entityName": "Line 6",
+                "entityConfidence": 0.9455636,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q1826381"
+                ],
+                "entityTypes": [
+                  "organization"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791112:0:64:12:30",
+            "entityInSentence": "musical instrument",
+            "entityStart": 12,
+            "entityEnd": 30,
+            "entityReferences": [
+              {
+                "entityName": "musical instrument",
+                "entityConfidence": 0.72558147,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q34379"
+                ],
+                "entityTypes": [
+                  "product",
+                  "tool"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791112:0:64:51:63",
+            "entityInSentence": "manufacturer",
+            "entityStart": 51,
+            "entityEnd": 63,
+            "entityReferences": [
+              {
+                "entityName": "manufacturing",
+                "entityConfidence": 0.61670154,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q187939"
+                ],
+                "entityTypes": [
+                  "skill",
+                  "product",
+                  "field of work",
+                  "industry"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sentenceId": "1791112:65:229",
+        "sentenceText": "Their product lines include electric and acoustic guitars, basses, guitar and bass amplifiers, effects units, USB audio interfaces and guitar/bass wireless systems.",
+        "sentenceStart": 65,
+        "sentenceEnd": 229,
+        "entities": [
+          {
+            "entityId": "1791112:65:229:175:178",
+            "entityInSentence": "USB",
+            "entityStart": 175,
+            "entityEnd": 178,
+            "entityReferences": [
+              {
+                "entityName": "Universal Serial Bus",
+                "entityConfidence": 0.8204214,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q42378"
+                ],
+                "entityTypes": [
+                  "product"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sentenceId": "1791112:230:308",
+        "sentenceText": "The company was founded in 1996 and is headquartered in Calabasas, California.",
+        "sentenceStart": 230,
+        "sentenceEnd": 308,
+        "entities": [
+          {
+            "entityId": "1791112:230:308:286:307",
+            "entityInSentence": "Calabasas, California",
+            "entityStart": 286,
+            "entityEnd": 307,
+            "entityReferences": [
+              {
+                "entityName": "Calabasas",
+                "entityConfidence": 0.9761917,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q629088"
+                ],
+                "entityTypes": [
+                  "location",
+                  "administrative area",
+                  "city"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "1791114",
+    "url": "https://en.wikipedia.org/wiki?curid=1791114",
+    "title": "Bertie Mee",
+    "text": "Bertram Mee OBE (25 December 1918 \u2013 22 October 2001) was an English footballer who played as a winger for Derby County and Mansfield Town. Mee was also a manager, noted for leading Arsenal to their first Double win in 1971.",
+    "annotatedSentences": [
+      {
+        "sentenceId": "1791114:0:138",
+        "sentenceText": "Bertram Mee OBE (25 December 1918 \u2013 22 October 2001) was an English footballer who played as a winger for Derby County and Mansfield Town.",
+        "sentenceStart": 0,
+        "sentenceEnd": 138,
+        "entities": [
+          {
+            "entityId": "1791114:0:138:106:118",
+            "entityInSentence": "Derby County",
+            "entityStart": 106,
+            "entityEnd": 118,
+            "entityReferences": [
+              {
+                "entityName": "Derby County F.C.",
+                "entityConfidence": 0.9829442,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q19470"
+                ],
+                "entityTypes": [
+                  "organization",
+                  "sports club"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791114:0:138:123:137",
+            "entityInSentence": "Mansfield Town",
+            "entityStart": 123,
+            "entityEnd": 137,
+            "entityReferences": [
+              {
+                "entityName": "Mansfield Town F.C.",
+                "entityConfidence": 0.9857875,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q18522"
+                ],
+                "entityTypes": [
+                  "organization",
+                  "sports club"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791114:0:138:60:67",
+            "entityInSentence": "English",
+            "entityStart": 60,
+            "entityEnd": 67,
+            "entityReferences": [
+              {
+                "entityName": "England",
+                "entityConfidence": 0.9178795,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q21"
+                ],
+                "entityTypes": [
+                  "location",
+                  "administrative area",
+                  "country",
+                  "country subdivision",
+                  "constituent state"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791114:0:138:68:78",
+            "entityInSentence": "footballer",
+            "entityStart": 68,
+            "entityEnd": 78,
+            "entityReferences": [
+              {
+                "entityName": "association football",
+                "entityConfidence": 0.9328968,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q2736"
+                ],
+                "entityTypes": [
+                  "skill",
+                  "field of work",
+                  "sport",
+                  "industry"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sentenceId": "1791114:139:223",
+        "sentenceText": "Mee was also a manager, noted for leading Arsenal to their first Double win in 1971.",
+        "sentenceStart": 139,
+        "sentenceEnd": 223,
+        "entities": [
+          {
+            "entityId": "1791114:139:223:139:142",
+            "entityInSentence": "Mee",
+            "entityStart": 139,
+            "entityEnd": 142,
+            "entityReferences": [
+              {
+                "entityName": "Ben Mee",
+                "entityConfidence": 0.7673465,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q3637942"
+                ],
+                "entityTypes": [
+                  "person"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791114:139:223:181:188",
+            "entityInSentence": "Arsenal",
+            "entityStart": 181,
+            "entityEnd": 188,
+            "entityReferences": [
+              {
+                "entityName": "Arsenal F.C.",
+                "entityConfidence": 0.9608166,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q9617"
+                ],
+                "entityTypes": [
+                  "organization",
+                  "sports club"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "1791116",
+    "url": "https://en.wikipedia.org/wiki?curid=1791116",
+    "title": "Paul Cullen (cardinal)",
+    "text": "Paul Cullen (29 April 1803 \u2013 24 October 1878) was Roman Catholic Archbishop of Dublin and previously of Armagh, and the first Irish cardinal. His Ultramontanism spearheaded the Romanisation of the Catholic Church in Ireland and ushered in the devotional revolution experienced in Ireland through the second half of the 19th century and much of the 20th century. A trained biblical theologian and scholar of ancient languages, Cullen crafted the formula for papal infallibility at the First Vatican Council.",
+    "annotatedSentences": [
+      {
+        "sentenceId": "1791116:0:141",
+        "sentenceText": "Paul Cullen (29 April 1803 \u2013 24 October 1878) was Roman Catholic Archbishop of Dublin and previously of Armagh, and the first Irish cardinal.",
+        "sentenceStart": 0,
+        "sentenceEnd": 141,
+        "entities": [
+          {
+            "entityId": "1791116:0:141:0:11",
+            "entityInSentence": "Paul Cullen",
+            "entityStart": 0,
+            "entityEnd": 11,
+            "entityReferences": [
+              {
+                "entityName": "Paul Cullen",
+                "entityConfidence": 0.9896478,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q2005947"
+                ],
+                "entityTypes": [
+                  "person"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791116:0:141:104:110",
+            "entityInSentence": "Armagh",
+            "entityStart": 104,
+            "entityEnd": 110,
+            "entityReferences": [
+              {
+                "entityName": "Armagh",
+                "entityConfidence": 0.73765874,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q193452"
+                ],
+                "entityTypes": [
+                  "location",
+                  "administrative area",
+                  "city"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791116:0:141:126:131",
+            "entityInSentence": "Irish",
+            "entityStart": 126,
+            "entityEnd": 131,
+            "entityReferences": [
+              {
+                "entityName": "Ireland",
+                "entityConfidence": 0.87147474,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q27"
+                ],
+                "entityTypes": [
+                  "location",
+                  "administrative area",
+                  "country"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791116:0:141:132:140",
+            "entityInSentence": "cardinal",
+            "entityStart": 132,
+            "entityEnd": 140,
+            "entityReferences": [
+              {
+                "entityName": "cardinal",
+                "entityConfidence": 0.83358866,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q45722"
+                ],
+                "entityTypes": [
+                  "job title",
+                  "award",
+                  "occupation"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sentenceId": "1791116:142:361",
+        "sentenceText": "His Ultramontanism spearheaded the Romanisation of the Catholic Church in Ireland and ushered in the devotional revolution experienced in Ireland through the second half of the 19th century and much of the 20th century.",
+        "sentenceStart": 142,
+        "sentenceEnd": 361,
+        "entities": [
+          {
+            "entityId": "1791116:142:361:146:160",
+            "entityInSentence": "Ultramontanism",
+            "entityStart": 146,
+            "entityEnd": 160,
+            "entityReferences": [
+              {
+                "entityName": "Ultramontanism",
+                "entityConfidence": 0.92016727,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q274053"
+                ],
+                "entityTypes": [
+                  "other"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791116:142:361:197:212",
+            "entityInSentence": "Catholic Church",
+            "entityStart": 197,
+            "entityEnd": 212,
+            "entityReferences": [
+              {
+                "entityName": "Catholic Church",
+                "entityConfidence": 0.99021524,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q9592"
+                ],
+                "entityTypes": [
+                  "organization",
+                  "religion"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791116:142:361:216:223",
+            "entityInSentence": "Ireland",
+            "entityStart": 216,
+            "entityEnd": 223,
+            "entityReferences": [
+              {
+                "entityName": "Ireland",
+                "entityConfidence": 0.87147474,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q27"
+                ],
+                "entityTypes": [
+                  "location",
+                  "administrative area",
+                  "country"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791116:142:361:254:264",
+            "entityInSentence": "revolution",
+            "entityStart": 254,
+            "entityEnd": 264,
+            "entityReferences": [
+              {
+                "entityName": "revolution",
+                "entityConfidence": 0.58108693,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q10931"
+                ],
+                "entityTypes": [
+                  "event"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791116:142:361:280:287",
+            "entityInSentence": "Ireland",
+            "entityStart": 280,
+            "entityEnd": 287,
+            "entityReferences": [
+              {
+                "entityName": "Ireland",
+                "entityConfidence": 0.87147474,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q27"
+                ],
+                "entityTypes": [
+                  "location",
+                  "administrative area",
+                  "country"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sentenceId": "1791116:362:506",
+        "sentenceText": "A trained biblical theologian and scholar of ancient languages, Cullen crafted the formula for papal infallibility at the First Vatican Council.",
+        "sentenceStart": 362,
+        "sentenceEnd": 506,
+        "entities": [
+          {
+            "entityId": "1791116:362:506:381:391",
+            "entityInSentence": "theologian",
+            "entityStart": 381,
+            "entityEnd": 391,
+            "entityReferences": [
+              {
+                "entityName": "theology",
+                "entityConfidence": 0.79387766,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q34178"
+                ],
+                "entityTypes": [
+                  "skill",
+                  "academic major",
+                  "field of work"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791116:362:506:426:432",
+            "entityInSentence": "Cullen",
+            "entityStart": 426,
+            "entityEnd": 432,
+            "entityReferences": [
+              {
+                "entityName": "Paul Cullen",
+                "entityConfidence": 0.9896478,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q2005947"
+                ],
+                "entityTypes": [
+                  "person"
+                ]
+              }
+            ]
+          },
+          {
+            "entityId": "1791116:362:506:484:505",
+            "entityInSentence": "First Vatican Council",
+            "entityStart": 484,
+            "entityEnd": 505,
+            "entityReferences": [
+              {
+                "entityName": "First Vatican Council",
+                "entityConfidence": 0.958505,
+                "entityUri": [
+                  "http://www.wikidata.org/entity/Q190857"
+                ],
+                "entityTypes": [
+                  "organization",
+                  "event"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
