@@ -1,4 +1,4 @@
-from scripts.commons import RELATION_TO_TYPES
+from scripts.commons import RELATION_TO_TYPES, PROPERTY_NAMES
 import re
 import json
 import itertools
@@ -23,7 +23,7 @@ class PatternSearch:
     def get_patterns(self):
         """ Read patterns from file and save them to a dictionary {relation : [patterns]}"""
         # {relation : [patterns]}, {pattern : pattern_id}
-        relation_to_patterns, patterns_to_ids, relation_to_ids = {}, {}, {}
+        relation_to_patterns, patterns_to_ids = {}, {}
         pattern_id, relation_id = 0, 0
         with open(self.path_to_patterns, encoding="UTF-8") as input:
             for line in input.readlines():
@@ -36,18 +36,18 @@ class PatternSearch:
                             patterns_to_ids[pattern] = pattern_id
                             pattern_id += 1
                         # assign an id to relation and add to relation_to_ids dict
-                        if relation not in relation_to_ids.keys():
-                            relation_to_ids[relation] = relation_id
-                            relation_id += 1
+                        # if relation not in relation_to_ids.keys():
+                        #     relation_to_ids[relation] = relation_id
+                        #     relation_id += 1
                         # add relation - pattern pair to relation_to_patterns dict
-                        if relation_to_ids[relation] in relation_to_patterns.keys():
-                            relation_to_patterns[relation_to_ids[relation]].append(pattern)
+                        if PROPERTY_NAMES[relation] in relation_to_patterns.keys():
+                            relation_to_patterns[PROPERTY_NAMES[relation]].append(pattern)
                         else:
-                            relation_to_patterns[relation_to_ids[relation]] = [pattern]
-        relation_to_types = self.get_relation_types_dict(relation_to_ids)
+                            relation_to_patterns[PROPERTY_NAMES[relation]] = [pattern]
+        relation_to_types = self.get_relation_types_dict(PROPERTY_NAMES)
         # save relation_to_ids to json file
-        with open(self.path_to_data + "/relations.json", "w+") as rel_f:
-            json.dump(relation_to_ids, rel_f)
+        # with open(self.path_to_data + "/relations.json", "w+") as rel_f:
+        #     json.dump(relation_to_ids, rel_f)
         # save patterns_to_ids to json file
         with open(self.path_to_data + "/patterns.json", "w+") as rel_p:
             json.dump(patterns_to_ids, rel_p)
@@ -101,7 +101,7 @@ class PatternSearch:
                     sent_idx.append([token["start"], token["end"]])
             for match in matches:
                 if match[0] >= int(sent["start"]) and match[3] <= int(sent["end"]):
-                    sent_rel.append(match[:4] + [match[5]])
+                    sent_rel.append(match[:4] + [str(match[5])])
                     sent_rel_ann.append(match[5])
                     sent_pattern.append(match)
             doc_idx.append(sent_idx)
