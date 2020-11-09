@@ -148,10 +148,3 @@ class PatternSearch:
         with open(self.path_to_data + "/annotated_data_with_matched_info.json", "w+") as output_json:
             json.dump(all_docs, output_json)
 
-
-"""
-
-
-Еще заметила, что в списке AnnotatedPredicates первого документа (id 161013) для 9 предложения предикат повторяется, а должен появиться только один раз, так как здесь не учитывается конкретное количество примеров этого предиката в предложении, а только факт его наличия.
-
-"""
