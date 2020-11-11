@@ -1,6 +1,7 @@
 import json
 import spacy
 import os
+from pathlib import Path
 
 
 nlp = spacy.load("en_core_web_sm")
@@ -8,8 +9,12 @@ nlp = spacy.load("en_core_web_sm")
 
 class WikiDumpProcesser:
 
-    def __init__(self, root_dir):
+    def __init__(self, root_dir, path_to_output):
         self.root_dir = root_dir
+        self.path_to_output = path_to_output
+
+        # create output directory if there isn't any
+        Path(self.path_to_output).mkdir(parents=True, exist_ok=True)
 
     def abstracts_to_json_format(self, annotation, wiki_input):
         """ Prepare annotated abstracts_test to save them in .json format"""
@@ -62,6 +67,7 @@ class WikiDumpProcesser:
                 if "wiki" in path_to_input_file:
                     preprocessed_wiki_dump += self.process_wikidump_file(path_to_input_file)
                     print("File {} is preprocessed".format(path_to_input_file))
-        with open(self.root_dir + "/spacy_annotated_pages.json", "w+", encoding="UTF-8") as o_json:
+
+        with open(self.path_to_output + "/spacy_annotated_pages.json", "w+", encoding="UTF-8") as o_json:
             json.dump(preprocessed_wiki_dump, o_json)
         print("================================================")

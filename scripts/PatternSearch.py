@@ -3,15 +3,15 @@ import re
 import json
 import itertools
 
-
 # todo: ? maybe add additional regex for datum
 
 
 class PatternSearch:
 
-    def __init__(self, path_to_data, path_to_patterns):
+    def __init__(self, path_to_data, path_to_patterns, path_to_output_files):
         self.path_to_data = path_to_data
         self.path_to_patterns = path_to_patterns
+        self.path_to_output_files = path_to_output_files
 
         self.relation_to_patterns = {}
         self.patterns_to_ids = {}
@@ -66,7 +66,7 @@ class PatternSearch:
         self.ids_to_patterns = {patt_id: pattern for pattern, patt_id in self.patterns_to_ids.items()}
 
         # save patterns_to_ids to json file
-        with open(self.path_to_data + "/patterns.json", "w+") as rel_p:
+        with open(self.path_to_data + "/patterns_ids.json", "w+") as rel_p:
             json.dump(self.ids_to_patterns, rel_p)
 
     def preprocess_patterns(self, pattern):
@@ -179,6 +179,6 @@ class PatternSearch:
             all_docs.append(self.prepare_output_dygie(curr_args_output, doc))
 
         print("Total match:", self.matches_counter)
-        with open(self.path_to_data + "/annotated_data_with_matched_info.json", "w+") as output_json:
+        with open(self.path_to_output_files + "/annotated_data_with_matched_info.json", "w+") as output_json:
             json.dump(all_docs, output_json)
 
