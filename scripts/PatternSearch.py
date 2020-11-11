@@ -90,8 +90,8 @@ class PatternSearch:
 
     def get_abstract_for_comparing(self, doc, ent1, ent2, curr_sent, arg1, arg2):
         """ Substitute entiies with "$ARG1" and "$ARG2" and do some refactoring needed for correct search """
-        to_compare = doc["text"][curr_sent["start"]:ent1["start"]] + arg1 \
-                     + doc["text"][ent1["end"]:ent2["start"]] + arg2 + \
+        to_compare = doc["text"][curr_sent["start"]:ent1["start"]] + arg1 + \
+                     doc["text"][ent1["end"]:ent2["start"]] + arg2 + \
                      doc["text"][ent2["end"]:curr_sent["end"]]
         to_compare = re.sub(u'\\(', u"( ", to_compare)
         to_compare = re.sub(u'\\)', u" )", to_compare)
