@@ -1,12 +1,14 @@
 RELATION_TO_TYPES = {'org:subsidiaries': ('ORG', 'ORG'),
                      'org:founded_by': ('ORG', 'PERSON'),
                      'per:employee_or_member_of': ('PERSON', 'ORG'),
+                     'per:member_of': ('PERSON', 'ORG'),  # EMPLOYEE_OR_MEMBER_OF
+                     'per:employee_of': ('PERSON', 'ORG'),  # EMPLOYEE_OR_MEMBER_OF
                      'org:top_members_employees': ('ORG', 'PERSON'),
                      'org:founded': ('ORG', 'DATE'),
                      'org:country_of_headquarters': ('ORG', 'GPE'),
                      'org:city_of_headquarters': ('ORG', 'GPE'),
                      'per:schools_attended': ('PERSON', 'ORG'),
-                     # 'per:nationality': ('PERSON','NORP'),    # todo: create patterns
+                     'per:nationality': ('PERSON', 'NORP'),
                      'per:statesorprovinces_of_residence': ('PERSON', 'GPE'),
                      'per:countries_of_residence': ('PERSON', 'GPE'),
                      'per:stateorprovince_of_birth': ('PERSON', 'GPE'),
@@ -18,19 +20,18 @@ RELATION_TO_TYPES = {'org:subsidiaries': ('ORG', 'ORG'),
                      'per:children': ('PERSON', 'PERSON'),
                      'per:political_religious_affiliation': ('PERSON', 'ORG')}
 
-# todo: should we unite e.g. 'org:country_of_headquarters' and 'org:city_of_headquarters'?
-# todo: how should we check that dygie has taken relation ids from KnowledgeNet?
 
 PROPERTY_NAMES = {'org:subsidiaries': '1',
                   'org:founded_by': '2',
-                  'per:employee_or_member_of': '3',
+                  'per:employee_or_member_of': '3',     # EMPLOYEE_OR_MEMBER_OF
+                  'per:member_of': '3',         # EMPLOYEE_OR_MEMBER_OF
+                  'per:employee_of': '3',         # EMPLOYEE_OR_MEMBER_OF
                   'org:top_members_employees': '4',
                   'org:founded': '5',
                   'org:country_of_headquarters': '6',  # 'HEADQUARTERS',
                   'org:city_of_headquarters': '6',       # 'HEADQUARTERS',
                   'per:schools_attended': '9',      # 'EDUCATED_AT',
-                  # 'per:nationality': '10',
-                  # '10': 'NATIONALITY',
+                  'per:nationality': '10',          # 'NATIONALITY',
                   'per:statesorprovinces_of_residence': '11',       # 'PLACE_OF_RESIDENCE',
                   'per:countries_of_residence': '11',        # 'PLACE_OF_RESIDENCE',
                   'per:stateorprovince_of_birth': '12',  # 'PLACE_OF_BIRTH'
@@ -43,6 +44,4 @@ PROPERTY_NAMES = {'org:subsidiaries': '1',
                   'per:political_religious_affiliation': '45'}       # 'POLITICAL_AFFILIATION'
 
 
-# todo - to clarify: 'Ludwig Purtscheller (October 6, 1849 – March 3, 1900) was an Austrian mountaineer and teacher.'
-#  : spacy parse it as 'Ludwig Purtscheller $ARG1 \\( $ARG2\\)  was an Austrian mountaineer and teacher.', what doesn't
-#  fall into patterns
+

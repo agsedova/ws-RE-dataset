@@ -624,7 +624,7 @@ org:political_religious_affiliation $ARG1 and other $ARG2 organizations
 org:political_religious_affiliation $ARG1 and other $ARG2 groups
 org:political_religious_affiliation $ARG1 is an affiliate of $ARG2
 
-# todo: per:political_religious_affiliation
+# newly created: per:political_religious_affiliation
 per:political_religious_affiliation $ARG1 , representing the $ARG2
 per:political_religious_affiliation $ARG1 , representing the * $ARG2
 per:political_religious_affiliation $ARG1 chaired the $ARG2
@@ -633,7 +633,12 @@ per:political_religious_affiliation $ARG1 joined the $ARG2
 per:political_religious_affiliation $ARG1 is the $ARG2 member
 per:political_religious_affiliation $ARG1 was the $ARG2 member
 
-# todo: per: nationality
+# newly created: per: nationality
+# e.g. "British writer William Shakespeare", "William Shakespeare was British", "William Shakespeare was a person of British nationality"
+per:nationality $ARG2 * $ARG1
+per:nationality $ARG1 is $ARG2
+per:nationality $ARG1 was $ARG2
+per:nationality $ARG1 * person of $ARG2 nationality
 
 # TODO: Uppercae/lowercase would matter most here.
 org:top_members_employees $ARG2 leads $ARG1

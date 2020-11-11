@@ -4,60 +4,77 @@ import json
 import itertools
 
 
+# todo: ? maybe add additional regex for datum
+# todo: add articles as option to all ARGs
+
+
 class PatternSearch:
+
     def __init__(self, path_to_data, path_to_patterns):
         self.path_to_data = path_to_data
         self.path_to_patterns = path_to_patterns
+        self.pattern_counter = 0
+
+        self.relation_to_patterns = {}
+        self.patterns_to_ids = {}
+        self.ids_to_patterns = {}
+        self.relation_to_types = {}
 
     def read_data(self):
         with open(self.path_to_data + "/spacy_annotated_pages.json") as input_file:
             data = json.load(input_file)
         return data
 
-    def get_relation_types_dict(self, relation_to_ids):
-        relation_to_types = {}
-        for relation in relation_to_ids.keys():
-            relation_to_types[relation_to_ids[relation]] = RELATION_TO_TYPES[relation]
-        return relation_to_types
+    def get_relation_types_dict(self):
+        for relation in PROPERTY_NAMES.keys():
+            self.relation_to_types[PROPERTY_NAMES[relation]] = RELATION_TO_TYPES[relation]
 
-    def get_patterns(self):
+    def get_pattern_id(self, pattern):
+        """ Returns a pattern id from patterns_to_ids dict or creates a new pattern : pattern_id pair """
+        if pattern not in self.patterns_to_ids.keys():
+            pattern_id = self.pattern_counter
+            self.patterns_to_ids[pattern] = pattern_id
+            self.pattern_counter += 1
+        else:
+            pattern_id = self.patterns_to_ids[pattern]
+        return pattern_id
+
+    def add_pattern(self, relation_id, curr_pattern_id):
+        if relation_id in self.relation_to_patterns.keys():
+            self.relation_to_patterns[relation_id].update([curr_pattern_id])
+        else:
+            self.relation_to_patterns[relation_id] = set([curr_pattern_id])
+
+    def collect_patterns(self):
         """ Read patterns from file and save them to a dictionary {relation : [patterns]}"""
         # {relation : [patterns]}, {pattern : pattern_id}
-        relation_to_patterns, patterns_to_ids = {}, {}
-        pattern_id, relation_id = 0, 0
-        with open(self.path_to_patterns, encoding="UTF-8") as input:
-            for line in input.readlines():
-                if not line.startswith("#") and line != "\n":
-                    relation, pattern = line.replace("\n", "").split(" ", 1)
-                    # we take only relations that dygie uses
-                    if relation in RELATION_TO_TYPES.keys():
-                        # assign an id to pattern and add to patterns_to_ids dict
-                        if pattern not in patterns_to_ids.keys():
-                            patterns_to_ids[pattern] = pattern_id
-                            pattern_id += 1
-                        # assign an id to relation and add to relation_to_ids dict
-                        # if relation not in relation_to_ids.keys():
-                        #     relation_to_ids[relation] = relation_id
-                        #     relation_id += 1
-                        # add relation - pattern pair to relation_to_patterns dict
-                        if PROPERTY_NAMES[relation] in relation_to_patterns.keys():
-                            relation_to_patterns[PROPERTY_NAMES[relation]].append(pattern)
-                        else:
-                            relation_to_patterns[PROPERTY_NAMES[relation]] = [pattern]
-        relation_to_types = self.get_relation_types_dict(PROPERTY_NAMES)
-        # save relation_to_ids to json file
-        # with open(self.path_to_data + "/relations.json", "w+") as rel_f:
-        #     json.dump(relation_to_ids, rel_f)
+        with open(self.path_to_patterns, encoding="UTF-8") as inp:
+            for line in inp.readlines():
+                if line.startswith("#") or line == "\n":            # take only meaningful strings
+                    continue
+                relation, pattern = line.replace("\n", "").split(" ", 1)
+                if relation not in RELATION_TO_TYPES.keys():              # we select only relations that dygie uses
+                    continue
+                relation_id = PROPERTY_NAMES[relation]
+                curr_pattern_id = self.get_pattern_id(pattern)
+                # add pattern to corresponding relation in relation_to_patterns dict if it is not there yet
+                self.add_pattern(relation_id, curr_pattern_id)
+
+        # patterns_to_ids = dict((patt_id, patt) for patt_id, patt in enumerate(set(patterns))) # {pattern : pattern_id}
+        self.get_relation_types_dict()        # {relation : arg_types}
+        self.ids_to_patterns = {patt_id: pattern for pattern, patt_id in self.patterns_to_ids.items()}
+
         # save patterns_to_ids to json file
         with open(self.path_to_data + "/patterns.json", "w+") as rel_p:
-            json.dump(patterns_to_ids, rel_p)
-        return relation_to_patterns, patterns_to_ids, relation_to_types
+            json.dump(self.ids_to_patterns, rel_p)
 
     def preprocess_patterns(self, pattern):
         """ Turn raw patterns into good-looking regexes"""
         pattern = re.escape(pattern)
         prepr_pattern = re.sub("\\\\\\*", "[^ ]+([^ ]+){0,3}", pattern)  # * --> match 1 to 4 tokens
         # prepr_pattern = re.sub("\\$ARG", "\\\\$ARG", prepr_pattern)  # escape $ in $ARG1 and $ARG2
+        # add optional articles
+        # prepr_pattern = re.sub("\\\\\\$ARG", "(A)?(a)?(The)?(the)? \\$ARG", prepr_pattern)
         return prepr_pattern
 
     def get_types_to_entities(self, doc):
@@ -72,6 +89,7 @@ class PatternSearch:
 
     def get_abstract_for_comparing(self, doc, ent1, ent2):
         """ Substitute entiies with "$ARG1" and "$ARG2" and do some refactoring needed for correct search """
+        # todo: to_compare = doc["text"][XXXXXXX:ent1["start"]]
         to_compare = doc["text"][:ent1["start"]] + "$ARG1" + doc["text"][ent1["end"]:ent2["start"]] + "$ARG2" + \
                      doc["text"][ent2["end"]:]
         to_compare = re.sub(u'\\(', u"( ", to_compare)
@@ -114,35 +132,39 @@ class PatternSearch:
         return doc_entry
 
     def search_patterns(self):
+        print("Pattern searching is starting.....")
         data = self.read_data()
-        relation_to_patterns, patterns_to_ids, relation_to_types = self.get_patterns()
+
+        self.collect_patterns()
+
         all_docs = []
         i = 0
         for doc in data:
             types_to_entities = self.get_types_to_entities(doc)
             curr_args_output = {}
-            for rel, patterns in relation_to_patterns.items():
+            for rel, patterns in self.relation_to_patterns.items():
                 curr_args_output[rel] = []
-                types = relation_to_types[rel]
-                if types[0] in types_to_entities.keys() and types[1] in types_to_entities.keys():
-                    for ent1, ent2 in itertools.product(types_to_entities[types[0]], types_to_entities[types[1]]):
-                        if ent1["start"] < ent2["start"]:
-                            # todo more checks about argument order!
-                            to_compare = self.get_abstract_for_comparing(doc, ent1, ent2)
-                            for raw_pattern in patterns:
-                                # convert pattern to regex
-                                pattern = self.preprocess_patterns(raw_pattern)
-                                match = re.search(pattern, to_compare)
-                                if match:
-                                    curr_args_output[rel].append([ent1["start"], ent1["end"], ent2["start"],
-                                                                  ent2["end"], patterns_to_ids[raw_pattern]])
-                                    print("New match! Relation:{}; entity1: {}; entity2: {}; pattern {}; "
-                                          "Sentence: {}".format(rel, doc["text"][ent1["start"]:ent1["end"]],
-                                                    doc["text"][ent2["start"]:ent2["end"]], pattern, doc["text"]))
-                                    i += 1
-                        elif ent1["start"] > ent2["start"]:
-                            # todo more checks about argument order!
-                            pass
+                types = self.relation_to_types[rel]
+                if not(types[0] in types_to_entities.keys() and types[1] in types_to_entities.keys()):
+                    continue
+                for ent1, ent2 in itertools.product(types_to_entities[types[0]], types_to_entities[types[1]]):
+                    if ent1["start"] < ent2["start"]:
+                        to_compare = self.get_abstract_for_comparing(doc, ent1, ent2)
+                        for pattern_id in patterns:
+                            # convert pattern to regex
+                            pattern = self.preprocess_patterns(self.ids_to_patterns[pattern_id])
+                            match = re.search(pattern, to_compare)
+                            if match:
+                                curr_args_output[rel].append([ent1["start"], ent1["end"], ent2["start"],
+                                                              ent2["end"], pattern_id])
+                                print("New match! Relation:{}; entity1: {}; entity2: {}; pattern {}; "
+                                      "Sentence: {}".format(rel, doc["text"][ent1["start"]:ent1["end"]],
+                                                            doc["text"][ent2["start"]:ent2["end"]], pattern,
+                                                            doc["text"]))
+                                i += 1
+                    elif ent1["start"] > ent2["start"]:
+                        # todo more checks about argument order!
+                        pass
             all_docs.append(self.prepare_output_dygie(curr_args_output, doc))
         print("Total match:", i)
         with open(self.path_to_data + "/annotated_data_with_matched_info.json", "w+") as output_json:
