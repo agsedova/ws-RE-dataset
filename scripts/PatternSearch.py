@@ -5,7 +5,6 @@ import itertools
 
 
 # todo: ? maybe add additional regex for datum
-# todo: add articles as option to all ARGs
 
 
 class PatternSearch:
@@ -13,12 +12,14 @@ class PatternSearch:
     def __init__(self, path_to_data, path_to_patterns):
         self.path_to_data = path_to_data
         self.path_to_patterns = path_to_patterns
-        self.pattern_counter = 0
 
         self.relation_to_patterns = {}
         self.patterns_to_ids = {}
         self.ids_to_patterns = {}
         self.relation_to_types = {}
+
+        self.pattern_counter = 0
+        self.matches_counter = 0
 
     def read_data(self):
         with open(self.path_to_data + "/spacy_annotated_pages.json") as input_file:
@@ -87,11 +88,11 @@ class PatternSearch:
                 types_to_entities[curr_label] = [ent]
         return types_to_entities
 
-    def get_abstract_for_comparing(self, doc, ent1, ent2):
+    def get_abstract_for_comparing(self, doc, ent1, ent2, curr_sent, arg1, arg2):
         """ Substitute entiies with "$ARG1" and "$ARG2" and do some refactoring needed for correct search """
-        # todo: to_compare = doc["text"][XXXXXXX:ent1["start"]]
-        to_compare = doc["text"][:ent1["start"]] + "$ARG1" + doc["text"][ent1["end"]:ent2["start"]] + "$ARG2" + \
-                     doc["text"][ent2["end"]:]
+        to_compare = doc["text"][curr_sent["start"]:ent1["start"]] + arg1 \
+                     + doc["text"][ent1["end"]:ent2["start"]] + arg2 + \
+                     doc["text"][ent2["end"]:curr_sent["end"]]
         to_compare = re.sub(u'\\(', u"( ", to_compare)
         to_compare = re.sub(u'\\)', u" )", to_compare)
         to_compare = re.sub(u'\\,', ' ,', to_compare)
@@ -131,14 +132,27 @@ class PatternSearch:
                      "tokensToOriginalIndices": doc_idx, "annotatedPredicates": doc_rel_ann, "patterns": doc_pattern}
         return doc_entry
 
+    def search_by_pattern(self, curr_args_output, rel, patterns, to_compare, doc, ent1, ent2):
+        """
+        Look up each pattern frpm the list in string and, if there is a match, add corresponding into to
+        curr_args_output dict
+        """
+        for pattern_id in patterns:
+            pattern = self.preprocess_patterns(self.ids_to_patterns[pattern_id])        # convert pattern to regex
+            match = re.search(pattern, to_compare)
+            if match:
+                curr_args_output[rel].append([ent1["start"], ent1["end"], ent2["start"], ent2["end"], pattern_id])
+                print("New match! Relation:{}; entity1: {}; entity2: {}; pattern {}; "
+                      "Sentence: {}".format(rel, doc["text"][ent1["start"]:ent1["end"]],
+                                            doc["text"][ent2["start"]:ent2["end"]], pattern, doc["text"]))
+                self.matches_counter += 1
+        return
+
     def search_patterns(self):
         print("Pattern searching is starting.....")
-        data = self.read_data()
-
-        self.collect_patterns()
-
+        data = self.read_data()     # read file with sentences annotated by spacy
+        self.collect_patterns()     # read patterns from the file
         all_docs = []
-        i = 0
         for doc in data:
             types_to_entities = self.get_types_to_entities(doc)
             curr_args_output = {}
@@ -148,25 +162,23 @@ class PatternSearch:
                 if not(types[0] in types_to_entities.keys() and types[1] in types_to_entities.keys()):
                     continue
                 for ent1, ent2 in itertools.product(types_to_entities[types[0]], types_to_entities[types[1]]):
-                    if ent1["start"] < ent2["start"]:
-                        to_compare = self.get_abstract_for_comparing(doc, ent1, ent2)
-                        for pattern_id in patterns:
-                            # convert pattern to regex
-                            pattern = self.preprocess_patterns(self.ids_to_patterns[pattern_id])
-                            match = re.search(pattern, to_compare)
-                            if match:
-                                curr_args_output[rel].append([ent1["start"], ent1["end"], ent2["start"],
-                                                              ent2["end"], pattern_id])
-                                print("New match! Relation:{}; entity1: {}; entity2: {}; pattern {}; "
-                                      "Sentence: {}".format(rel, doc["text"][ent1["start"]:ent1["end"]],
-                                                            doc["text"][ent2["start"]:ent2["end"]], pattern,
-                                                            doc["text"]))
-                                i += 1
-                    elif ent1["start"] > ent2["start"]:
-                        # todo more checks about argument order!
-                        pass
+                    # make sure that entities are in one sentence
+                    for sent in doc["sents"]:
+                        if not (sent["start"] <= min(ent1["start"], ent2["start"]) <= sent["end"] and \
+                                sent["start"] <= max(ent1["end"], ent2["end"]) <= sent["end"]):
+                            continue
+                        if ent1["start"] < ent2["start"] and ent1["label"] == types[0]:
+                            # if the ent1 comes before ent2 and that is what pattern types demand
+                            to_compare = self.get_abstract_for_comparing(doc, ent1, ent2, sent, "$ARG1", "$ARG2")
+                            self.search_by_pattern(curr_args_output, rel, patterns, to_compare, doc, ent1, ent2)
+                        elif ent1["start"] > ent2["start"] and ent2["label"] == types[0]:
+                            # if the ent2 comes before ent1 and that is what pattern types demand
+                            to_compare = self.get_abstract_for_comparing(doc, ent2, ent1, sent, "$ARG2", "$ARG1")
+                            self.search_by_pattern(curr_args_output, rel, patterns, to_compare, doc, ent1, ent2)
+
             all_docs.append(self.prepare_output_dygie(curr_args_output, doc))
-        print("Total match:", i)
+
+        print("Total match:", self.matches_counter)
         with open(self.path_to_data + "/annotated_data_with_matched_info.json", "w+") as output_json:
             json.dump(all_docs, output_json)
 
