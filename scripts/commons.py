@@ -43,5 +43,8 @@ PROPERTY_NAMES = {'org:subsidiaries': '1',
                   'per:children': '34',      # 'CHILD_OF'
                   'per:political_religious_affiliation': '45'}       # 'POLITICAL_AFFILIATION'
 
-
+DYGIE_RELATIONS = {'1':  "SUBSIDIARY_OF", '2':  "FOUNDED_BY", '3':  "EMPLOYEE_OR_MEMBER_OF", '4':  "CEO",
+                   '5':  "DATE_FOUNDED", '6':  "HEADQUARTERS", '9':  "EDUCATED_AT", '10': "NATIONALITY",
+                   '11': "PLACE_OF_RESIDENCE", '12': "PLACE_OF_BIRTH", '14': "DATE_OF_DEATH", '15':"DATE_OF_BIRTH",
+                   '25': "SPOUSE", '34': "CHILD_OF", '45': "POLITICAL_AFFILIATION"}
 

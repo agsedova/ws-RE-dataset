@@ -16,10 +16,11 @@ EXPECTED_TYPES_PER_PROPERTY = {
   '45': ('PERSON','ORG'), #POLITICAL_AFFILIATION
 }
 
-
+"""
 Labels used:
 - ORG
 - PERSON
 - DATE
 - GPE
 - NORP
+"""

@@ -42,7 +42,9 @@ per:date_of_birth $ARG1 ( born $ARG2 )
 per:date_of_birth $ARG1 ( born $ARG2 in
 per:date_of_birth $ARG1 ( $ARG2 -
 per:date_of_birth $ARG1 was born $ARG2
+per:date_of_birth $ARG1 was born in $ARG2
 per:date_of_birth $ARG1 , born $ARG2 in
+per:date_of_birth $ARG1 , born in $ARG2
 
 per:age $ARG1 died at the age of $ARG2
 per:age $ARG1 , who turned $ARG2

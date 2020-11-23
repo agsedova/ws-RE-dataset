@@ -59,15 +59,17 @@ class WikiDumpProcesser:
         return all_pages
 
     def process_wiki_pages(self):
-        preprocessed_wiki_dump = []
         for dir, _, files in os.walk(self.root_dir):
+            current_out_dir = os.path.join(self.path_to_output, dir[-2:])
+            Path(current_out_dir).mkdir(parents=True, exist_ok=True)
             for file in files:
                 path_to_input_file = os.path.join(dir, file)
                 print("Processing of file", path_to_input_file)
-                if "wiki" in path_to_input_file:
-                    preprocessed_wiki_dump += self.process_wikidump_file(path_to_input_file)
-                    print("File {} is preprocessed".format(path_to_input_file))
+                current_out_file = os.path.join(current_out_dir, file + "_spacy.json")
+                with open(current_out_file, "w", encoding="UTF-8") as o_json:
+                    json.dump(self.process_wikidump_file(path_to_input_file), o_json)
+                print("File {} is preprocessed".format(path_to_input_file))
 
-        with open(self.path_to_output + "/spacy_annotated_pages.json", "w+", encoding="UTF-8") as o_json:
-            json.dump(preprocessed_wiki_dump, o_json)
+        # with open(self.path_to_output + "/spacy_annotated_pages.json", "w+", encoding="UTF-8") as o_json:
+        #     json.dump(preprocessed_wiki_dump, o_json)
         print("================================================")
