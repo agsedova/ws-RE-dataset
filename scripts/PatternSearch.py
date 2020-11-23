@@ -84,6 +84,10 @@ class PatternSearch:
         # prepr_pattern = re.sub("\\$ARG", "\\\\$ARG", prepr_pattern)  # escape $ in $ARG1 and $ARG2
         # add optional articles
         # prepr_pattern = re.sub("\\\\\\$ARG", "(A)?(a)?(The)?(the)? \\$ARG", prepr_pattern)
+        # if there is reflexive relation
+        if "$ARG0" in prepr_pattern:
+            prepr_pattern = re.sub(u"\\$ARG0", "$ARG1", prepr_pattern, 1)
+            prepr_pattern = re.sub(u"\\$ARG0", "$ARG2", prepr_pattern)
         return prepr_pattern
 
     def get_types_to_entities(self, doc):
@@ -210,7 +214,7 @@ class PatternSearch:
         self.save_loc_stat_to_csv(output_path + "_stat.csv", stat_rel)
 
     def start_somewhat_function(self):
-        sys.stdout = open('scripts/retrieved', 'w')
+        sys.stdout = open('data/output/console', 'w')
         self.collect_patterns()  # read patterns from the file
         for dir, _, files in os.walk(self.path_to_data):
             current_out_dir = os.path.join(self.path_to_output, "retrieved", dir[-2:])
