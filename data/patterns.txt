@@ -457,7 +457,7 @@ per:children $ARG2 is the youngest child of $ARG1
 per:children $ARG1 's daughter $ARG2
 per:children $ARG1 ' daughter $ARG2
 per:children $ARG2 is the daughter of $ARG1
-per:children $ARG1 has a doughter named $ARG2
+per:children $ARG1 has a daughter named $ARG2
 per:children $ARG1 's son $ARG2
 per:children $ARG1 ' son $ARG2
 per:children $ARG2 is the son of $ARG1
@@ -773,6 +773,7 @@ org:member_of $ARG1 joined $ARG2
 org:member_of $ARG1 and other members of $ARG2
 
 org:subsidiaries $ARG2 , a subsidiary of $ARG1
+org:subsidiaries $ARG1 ( a subsidiary of $ARG2 )
 org:subsidiaries $ARG2 is a subsidiary of $ARG1
 org:subsidiaries $ARG2 as a subsidiary of $ARG1
 org:subsidiaries $ARG2 operates as a subsidiary of $ARG1

@@ -93,6 +93,11 @@ class PatternSearch:
     def get_types_to_entities(self, doc):
         types_to_entities = {}  # type: [ent_list]
         for ent in doc["ents"]:
+            for token in doc["tokens"]:
+                if token["start"] == ent["start"]:
+                    ent["start_id"] = int(token["id"])
+                if token["end"] == ent["end"]:
+                    ent["end_id"] = int(token["id"])
             curr_label = ent["label"]
             if ent["label"] in types_to_entities.keys():
                 types_to_entities[curr_label].append(ent)
@@ -132,9 +137,10 @@ class PatternSearch:
             pattern = self.preprocess_patterns(self.ids_to_patterns[pattern_id])  # convert pattern to regex
             match = re.search(pattern, to_compare)
             if match:
-                curr_args_output[rel].append([min(ent1["start"], ent2["start"]), min(ent1["end"], ent2["end"]),
-                                              max(ent1["start"], ent2["start"]), max(ent1["end"], ent2["end"]),
-                                              pattern_id])
+                # curr_args_output[rel].append([min(ent1["start"], ent2["start"]), min(ent1["end"], ent2["end"]),
+                #                               max(ent1["start"], ent2["start"]), max(ent1["end"], ent2["end"]),
+                #                               pattern_id])
+                curr_args_output[rel].append([ent1, ent2, pattern_id])
                 # print_match_info(self, sent, rel, pattern, ent1, ent2)
 
                 self.stat_rel_matches[rel] += 1  # increment whole statistics
@@ -178,6 +184,10 @@ class PatternSearch:
         ent["start_sent"] = ent["start"] - sent["start"]
         ent["end_sent"] = ent["end"] - sent["start"]
         return ent
+    #
+    # def get_ent_id(self, doc, ent):
+    #     ent[""] = doc.ents.
+    #     return
 
     def search_patterns(self, data, output_path):
         # data = self.read_data()  # read file with sentences annotated by spacy
@@ -200,18 +210,22 @@ class PatternSearch:
                         # calculate entities indices according to the sentence
                         ent1 = self.calculate_ent_indices(ent1, sent)
                         ent2 = self.calculate_ent_indices(ent2, sent)
+
                         # extract the sentence we are working now with
                         sent_text = doc["text"][sent["start"]:sent["end"]]
                         curr_args_output = self.perform_search_in_sentence(sent_text, ent1, ent2, types, rel, patterns,
                                                                            curr_args_output, stat_rel)
             if any(curr_args_output.values()):  # check if there were any matches in doc
-                all_docs.append(self.prepare_output_dygie(curr_args_output, doc))
+                curr_args_output_dygie = self.prepare_output_dygie(curr_args_output, doc)
+                all_docs.append(curr_args_output_dygie)
 
         print("Total match:", self.matches_counter)
 
         with open(output_path + "_dygie.json", "w+") as output_json:
             json.dump(all_docs, output_json)
         self.save_loc_stat_to_csv(output_path + "_stat.csv", stat_rel)
+
+        return curr_args_output_dygie      # for testing purposes
 
     def start_somewhat_function(self):
         sys.stdout = open('data/output/console', 'w')
@@ -224,7 +238,7 @@ class PatternSearch:
                 current_out_path = os.path.join(current_out_dir, file[:-11])
                 self.matches_counter = 0
                 data = self.read_data(os.path.join(dir, file))  # load data
-                self.search_patterns(data, current_out_path)  # launch pattern search
+                _ = self.search_patterns(data, current_out_path)  # launch pattern search
                 print(self.stat_rel_matches)
         # save overall statistics
         self.save_glob_stat_to_csv(os.path.join(self.path_to_output, "retrieved", "_stat.csv"))
@@ -243,10 +257,14 @@ class PatternSearch:
                     sent_ent.append(doc["text"][token["start"]:token["end"]])
                     sent_idx.append([token["start"], token["end"]])
             for match in matches:
-                if match[0] >= int(sent["start"]) and match[3] <= int(sent["end"]):
-                    sent_rel.append(match[:4] + [str(match[5])])
-                    sent_rel_ann.append(match[5])
-                    sent_pattern.append(match)
+                ent1 = match[0]
+                ent2 = match[1]
+                if min(ent1["start"], ent2["start"]) >= int(sent["start"]) and max(ent1["end"], ent2["end"]) <= int(sent["end"]):
+                    # if match[0] >= int(sent["start"]) and match[3] <= int(sent["end"]):
+                    # sent_rel.append(match[:4] + [str(match[5])])
+                    sent_rel.append(sorted([ent1["start_id"], ent2["start_id"], ent1["end_id"], ent2["end_id"]]) + [str(match[3])])
+                    sent_rel_ann.append(match[3])
+                    sent_pattern.append(sorted([ent1["start_id"], ent2["start_id"], ent1["end_id"], ent2["end_id"]]) + [match[2]] + [match[3]])
             doc_idx.append(sent_idx)
             doc_ent.append(sent_ent)
             doc_rel.append(sent_rel)

@@ -31,7 +31,7 @@ class WikiDumpProcesser:
         # return page[:self.find_nth(page, "\n\n", 2) + 2].encode('utf-8').decode('utf-8')
         return page[:self.find_nth(page, "\n\n", 1)] + ". " + page[self.find_nth(page, "\n\n", 1) + 1
                                                                    :self.find_nth(page, "\n\n", 2)]\
-            .replace(u'\xa0', u' ').replace(u'\u00ad', u'-').replace(u'\u2013', u'-').replace(u'\n\n', u'')
+            .replace(u'\xa0', u' ').replace(u'\u00ad', u'-').replace(u'\u2013', u'-').replace(u'\n', u'')
 
     def find_nth(self, string, substring, n):
         """ Find index of the nth element in the string"""
