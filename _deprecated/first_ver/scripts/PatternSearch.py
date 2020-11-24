@@ -8,8 +8,6 @@ from first_ver.scripts.commons import TYPES_PER_RELATION
 es = Elasticsearch(host="localhost", port=9200)
 es = Elasticsearch()
 
-# todo: filter out relations that do not have correpondings in diffbot
-
 
 class PatternSearch:
 

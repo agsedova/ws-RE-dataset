@@ -5,9 +5,10 @@ import re
 from pathlib import Path
 from scripts.commons import RELATION_TO_TYPES, PROPERTY_NAMES, DYGIE_RELATIONS
 import sys
+import argparse
 
 
-# todo: ? maybe add additional regex for datum
+# todo: if the same pattern is used for different relations - how such cases are handled?
 
 
 class PatternSearch:
@@ -21,6 +22,7 @@ class PatternSearch:
         self.patterns_to_ids = {}
         self.relation_to_patterns = {}
         self.relation_to_types = {}
+        self.ids_to_relations = DYGIE_RELATIONS
         self.stat_rel_matches = {}
 
         self.get_relation_types_dict()
@@ -78,14 +80,10 @@ class PatternSearch:
 
     def preprocess_patterns(self, pattern):
         """ Turn raw patterns into good-looking regexes"""
-        # todo: add optional articles - check if there isn't any yet!
         pattern = re.escape(pattern)
         prepr_pattern = re.sub("\\\\ \\\\\\*", "([ ][^ ]+){0,3}", pattern)  # * --> match 1 to 4 tokens
-        # prepr_pattern = re.sub("\\$ARG", "\\\\$ARG", prepr_pattern)  # escape $ in $ARG1 and $ARG2
-        # add optional articles
-        # prepr_pattern = re.sub("\\\\\\$ARG", "(A)?(a)?(The)?(the)? \\$ARG", prepr_pattern)
-        # if there is reflexive relation
-        if "$ARG0" in prepr_pattern:
+        prepr_pattern = re.sub("\\\\\\$ARG", "(A )?(a )?(The )?(the )?\\$ARG", prepr_pattern)  # add optional articles
+        if "$ARG0" in prepr_pattern:        # if there is reflexive relation
             prepr_pattern = re.sub(u"\\$ARG0", "$ARG1", prepr_pattern, 1)
             prepr_pattern = re.sub(u"\\$ARG0", "$ARG2", prepr_pattern)
         return prepr_pattern
@@ -137,9 +135,6 @@ class PatternSearch:
             pattern = self.preprocess_patterns(self.ids_to_patterns[pattern_id])  # convert pattern to regex
             match = re.search(pattern, to_compare)
             if match:
-                # curr_args_output[rel].append([min(ent1["start"], ent2["start"]), min(ent1["end"], ent2["end"]),
-                #                               max(ent1["start"], ent2["start"]), max(ent1["end"], ent2["end"]),
-                #                               pattern_id])
                 curr_args_output[rel].append([ent1, ent2, pattern_id])
                 # print_match_info(self, sent, rel, pattern, ent1, ent2)
 
@@ -151,9 +146,6 @@ class PatternSearch:
 
     def perform_search_in_sentence(self, sent, ent1, ent2, types, rel, patterns, curr_args_output, stat_rel):
         """ Look for pattern matches in a sentence """
-        # if not (sent["start"] <= min(ent1["start"], ent2["start"]) <= sent["end"] and
-        #         sent["start"] <= max(ent1["end"], ent2["end"]) <= sent["end"]):
-        #     return
         if ent1["start_sent"] < ent2["start_sent"] and ent1["label"] == types[0]:
             # usual case
             # $ARG1 studied at $ARG2, types = ("PERSON", "ORG")
@@ -168,6 +160,7 @@ class PatternSearch:
         elif ent1["start_sent"] > ent2["start_sent"] and ent1["label"] == types[0]:
             # $ARG2 alumnus $ARG1, types = ("PERSON", "ORG"), ent1 = Bill ("PERSON"), ent2 = Stanford ("ORG")
             # e.g. "Stanford alumnus Bill"
+            # todo: check that it does not intersect with the previous
             to_compare = self.get_abstract_for_comparing(sent, ent2, ent1, "$ARG2", "$ARG1")
             self.search_by_pattern(curr_args_output, rel, patterns, to_compare, ent1, ent2, stat_rel)
         elif ent1["start_sent"] > ent2["start_sent"] and ent1["label"] == types[1]:
@@ -177,17 +170,11 @@ class PatternSearch:
             self.search_by_pattern(curr_args_output, rel, patterns, to_compare, ent1, ent2, stat_rel)
         return curr_args_output
 
-    # todo: shouldn't be return curr_args_output?
-
     def calculate_ent_indices(self, ent, sent):
         """ Calculate new entity indices in a sentence """
         ent["start_sent"] = ent["start"] - sent["start"]
         ent["end_sent"] = ent["end"] - sent["start"]
         return ent
-    #
-    # def get_ent_id(self, doc, ent):
-    #     ent[""] = doc.ents.
-    #     return
 
     def search_patterns(self, data, output_path):
         # data = self.read_data()  # read file with sentences annotated by spacy
@@ -225,10 +212,10 @@ class PatternSearch:
             json.dump(all_docs, output_json)
         self.save_loc_stat_to_csv(output_path + "_stat.csv", stat_rel)
 
-        return curr_args_output_dygie      # for testing purposes
+        return curr_args_output_dygie  # for testing purposes
 
     def start_somewhat_function(self):
-        sys.stdout = open('data/output/console', 'w')
+        sys.stdout = open(os.path.join(self.path_to_output, "console"), 'w')
         self.collect_patterns()  # read patterns from the file
         for dir, _, files in os.walk(self.path_to_data):
             current_out_dir = os.path.join(self.path_to_output, "retrieved", dir[-2:])
@@ -257,14 +244,11 @@ class PatternSearch:
                     sent_ent.append(doc["text"][token["start"]:token["end"]])
                     sent_idx.append([token["start"], token["end"]])
             for match in matches:
-                ent1 = match[0]
-                ent2 = match[1]
+                ent1, ent2, pattern, relation = match[0], match[1], match[2], self.ids_to_relations[match[3]]
                 if min(ent1["start"], ent2["start"]) >= int(sent["start"]) and max(ent1["end"], ent2["end"]) <= int(sent["end"]):
-                    # if match[0] >= int(sent["start"]) and match[3] <= int(sent["end"]):
-                    # sent_rel.append(match[:4] + [str(match[5])])
-                    sent_rel.append(sorted([ent1["start_id"], ent2["start_id"], ent1["end_id"], ent2["end_id"]]) + [str(match[3])])
-                    sent_rel_ann.append(match[3])
-                    sent_pattern.append(sorted([ent1["start_id"], ent2["start_id"], ent1["end_id"], ent2["end_id"]]) + [match[2]] + [match[3]])
+                    sent_rel.append(sorted([ent1["start_id"], ent2["start_id"], ent1["end_id"], ent2["end_id"]]) + [relation])
+                    sent_rel_ann.append(relation)
+                    sent_pattern.append(sorted([ent1["start_id"], ent2["start_id"], ent1["end_id"], ent2["end_id"]]) + [pattern] + [relation])
             doc_idx.append(sent_idx)
             doc_ent.append(sent_ent)
             doc_rel.append(sent_rel)
@@ -277,19 +261,19 @@ class PatternSearch:
     def save_loc_stat_to_csv(self, out_file, stat):
         with open(out_file, 'w') as csvfile:
             for key in stat.keys():
-                csvfile.write("%s\t%s\n" % (DYGIE_RELATIONS[key], stat[key]))
+                csvfile.write("%s\t%s\n" % (self.ids_to_relations[key], stat[key]))
 
     def save_glob_stat_to_csv(self, out_file):
         with open(out_file, 'w') as csvfile:
             for key in self.stat_rel_matches.keys():
-                csvfile.write("%s\t%s\n" % (DYGIE_RELATIONS[key], self.stat_rel_matches[key]))
+                csvfile.write("%s\t%s\n" % (self.ids_to_relations[key], self.stat_rel_matches[key]))
 
 
-""" 
-After the whole run:
-    {'per:nationality': 280550, 'org:city_of_headquarters': 14098, 'per:date_of_birth': 488102, 
-    'org:top_members_employees': 1983, 'per:city_of_birth': 25308, 'per:countries_of_residence': 9134, 
-    'org:founded_by': 1492, 'org:subsidiaries': 3000, 'per:employee_of': 3649, 'per:children': 1069, 
-    'per:date_of_death': 10739, 'org:founded': 191, 'per:schools_attended': 2459, 
-    'per:political_religious_affiliation': 233}
-"""
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(prog=os.path.basename(sys.argv[0]))
+    parser.add_argument("--path_to_patterns", help="")
+    parser.add_argument("--path_to_output_files", help="")
+    parser.add_argument("--path_to_retrieved_sentences", help="")
+    args = parser.parse_args()
+    PatternSearch(args.path_to_output_files, args.path_to_patterns, args.path_to_retrieved_sentences).start_somewhat_function()
+

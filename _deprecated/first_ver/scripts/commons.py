@@ -143,6 +143,3 @@ TYPES_PER_RELATION = {'org:subsidiaries': ('ORG', 'ORG'), 'org:founded_by': ('OR
                       'per:children': ('PERSON', 'PERSON'),
                       'per:political_religious_affiliation': ('PERSON', 'ORG')}
 
-# todo: write 'per:political_religious_affiliation' patterns - done
-# todo: write 'per:nationality' patterns
-
