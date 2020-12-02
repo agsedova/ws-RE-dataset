@@ -1,7 +1,7 @@
 import argparse
 
-from scripts import WikiExtractor
-from scripts.WikiDumpProcesser import WikiDumpProcesser
+from scripts.DataPreprocessing import WikiExtractor
+from scripts.DataPreprocessing.WikiDumpProcesser import WikiDumpProcesser
 from scripts.PatternSearch import PatternSearch
 import sys
 import os
