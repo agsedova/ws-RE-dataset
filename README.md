@@ -1,4 +1,4 @@
-# DiffBot_Corpus
+# Weakly Supervised Corpus for RE task in KnowledgeNet Format
 
 ## [main.py](https://github.com/agsedova/DiffBot_Corpus/blob/master/main.py)
 
