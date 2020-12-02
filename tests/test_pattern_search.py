@@ -2,8 +2,6 @@ import pytest
 from scripts.PatternSearch import PatternSearch
 from scripts.commons import DYGIE_RELATIONS
 
-# todo: edge case: if the same pattern is for different relations - check!
-
 stat = {}
 for rel_id, rel_name in DYGIE_RELATIONS.items():
     stat[rel_id] = 0

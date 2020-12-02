@@ -4,3 +4,10 @@ __pycache__
 /stuff/
 /data/output/
 /.ipynb_checkpoints/
+/data/text/
+/data/text_not_json/
+/data/enwiki-20201101-pages-articles-multistream.xml.bz2
+/test_jup_not.ipynb
+/_stat.csv
+/_dygie.json
+/data/abstracts_big_test/

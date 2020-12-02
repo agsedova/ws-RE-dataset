@@ -12,8 +12,6 @@ class WikiDumpProcesser:
     def __init__(self, root_dir, path_to_output):
         self.root_dir = root_dir
         self.path_to_output = path_to_output
-
-        # create output directory if there isn't any
         Path(self.path_to_output).mkdir(parents=True, exist_ok=True)
 
     def abstracts_to_json_format(self, annotation, wiki_input):
@@ -27,8 +25,6 @@ class WikiDumpProcesser:
 
     def extract_abstract(self, page):
         """ takes an entire Wiki pages as input and returns its abstract"""
-        # return page[self.find_nth(page, "\n\n", 1) + 2:self.find_nth(page, "\n\n", 2) + 2]      # without page title
-        # return page[:self.find_nth(page, "\n\n", 2) + 2].encode('utf-8').decode('utf-8')
         return page[:self.find_nth(page, "\n\n", 1)] + ". " + page[self.find_nth(page, "\n\n", 1) + 1
                                                                    :self.find_nth(page, "\n\n", 2)]\
             .replace(u'\xa0', u' ').replace(u'\u00ad', u'-').replace(u'\u2013', u'-').replace(u'\n', u'')
@@ -37,7 +33,7 @@ class WikiDumpProcesser:
         """ Find index of the nth element in the string"""
         return string.find(substring) if n == 1 else string.find(substring, self.find_nth(string, substring, n - 1) + 1)
 
-    def process_wikidump_file(self, path_to_input_file):
+    def process_wikidump_file(self, path_to_input_file):       # todo: renaming
         all_pages = []
         skipped_pages = 0
         with open(path_to_input_file, 'r', encoding="UTF-8") as input_file:
@@ -51,14 +47,12 @@ class WikiDumpProcesser:
                     if abstract_annotation is not None:
                         page_annotation = {**{"doc_id": wiki_input["id"]}, **abstract_annotation}
                         all_pages.append(page_annotation)
-                        # print("Page {}/{} is annotated".format(num, file_length))
                 else:
                     skipped_pages += 1
-
             print("Totally {} pages were processed, {} out of them were skipped.".format(file_length, skipped_pages))
         return all_pages
 
-    def process_wiki_pages(self):
+    def process_wiki_pages(self):       # todo: renaming
         for dir, _, files in os.walk(self.root_dir):
             current_out_dir = os.path.join(self.path_to_output, dir[-2:])
             Path(current_out_dir).mkdir(parents=True, exist_ok=True)
@@ -69,7 +63,6 @@ class WikiDumpProcesser:
                 with open(current_out_file, "w", encoding="UTF-8") as o_json:
                     json.dump(self.process_wikidump_file(path_to_input_file), o_json)
                 print("File {} is preprocessed".format(path_to_input_file))
-
-        # with open(self.path_to_output + "/spacy_annotated_pages.json", "w+", encoding="UTF-8") as o_json:
-        #     json.dump(preprocessed_wiki_dump, o_json)
+        print("================================================")
+        print("WikiDump is processed")
         print("================================================")
