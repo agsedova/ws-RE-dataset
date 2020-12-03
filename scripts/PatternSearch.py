@@ -220,7 +220,7 @@ class PatternSearch:
             doc_idx.append(sent_idx)
             doc_ent.append(sent_ent)
             doc_rel.append(sent_rel)
-            doc_rel_ann.append(list(set(sent_rel_ann)))
+            doc_rel_ann.append(list(dict.fromkeys(sent_rel_ann)))
             doc_pattern.append(sent_pattern)
         doc_entry = {"doc_key": doc["doc_id"], "sentences": doc_ent, "relations": doc_rel,
                      "tokensToOriginalIndices": doc_idx, "annotatedPredicates": doc_rel_ann, "patterns": doc_pattern}

@@ -39,6 +39,46 @@ def get_spacy_pattern_search_data():
             ]
 
 
+@pytest.fixture(scope='session')
+def get_multiple_patterns_sent_test_data():
+    sent = "Mr. Smith was born in 2001, and Anna studied at Stanford."
+    ann_sent = nlp(sent).to_json()
+    page_annotation = [{**{"doc_id": "1111"}, **ann_sent}]
+    ps = PatternSearch("../data/output/spacy", "../data/patterns.txt", "../data/output")
+    return [
+                [
+                    ps,
+                    page_annotation,
+                    "../",
+                    {"doc_key": "1111",
+                     "sentences": [["Mr.","Smith","was", "born","in","2001",",","and", "Anna", "studied","at","Stanford","."]],
+                     "relations": [[[1, 1, 5, 5, 'DATE_OF_BIRTH'], [8, 8, 11, 11, "EDUCATED_AT"]]],
+                     "tokensToOriginalIndices":[[[0, 3],
+                              [4, 9],
+                              [10, 13],
+                              [14, 18],
+                              [19, 21],
+                              [22, 26],
+                              [26, 27],
+                              [28, 31],
+                              [32, 36],
+                              [37, 44],
+                              [45, 47],
+                              [48, 56],
+                              [56, 57]]],
+                     "annotatedPredicates":[["DATE_OF_BIRTH", "EDUCATED_AT"]],
+                     'patterns': [[[1, 1, 5, 5, 4, 'DATE_OF_BIRTH'], [8, 8, 11, 11, 88, "EDUCATED_AT"]]]}
+                ]
+            ]
+
+
 def test_spacy_pattern_search_data(get_spacy_pattern_search_data):
     for data in get_spacy_pattern_search_data:
         assert PatternSearch.find_pattern_matches(data[0], data[1], data[2]) == data[3]
+
+
+def test_multiple_pattern_search_data(get_multiple_patterns_sent_test_data):
+    for data in get_multiple_patterns_sent_test_data:
+        assert PatternSearch.find_pattern_matches(data[0], data[1], data[2]) == data[3]
+
+

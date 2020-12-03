@@ -126,6 +126,33 @@ def get_art_patterns_sent_test_data():
                 ]
             ]
 
+
+@pytest.fixture(scope='session')
+def get_multiple_patterns_sent_test_data():
+    ps = PatternSearch("../data/output/spacy", "../data/patterns.txt", "../data/output")
+    return [
+                [
+                    {"sent": "Mr. Smith, born in 2001, studied at Stanford"},
+                    {"start": 0, "end": 9, "start_sent": 0, "end_sent": 9, "label": 'PERSON'},
+                    {"start": 19, "end": 23, "start_sent": 19, "end_sent": 23, "label": 'DATE'},
+                    ('PERSON', 'DATE'),
+                    "15",
+                    ps.relation_to_patterns["15", "9"], ps, {"15": [], "9": []},
+                    stat,
+                    {'15': [[{"start": 0, "end": 9, "start_sent": 0, "end_sent": 9, "label": 'PERSON'},
+                             {"start": 19, "end": 23, "start_sent": 19, "end_sent": 23, "label": 'DATE'},
+                             ps.patterns_to_ids["$ARG1 , born in $ARG2"]]],
+                     '9': [[{"start": 0, "end": 9, "start_sent": 0, "end_sent": 9, "label": 'PERSON'},
+                            {"start": 36, "end": 44, "start_sent": 36, "end_sent": 44, "label": 'ORG'}
+                            ps.patterns_to_ids["$ARG1 studied at $ARG2"]]]}
+                ]
+            ]
+
+
+# doc, types, rel, patterns, stat_rel, types_to_entities):
+
+
+
 def test_arg_switch_patterns_sent(get_arg_switch_patterns_sent_test_data):
     for data in get_arg_switch_patterns_sent_test_data:
         assert PatternSearch.perform_search_in_sentence(data[6], data[0], data[1], data[2], data[3], data[4], data[5],
@@ -154,3 +181,9 @@ def test_art_patterns(get_art_patterns_sent_test_data):
     for data in get_art_patterns_sent_test_data:
         assert PatternSearch.perform_search_in_sentence(data[6], data[0], data[1], data[2], data[3], data[4], data[5],
                                                         data[7], data[8]) == data[9]
+
+
+def test_multiple_patterns(get_multiple_patterns_sent_test_data):
+    for data in get_multiple_patterns_sent_test_data:
+        assert PatternSearch.xxx(data[1], data[2], data[3], data[4], data[5], data[6] == data[7])
+
