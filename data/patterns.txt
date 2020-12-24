@@ -308,7 +308,7 @@ per:schools_attended $ARG1 , who has a * in * from $ARG2
 per:schools_attended $ARG1 , who has a * from $ARG2
 # This should match the sentence:
 #Erraguntla , who has a masters degree in computer engineering from the University of Lousiana
-per:schools_attended $ARG1 studied at $ARG2
+per:schools_attended $ARG1 * studied at $ARG2
 per:schools_attended $ARG1 is a student at $ARG2
 per:schools_attended $ARG1 was a student at $ARG2
 per:schools_attended $ARG1 is a $ARG2 student
@@ -323,7 +323,7 @@ per:schools_attended $ARG1 is a $ARG2 alumnus
 per:schools_attended $ARG1, a $ARG2 alumnus
 per:schools_attended $ARG1 is an $ARG2 alumnus
 per:schools_attended $ARG1, an $ARG2 alumnus
-per:schools_attended $ARG2 gradute $ARG1
+per:schools_attended $ARG2 graduate $ARG1
 per:schools_attended $ARG2 student $ARG1
 per:schools_attended $ARG2 alumnus $ARG1
 
