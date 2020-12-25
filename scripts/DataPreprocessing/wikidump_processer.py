@@ -53,9 +53,10 @@ class WikiDumpProcessor:
                     continue
                 wiki_input["text"] = self.extract_abstract(wiki_input["text"])
                 abstract_annotation = abstract_analyser(wiki_input["text"]).to_json()  # get parsed abstracts_test
-                if abstract_annotation is not None:
-                    page_annotation = {**{"doc_id": wiki_input["id"]}, **abstract_annotation}
-                    all_pages.append(page_annotation)
+                if abstract_annotation is None:
+                    continue
+                page_annotation = {**{"doc_id": wiki_input["id"]}, **abstract_annotation}
+                all_pages.append(page_annotation)
             self.logger.info("{}/{} pages were annotated.".format(file_length-skipped_pages, file_length))
         return all_pages
 
