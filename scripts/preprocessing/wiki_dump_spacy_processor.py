@@ -6,10 +6,6 @@ import json
 import os
 
 from scripts.utils import log_section
-from scripts.preprocessing.utils import extract_abstract
-
-import en_core_web_sm
-abstract_analyser = en_core_web_sm.load()
 
 logger = logging.getLogger(__name__)
 
@@ -24,10 +20,8 @@ def wiki_dump_spacy_processor(root_dir: str, path_to_output: str = None):
     """
 
     if path_to_output is None:
-        # splitted_root_path = os.path.split(root_dir)
-        # path_to_output = os.path.join(splitted_root_path[0], f"{splitted_root_path[1]}_spacy")
-        # todo: add proper automatically created output folder
-        path_to_output = "spacy_annotation"
+        # path_to_output = os.path.join(os.path.split(root_dir)[0], f"{os.path.split(root_dir)[1]}_spacy")
+        path_to_output = "data/spacy_annotation"
 
     Path(path_to_output).mkdir(parents=True, exist_ok=True)
 
@@ -46,7 +40,7 @@ def wiki_dump_spacy_processor(root_dir: str, path_to_output: str = None):
 
 def get_analysed_pages(path_to_input_file: str) -> List:
     """
-    The function read the file with wiki pages and process meaningful ones with SpaCy package.
+    The function read the file with wiki pages and process the abstract of the meaningful ones with SpaCy package.
     :param path_to_input_file: path to the file with wiki pages that should be processed
     :return: list of SpaCy annotation for meaningful wiki pages.
     """
@@ -56,14 +50,37 @@ def get_analysed_pages(path_to_input_file: str) -> List:
         file_length = sum(1 for _ in open(path_to_input_file))
         for num, line in enumerate(input_file, 1):
             wiki_input = json.loads(line)
-            if "may refer to" in wiki_input["text"]:
+            if "may refer to" in wiki_input["text"]:        # skip the wiki pages that contain only "may refer to" info
                 skipped_pages += 1
                 continue
-            wiki_input["text"] = extract_abstract(wiki_input["text"])
-            abstract_annotation = abstract_analyser(wiki_input["text"]).to_json()  # get parsed abstracts_test
+            wiki_input["abstract"] = extract_abstract(wiki_input["text"])       # extract wiki page abstracts
+            abstract_annotation = analyze_text_with_spacy(wiki_input["abstract"])   # annotate a wiki page abstract
             if abstract_annotation is None:
                 continue
-            page_annotation = {**{"doc_id": wiki_input["id"]}, **abstract_annotation}
-            all_pages.append(page_annotation)
+            abstract_annotation["doc_id"] = wiki_input["id"]
+            all_pages.append(abstract_annotation)
         logger.info("{}/{} pages were annotated.".format(file_length-skipped_pages, file_length))
     return all_pages
+
+
+def extract_abstract(page: str) -> str:
+    """
+    The function extracts an abstract of the Wiki page (=the first paragraph of it) and deletes some unnecessary symbols
+    :param page: text of the wiki page
+    :return: wiki page abstract
+    """
+    return page[:find_nth(page, "\n\n", 1)] + ". " + page[find_nth(page, "\n\n", 1) + 1:find_nth(page, "\n\n", 2)] \
+        .replace(u'\xa0', u' ').replace(u'\u00ad', u'-').replace(u'\u2013', u'-').replace(u'\n', u'')
+
+
+def analyze_text_with_spacy(text: str):
+    """ The function annotated the text string with SpaCy and return the usually SpaCy dictionary """
+    import en_core_web_sm
+    abstract_analyser = en_core_web_sm.load()
+
+    return abstract_analyser(text).to_json()  # get parsed abstracts_test
+
+
+def find_nth(string: str, substring: str, n: int) -> int:
+    """ Find index of the nth element in the string"""
+    return string.find(substring) if n == 1 else string.find(substring, find_nth(string, substring, n - 1) + 1)

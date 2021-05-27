@@ -1,6 +1,6 @@
 import argparse
 from scripts.preprocessing.wiki_dump_spacy_processor import wiki_dump_spacy_processor
-from scripts.weak_annotation.pattern_search import PatternSearch
+from scripts.weak_annotation.pattern_search.PatternSearch import PatternSearch
 import sys
 import os
 import logging
