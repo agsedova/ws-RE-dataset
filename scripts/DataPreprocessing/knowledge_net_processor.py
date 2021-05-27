@@ -7,8 +7,7 @@ from pathlib import Path
 nlp = spacy.load("en_core_web_sm")
 
 
-class KnowledgeNetProcesser:
-
+class KnowledgeNetProcessor:
     def __init__(self, path_to_input, path_to_output):
         self.source_file = path_to_input
         self.path_to_output = path_to_output

@@ -34,7 +34,7 @@ class WikiDumpProcessor:
                 with open(current_out_file, "w", encoding="UTF-8") as o_json:
                     json.dump(self.get_analysed_pages(path_to_input_file), o_json)
                 self.logger.info("File {} is processed and saved to {}".format(path_to_input_file, current_out_file))
-        utils.log_section("WikiDump is processed", self.logger)
+        utils.log_section("WikiDump processing is finished", self.logger)
 
     def get_analysed_pages(self, path_to_input_file: str) -> list:
         """
