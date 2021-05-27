@@ -2,6 +2,17 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+
+def log_section(text: str, logger: logging) -> None:
+    """
+    Prints a section.
+    :param text:  text to print
+    :param logger: logger object
+    """
+    logger.info("==============================================================")
+    logger.info(text)
+    logger.info("==============================================================")
+
 def prepare_output_dygie(matches, doc):
     """
 
@@ -44,21 +55,6 @@ def abstracts_to_json_format(annotation, wiki_input):
                                "sentences": [sent.as_dict() for sent in annotation]}}
 
 
-def find_nth(string: str, substring: str, n: int) -> int:
-    """ Find index of the nth element in the string"""
-    return string.find(substring) if n == 1 else string.find(substring, find_nth(string, substring, n - 1) + 1)
-
-
 def print_match_info(sent, rel, pattern, ent1, ent2):
     logger.info("New match! Relation:{}; entity1: {}; entity2: {}; pattern {}; Sentence: {}".format(
         rel, sent[ent1["start_sent"]:ent1["end_sent"]], sent[ent2["start_sent"]:ent2["end_sent"]], pattern, sent))
-
-def log_section(text: str, logger: logging) -> None:
-    """
-    Prints a section.
-    :param text:  text to print
-    :param logger: logger object
-    """
-    logger.info("==============================================================")
-    logger.info(text)
-    logger.info("==============================================================")

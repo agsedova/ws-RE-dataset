@@ -1,6 +1,5 @@
 import json
 import spacy
-import os
 from pathlib import Path
 
 
@@ -8,12 +7,12 @@ nlp = spacy.load("en_core_web_sm")
 
 
 class KnowledgeNetProcessor:
-    def __init__(self, path_to_input, path_to_output):
+    def __init__(self, path_to_input: str, path_to_output: str):
         self.source_file = path_to_input
         self.path_to_output = path_to_output
         Path(self.path_to_output).mkdir(parents=True, exist_ok=True)
 
-    def process_knowledgenet_data(self):
+    def process_knowledge_net_data(self):
         all_docs = []
         with open(self.source_file, "r", encoding="UTF-8") as input_file:
             for num, line in enumerate(input_file, 1):
@@ -28,9 +27,5 @@ class KnowledgeNetProcessor:
             json.dump(all_docs, o_json)
 
 
-if __name__ == "__main__":
-    KnowledgeNetProcesser("../../data/knwldgn/knwldgn_dev.json",
-                          "../../data/output/").process_knowledgenet_data()
-
-
-
+# if __name__ == "__main__":
+#     KnowledgeNetProcessor("../data/knwldgn_train.json", "../data/output/").process_knowledge_net_data()

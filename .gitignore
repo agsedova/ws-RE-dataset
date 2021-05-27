@@ -11,3 +11,5 @@ __pycache__
 /_stat.csv
 /_dygie.json
 /data/abstracts_big_test/
+/_deprecated/
+/data/

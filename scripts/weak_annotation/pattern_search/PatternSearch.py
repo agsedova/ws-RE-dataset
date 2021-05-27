@@ -4,28 +4,36 @@ import os
 import re
 import logging
 from pathlib import Path
-from scripts.commons import RELATION_TO_TYPES, PROPERTY_NAMES, DYGIE_RELATIONS
+from scripts.weak_annotation.commons import RELATION_TO_TYPES, PROPERTY_NAMES, DYGIE_RELATIONS
 import sys
-import argparse
 import scripts.utils as utils
+from scripts.weak_annotation.pattern_search.utils import calculate_ent_indices, get_abstract_for_comparing, get_types_to_entities, \
+    preprocess_patterns
 
 logger = logging.getLogger(__name__)
 
 
 class PatternSearch:
+    """
+
+    """
 
     def __init__(self, path_to_data: str, path_to_patterns: str, path_to_output: str):
+        """
+
+        :param path_to_data:
+        :param path_to_patterns:
+        :param path_to_output:
+        """
         self.path_to_data = path_to_data
         self.path_to_patterns = path_to_patterns
         self.path_to_output = path_to_output
 
         self.pattern_counter, self.matches_counter = 0, 0
-        self.patterns_to_ids = {}
-        self.relation_to_patterns = {}
-        self.relation_to_types = {}
+        self.patterns_to_ids, self.relation_to_patterns, self.relation_to_types, self.stat_rel_matches, \
+            self.ids_to_patterns = {}, {}, {}, {}, {}
+
         self.ids_to_relations = DYGIE_RELATIONS
-        self.stat_rel_matches = {}
-        self.ids_to_patterns = {}
 
     def retrieve_patterns(self):
         Path(self.path_to_output).mkdir(parents=True, exist_ok=True)
@@ -113,41 +121,6 @@ class PatternSearch:
             self.stat_rel_matches[relation_id] = 0
             self.relation_to_types[relation_id] = RELATION_TO_TYPES[relation]
 
-    def preprocess_patterns(self, pattern: str) -> str:
-        """ Turn raw patterns into good-looking regexes"""
-        pattern = re.escape(pattern)
-        prepr_pattern = re.sub("\\\\ \\\\\\*", "([ ][^ ]+){0,3}", pattern)  # * --> match 1 to 4 tokens
-        prepr_pattern = re.sub("\\\\\\$ARG", "(A )?(a )?(The )?(the )?\\$ARG", prepr_pattern)  # add optional articles
-        if "$ARG0" in prepr_pattern:  # a reflexive relation
-            prepr_pattern = re.sub(u"\\$ARG0", "$ARG1", prepr_pattern, 1)
-            prepr_pattern = re.sub(u"\\$ARG0", "$ARG2", prepr_pattern)
-        return prepr_pattern
-
-    def get_types_to_entities(self, doc: dict) -> dict:
-        types_to_entities = {}  # type: [ent_list]
-        for ent in doc["ents"]:
-            for token in doc["tokens"]:
-                if token["start"] == ent["start"]:
-                    ent["start_id"] = int(token["id"])
-                if token["end"] == ent["end"]:
-                    ent["end_id"] = int(token["id"])
-            curr_label = ent["label"]
-            if ent["label"] in types_to_entities.keys():
-                types_to_entities[curr_label].append(ent)
-            else:
-                types_to_entities[curr_label] = [ent]
-        return types_to_entities
-
-    def get_abstract_for_comparing(self, sent: str, ent1: dict, ent2: dict, arg1: str, arg2: str) -> str:
-        """ Substitute entities with "$ARG1" and "$ARG2" and do some refactoring needed for correct search """
-        to_compare = sent[:ent1["start_sent"]] + arg1 + sent[ent1["end_sent"]:ent2["start_sent"]] + arg2 + \
-                     sent[ent2["end_sent"]:]
-        to_compare = re.sub(u'\\(', u"( ", to_compare)
-        to_compare = re.sub(u'\\)', u" )", to_compare)
-        to_compare = re.sub(u'\\,', ' ,', to_compare)
-        to_compare = re.sub(u"\\'", " '", to_compare)
-        return to_compare
-
     def _get_sentence_matches(self, args_output: dict) -> list:
         matches = []
         for rel, match in args_output.items():
@@ -159,13 +132,14 @@ class PatternSearch:
 
     def search_by_pattern(
             self, curr_args_output: dict, rel: str, patterns: set, to_compare: str, ent1: dict, ent2: dict,
-            stat_rel: dict) -> None:
+            stat_rel: dict
+    ) -> None:
         """
         Look up each pattern from the list in string and, if there is a match, add corresponding info to
         curr_args_output dict
         """
         for pattern_id in patterns:
-            pattern = self.preprocess_patterns(self.ids_to_patterns[pattern_id])  # convert pattern to regex
+            pattern = preprocess_patterns(self.ids_to_patterns[pattern_id])  # convert pattern to regex
             match = re.search(pattern, to_compare)
             if match:
                 curr_args_output[rel].append([ent1, ent2, pattern_id])
@@ -176,37 +150,32 @@ class PatternSearch:
 
     def perform_search_in_sentence(
             self, sent: str, ent1: dict, ent2: dict, types: tuple, rel: str, patterns: set, curr_args_output: dict,
-            stat_rel: dict):
+            stat_rel: dict
+    ) -> None:
         """ Look for pattern matches in a sentence """
         if ent1["start_sent"] < ent2["start_sent"] and ent1["label"] == types[0]:
             # $ARG1 studied at $ARG2, types = ("PERSON", "ORG"), ent1 = Bill ("PERSON"), ent2 = Stanford ("ORG")
-            to_compare = self.get_abstract_for_comparing(sent, ent1, ent2, "$ARG1", "$ARG2")
+            to_compare = get_abstract_for_comparing(sent, ent1, ent2, "$ARG1", "$ARG2")
             self.search_by_pattern(curr_args_output, rel, patterns, to_compare, ent1, ent2, stat_rel)
         elif ent1["start_sent"] < ent2["start_sent"] and ent1["label"] == types[1]:
             # $ARG2 alumnus $ARG1, types = ("PERSON", "ORG"), ent1 = Stanford ("ORG"), ent2 = Bill ("PERSON")
-            to_compare = self.get_abstract_for_comparing(sent, ent1, ent2, "$ARG2", "$ARG1")
+            to_compare = get_abstract_for_comparing(sent, ent1, ent2, "$ARG2", "$ARG1")
             self.search_by_pattern(curr_args_output, rel, patterns, to_compare, ent1, ent2, stat_rel)
         elif ent1["start_sent"] > ent2["start_sent"] and ent1["label"] == types[0]:
             # $ARG2 alumnus $ARG1, types = ("PERSON", "ORG"), ent1 = Bill ("PERSON"), ent2 = Stanford ("ORG")
-            to_compare = self.get_abstract_for_comparing(sent, ent2, ent1, "$ARG2", "$ARG1")
+            to_compare = get_abstract_for_comparing(sent, ent2, ent1, "$ARG2", "$ARG1")
             self.search_by_pattern(curr_args_output, rel, patterns, to_compare, ent1, ent2, stat_rel)
         elif ent1["start_sent"] > ent2["start_sent"] and ent1["label"] == types[1]:
             # $ARG1 studied at $ARG2, types = ("PERSON", "ORG"), ent1 = Stanford ("ORG"), ent2 = Bill ("PERSON")
-            to_compare = self.get_abstract_for_comparing(sent, ent2, ent1, "$ARG1", "$ARG2")
+            to_compare = get_abstract_for_comparing(sent, ent2, ent1, "$ARG1", "$ARG2")
             self.search_by_pattern(curr_args_output, rel, patterns, to_compare, ent1, ent2, stat_rel)
-
-    def calculate_ent_indices(self, ent: dict, sent: dict) -> dict:
-        """ Calculate new entity indices in a sentence """
-        ent["start_sent"] = ent["start"] - sent["start"]
-        ent["end_sent"] = ent["end"] - sent["start"]
-        return ent
 
     def find_pattern_matches(self, data: list, output_path: str) -> None:
         # data = self.read_data()  # read file with sentences annotated by spacy
         all_docs = []
         stat_rel = {key: 0 for key in self.stat_rel_matches.keys()}
         for doc in data:
-            types_to_entities = self.get_types_to_entities(doc)
+            types_to_entities = get_types_to_entities(doc)
             curr_args_output = {}
             for rel, patterns in self.relation_to_patterns.items():
                 curr_args_output[rel] = []
@@ -220,8 +189,8 @@ class PatternSearch:
                                 sent["start"] <= max(ent1["end"], ent2["end"]) <= sent["end"]):
                             continue
                         # calculate entities indices according to the sentence
-                        ent1 = self.calculate_ent_indices(ent1, sent)
-                        ent2 = self.calculate_ent_indices(ent2, sent)
+                        ent1 = calculate_ent_indices(ent1, sent)
+                        ent2 = calculate_ent_indices(ent2, sent)
 
                         # extract the sentence we are working now with
                         sent_text = doc["text"][sent["start"]:sent["end"]]
@@ -246,12 +215,12 @@ class PatternSearch:
                 csvfile.write("%s\t%s\n" % (self.ids_to_relations[key], self.stat_rel_matches[key]))
 
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(prog=os.path.basename(sys.argv[0]))
-    parser.add_argument("--path_to_patterns", help="")
-    parser.add_argument("--path_to_output_files", help="")
-    parser.add_argument("--path_to_retrieved_sentences", help="")
-    args = parser.parse_args()
-    PatternSearch(
-        args.path_to_output_files, args.path_to_patterns, args.path_to_retrieved_sentences
-    ).retrieve_patterns()
+# if __name__ == "__main__":
+#     parser = argparse.ArgumentParser(prog=os.path.basename(sys.argv[0]))
+#     parser.add_argument("--path_to_patterns", help="")
+#     parser.add_argument("--path_to_output_files", help="")
+#     parser.add_argument("--path_to_retrieved_sentences", help="")
+#     args = parser.parse_args()
+#     PatternSearch(
+#         args.path_to_output_files, args.path_to_patterns, args.path_to_retrieved_sentences
+#     ).retrieve_patterns()

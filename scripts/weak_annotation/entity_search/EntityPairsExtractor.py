@@ -4,9 +4,8 @@ import os
 
 class EntityPairsExtractor:
     """
-    This class helps to extract and index the entity pairs from the sentences labelled with patterns and saved in
-    dygie format. It also saves the relations they correspond to in order to use this information for further sentence
-    labelling.
+    This class extracts and indexes the entity pairs from the sentences labeled with patterns and saved in dygie format.
+    It also saves the relations they correspond to in order to use this information for further sentence labeling.
     """
 
     def __init__(self, path_to_dygie, path_to_output):
@@ -66,8 +65,6 @@ class EntityPairsExtractor:
                         for relation in sample_relations:
                             self.process_pattern_match(sample_text, relation)
         self.save_dicts()
-
-
-if __name__ == "__main__":
-    EntityPairsExtractor("../data/output/wikidump/retrieved_4th_ver",
-                         "../data/output/wikidump/retrieved_4th_ver/_ent_pairs").extract_entity_pairs()
+# if __name__ == "__main__":
+#     EntityPairsExtractor("../data/output/wikidump/retrieved_4th_ver",
+#                          "../data/output/wikidump/retrieved_4th_ver/_ent_pairs").extract_entity_pairs()

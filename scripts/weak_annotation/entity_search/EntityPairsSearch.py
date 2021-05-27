@@ -4,7 +4,7 @@ from pathlib import Path
 import sys
 import os
 import scripts.utils as utils
-from scripts.commons import DYGIE_RELATIONS
+from scripts.weak_annotation.commons import DYGIE_RELATIONS
 
 
 class EntityPairsSearch:
@@ -153,11 +153,10 @@ class EntityPairsSearch:
         elif os.path.isfile(self.path_to_spacy_data):  # if we retrieve patterns in a single file
             self.search_entpairs_one_file()
 
-
-if __name__ == "__main__":
-    EntityPairsSearch("../data/output/knwldgn/retrieved_knwldgn_train/knwldgn_train_spacy.json",
-                      "../data/output/wikidump/retrieved_4th_ver/_ent_pairs/entity_pair_ids.json",
-                      "../data/output/wikidump/retrieved_4th_ver/_ent_pairs/entity_pair_to_rel.json",
-                      "../data/output/knwldgn/retrieved_knwldgn_train_ent_pairs/")\
-        .retrieve_entity_pairs()
+# if __name__ == "__main__":
+#     EntityPairsSearch("../data/output/knwldgn/retrieved_knwldgn_train/knwldgn_train_spacy.json",
+#                       "../data/output/wikidump/retrieved_4th_ver/_ent_pairs/entity_pair_ids.json",
+#                       "../data/output/wikidump/retrieved_4th_ver/_ent_pairs/entity_pair_to_rel.json",
+#                       "../data/output/knwldgn/retrieved_knwldgn_train_ent_pairs/")\
+#         .retrieve_entity_pairs()
 
