@@ -23,7 +23,7 @@ class KnowledgeNetProcessor:
                 if doc_annotation is not None:
                     doc_annotation = {**{"doc_id": doc["doc_key"]}, **doc_annotation}
                     all_docs.append(doc_annotation)
-        with open(self.path_to_output + "knwldgn_dev_spacy.json", "w", encoding="UTF-8") as o_json:
+        with open(self.path_to_output + "knwldgn_train_spacy.json", "w", encoding="UTF-8") as o_json:
             json.dump(all_docs, o_json)
 
 
