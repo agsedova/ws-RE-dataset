@@ -49,7 +49,7 @@ if __name__ == "__main__":
 # data/enwiki-20201101-pages-articles-multistream.xml.bz2
 # --wiki_extractor_output
 # data/text
-# --path_to_patterns
+# --path_patterns
 # data/patterns.txt
 # --path_to_output_files
 # data/output/wikidump/spacy_1

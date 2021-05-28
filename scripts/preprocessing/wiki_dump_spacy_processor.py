@@ -20,7 +20,7 @@ def wiki_dump_spacy_processor(root_dir: str, path_to_output: str = None):
     """
 
     if path_to_output is None:
-        # path_to_output = os.path.join(os.path.split(root_dir)[0], f"{os.path.split(root_dir)[1]}_spacy")
+        # path_out = os.path.join(os.path.split(root_dir)[0], f"{os.path.split(root_dir)[1]}_spacy")
         path_to_output = "data/spacy_annotation"
 
     Path(path_to_output).mkdir(parents=True, exist_ok=True)

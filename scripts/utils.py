@@ -13,6 +13,7 @@ def log_section(text: str, logger: logging) -> None:
     logger.info(text)
     logger.info("==============================================================")
 
+
 def prepare_output_dygie(matches, doc):
     """
 
@@ -43,10 +44,10 @@ def prepare_output_dygie(matches, doc):
     return doc_entry
 
 
-def save_loc_stat_to_csv(out_file: str, stat: dict, ids_to_relations: dict) -> None:
+def save_loc_stat_to_csv(out_file: str, stat: dict, id2relation: dict) -> None:
     with open(out_file, 'w') as csvfile:
         for key in stat.keys():
-            csvfile.write("%s\t%s\n" % (ids_to_relations[key], stat[key]))
+            csvfile.write("%s\t%s\n" % (id2relation[key], stat[key]))
 
 
 def abstracts_to_json_format(annotation, wiki_input):
