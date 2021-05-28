@@ -4,7 +4,7 @@ import os
 import re
 import logging
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Dict, Tuple, List
 
 from scripts.weak_annotation.commons import DYGIE_RELATIONS
 import sys
@@ -12,7 +12,8 @@ import scripts.utils as utils
 from scripts.weak_annotation.pattern_search.build_dicts import get_types2entities, get_relation_types_dict, \
     collect_patterns
 from scripts.weak_annotation.pattern_search.text_processing import get_abstract_for_comparing
-from scripts.weak_annotation.pattern_search.utils import calculate_ent_indices, save_glob_stat_to_csv
+from scripts.weak_annotation.pattern_search.utils import calculate_ent_indices, save_glob_stat_to_csv, \
+    read_wiki_dicts_from_file
 
 logger = logging.getLogger(__name__)
 
@@ -46,7 +47,7 @@ class PatternSearch:
         sys.stdout = open(os.path.join(self.path_out, "console"), 'w')
 
         if os.path.isdir(self.path_to_data):  # if we retrieve patterns in multiple files (input is a directory)
-            self._search_patterns_multiple_files()
+            self._search_patterns_in_multiple_files()
         elif os.path.isfile(self.path_to_data):  # if we retrieve patterns in a single file
             self._search_patterns_in_file(inp=self.path_to_data, out=self.path_out)
         else:
@@ -55,7 +56,7 @@ class PatternSearch:
         save_glob_stat_to_csv(self.stat_rel_matches, os.path.join(self.path_out, '_stat.csv'))
         sys.stdout.close()
 
-    def _search_patterns_multiple_files(self):
+    def _search_patterns_in_multiple_files(self):
         """ The function performs search for patterns in samples that are stored in different files """
         for curr_dir, _, files in os.walk(self.path_to_data):
             current_out_dir = os.path.join(self.path_out, "retrieved", curr_dir[-2:])
@@ -71,20 +72,17 @@ class PatternSearch:
         self.matches_counter = 0
 
         # load list of dictionaries containing with wiki articles
-        with open(inp) as input_file:
-            if input_file != '.DS_Store':
-                try:
-                    data = json.load(input_file)
-                except json.decoder.JSONDecodeError:
-                    return
+        wiki_pages = read_wiki_dicts_from_file(inp)
+        if not wiki_pages:
+            return
 
-        # perform search in each wiki article
+        # perform search in each wiki article & collect statistics
         stat_rel = {key: 0 for key in self.stat_rel_matches.keys()}
-        all_docs = [self.find_pattern_matches(doc, stat_rel) for doc in data]
-        all_docs = list(filter(lambda x: x is not None, all_docs))
+        w_pages_retrieved = [self.find_pattern_matches(w_page, stat_rel) for w_page in wiki_pages]
+        w_pages_retrieved = list(filter(lambda x: x is not None, w_pages_retrieved))
 
         with open(out + "_dygie.json", "w+") as out_j:
-            json.dump(all_docs, out_j)
+            json.dump(w_pages_retrieved, out_j)
         utils.save_loc_stat_to_csv(out + "_stat.csv", stat_rel, self.id2relation)
 
         logger.info(f'Pattern search in {inp}. Total match: {self.matches_counter}')
@@ -121,18 +119,22 @@ class PatternSearch:
                     # extract the sentence we are working now with
                     sent_text = wiki_page["text"][sent["start"]:sent["end"]]
                     # look for patterns in this sentence
-                    self.perform_search_in_sentence(
+                    rel2retrieved_args = self.perform_search_in_sentence(
                         sent_text, ent1, ent2, types, rel_id, pattern_ids, rel2retrieved_args, stat_rel
                     )
 
         if any(rel2retrieved_args.values()):  # check if there were any matches in doc
             matches = self._get_sentence_matches(rel2retrieved_args)
-            args_output = utils.prepare_output_dygie(matches, wiki_page)
+            args_output = utils.prepare_output_dygie(matches, wiki_page)  # the function prepares dygie specific output
             return args_output
         else:
             return None
 
-    def _get_sentence_matches(self, args_output: dict) -> list:
+    def _get_sentence_matches(self, args_output: Dict) -> List:
+        """
+        The function gets from the dict {rel: sample, where relation matched} only the samples that match some
+        relation, adds relation name to it and return as a list of matches.
+        """
         matches = []
         for rel, match in args_output.items():
             if len(match) > 0:
@@ -142,49 +144,65 @@ class PatternSearch:
         return matches
 
     def search_by_pattern(
-            self, curr_args_output: dict, rel: str, patterns: set, to_compare: str, ent1: dict, ent2: dict,
-            stat_rel: dict
-    ) -> None:
+            self, rel: str, patterns: set, to_compare: str, ent1: Dict, ent2: Dict, stat_rel: Dict
+    ) -> Dict:
         """
-        Look up each pattern from the list in string and, if there is a match, add corresponding info to
-        curr_args_output dict
+        Look up each pattern from the list in string. If there is a match, the information about matched entities
+        are added to the dict: {rel_id: [match_1, match_2, ...]}, where
+            match_1 = [ent1_params, ent2_params, pattern_id]
         """
+        rel2matches = {rel: []}
         for pattern_id in patterns:
             pattern_regex = self.id2pattern[pattern_id] # take pattern regex
             match = re.search(pattern_regex, to_compare)
             if match:
-                curr_args_output[rel].append([ent1, ent2, pattern_id])
                 # print_match_info(self, sent, rel, pattern, ent1, ent2)
                 self.stat_rel_matches[rel] += 1  # increment whole statistics
                 stat_rel[rel] += 1  # increment local sentence statistics
                 self.matches_counter += 1
+                rel2matches[rel].append([ent1, ent2, pattern_id])
+        return rel2matches
 
     def perform_search_in_sentence(
-            self, sent: str, ent1: dict, ent2: dict, types: tuple, rel: str, patterns: set, curr_args_output: dict,
-            stat_rel: dict
-    ) -> None:
+            self, sent: str, ent1: Dict, ent2: Dict, types: Tuple, rel: str, patterns: set, curr_args_output: Dict,
+            stat_rel: Dict
+    ) -> Dict:
         """
          Look for pattern matches in a sentence "
         """
         if ent1["start_sent"] < ent2["start_sent"] and ent1["label"] == types[0]:
             # $ARG1 studied at $ARG2, types = ("PERSON", "ORG"), ent1 = Bill ("PERSON"), ent2 = Stanford ("ORG")
             to_compare = get_abstract_for_comparing(sent, ent1, ent2, "$ARG1", "$ARG2")
-            self.search_by_pattern(curr_args_output, rel, patterns, to_compare, ent1, ent2, stat_rel)
+            matches = self.search_by_pattern(rel, patterns, to_compare, ent1, ent2, stat_rel)
+            if matches[rel]:
+                for key, value in matches.items():
+                    curr_args_output[key] += value
+
         elif ent1["start_sent"] < ent2["start_sent"] and ent1["label"] == types[1]:
             # $ARG2 alumnus $ARG1, types = ("PERSON", "ORG"), ent1 = Stanford ("ORG"), ent2 = Bill ("PERSON")
             to_compare = get_abstract_for_comparing(sent, ent1, ent2, "$ARG2", "$ARG1")
-            self.search_by_pattern(curr_args_output, rel, patterns, to_compare, ent1, ent2, stat_rel)
+            matches = self.search_by_pattern(rel, patterns, to_compare, ent1, ent2, stat_rel)
+            if len(matches.keys()) > 0:
+                for key, value in matches.items():
+                    curr_args_output[key] += value
+
         elif ent1["start_sent"] > ent2["start_sent"] and ent1["label"] == types[0]:
             # $ARG2 alumnus $ARG1, types = ("PERSON", "ORG"), ent1 = Bill ("PERSON"), ent2 = Stanford ("ORG")
             to_compare = get_abstract_for_comparing(sent, ent2, ent1, "$ARG2", "$ARG1")
-            self.search_by_pattern(curr_args_output, rel, patterns, to_compare, ent1, ent2, stat_rel)
+            matches = self.search_by_pattern(rel, patterns, to_compare, ent1, ent2, stat_rel)
+            if len(matches.keys()) > 0:
+                for key, value in matches.items():
+                    curr_args_output[key] += value
+
         elif ent1["start_sent"] > ent2["start_sent"] and ent1["label"] == types[1]:
             # $ARG1 studied at $ARG2, types = ("PERSON", "ORG"), ent1 = Stanford ("ORG"), ent2 = Bill ("PERSON")
             to_compare = get_abstract_for_comparing(sent, ent2, ent1, "$ARG1", "$ARG2")
-            self.search_by_pattern(curr_args_output, rel, patterns, to_compare, ent1, ent2, stat_rel)
+            matches = self.search_by_pattern(rel, patterns, to_compare, ent1, ent2, stat_rel)
+            if len(matches.keys()) > 0:
+                for key, value in matches.items():
+                    curr_args_output[key] += value
 
-        return curr_args_output  # for testing purposes
-
+        return curr_args_output
 
     # def _get_pattern_id(self, pattern: str) -> int:
     #     """ Returns a pattern id from pattern2id dict or creates a new pattern : pattern_id pair """

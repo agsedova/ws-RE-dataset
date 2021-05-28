@@ -33,7 +33,11 @@ def collect_patterns(path_to_patterns: str, path_to_output: str) -> Tuple[Dict, 
     return relation2patterns, id2pattern
 
 
-def get_types2entities(doc: dict) -> dict:
+def get_types2entities(doc: Dict) -> Dict:
+    """
+        Returns a dictionary of all entities that doc contains: {entity_type : [entities]}
+    :param doc: SpaCy annotated text saved as a dictionary (fields: "doc_id", "text", "ents", "sents", "tokens")
+    """
     types2entities = {}  # {type:[ent_list]}
     for ent in doc["ents"]:
         for token in doc["tokens"]:

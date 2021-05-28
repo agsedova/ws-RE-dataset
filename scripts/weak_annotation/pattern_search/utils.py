@@ -1,3 +1,4 @@
+import json
 from typing import Dict, Tuple
 
 
@@ -17,6 +18,15 @@ def get_pattern_id(pattern: str, pattern2id: Dict, pattern_counter: int) -> Tupl
     else:
         pattern_id = pattern2id[pattern]
     return pattern_id, pattern_counter
+
+
+def read_wiki_dicts_from_file(inp: str):
+    with open(inp) as input_file:
+        try:
+            data = json.load(input_file)
+            return data
+        except json.decoder.JSONDecodeError:
+            return False
 
 
 def save_glob_stat_to_csv(stat_dict: Dict, id2relation: Dict, out_file: str) -> None:

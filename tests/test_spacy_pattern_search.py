@@ -113,8 +113,6 @@ def get_multiple_patterns_sent_test_data():
 
 def test_spacy_pattern_search_data(get_spacy_pattern_search_data):
     for data in get_spacy_pattern_search_data:
-        qqq = PatternSearch.find_pattern_matches(data[0], data[1], data[2])
-        print(qqq)
         assert PatternSearch.find_pattern_matches(data[0], data[1], data[2]) == data[3]
 
 
