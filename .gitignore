@@ -2,14 +2,11 @@
 /.idea
 __pycache__
 /stuff/
-/data/output/
+/data/
 /.ipynb_checkpoints/
-/data/text/
-/data/text_not_json/
-/data/enwiki-20201101-pages-articles-multistream.xml.bz2
 /test_jup_not.ipynb
 /_stat.csv
 /_dygie.json
-/data/abstracts_big_test/
 /_deprecated/
-/data/
+/result_all_data_first_run/
+/result_small_data/
