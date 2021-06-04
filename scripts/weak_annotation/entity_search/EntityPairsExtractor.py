@@ -40,8 +40,9 @@ class EntityPairsExtractor:
         input match_info: info about extracted relations in sample saved in dygie
             (ent_1_start_pos, ent_1_end_pos, ent_2_start_pos, ent_2_end_pos, relation)
         """
-        entity_pair = self.get_text_ent_pair(sample[match_info[0]:match_info[1]+1],
-                                             sample[match_info[2]:match_info[3]+1])
+        entity_pair = self.get_text_ent_pair(
+            sample[match_info[0]:match_info[1]+1], sample[match_info[2]:match_info[3]+1]
+        )
         self.update_ent_pair_to_relation(entity_pair, match_info[4])
 
     def save_dicts(self):

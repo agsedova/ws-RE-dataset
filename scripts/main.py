@@ -1,6 +1,8 @@
 import argparse
 from scripts.preprocessing.wiki_dump_spacy_processor import wiki_dump_spacy_processor
-from scripts.weak_annotation.pattern_search.PatternSearch import PatternSearch
+from scripts.utils import log_section
+from scripts.weak_annotation.annotation_with_entity_pairs.EntityPairAnnotator import EntityPairsAnnotator
+from scripts.weak_annotation.annotation_with_patterns.PatternSearch import PatternSearch
 import sys
 import os
 import logging
@@ -13,8 +15,9 @@ if __name__ == "__main__":
     parser.add_argument("--wiki_dump", help="")
     parser.add_argument("--wiki_dump_extracted", help="")
     parser.add_argument("--wiki_dump_spacy", default=None, help="")
-    parser.add_argument("--path_to_retrieved_sentences", help="")
     parser.add_argument("--path_to_patterns", help="")
+    parser.add_argument("--path_to_relations", help="")
+    parser.add_argument("--path_to_output", help="")
     args = parser.parse_args()
 
     # ==================
@@ -36,22 +39,31 @@ if __name__ == "__main__":
         )
 
     # ==================
-    # Step 2: search for patterns in SpaCy output.
+    # Step 2: search for patterns in SpaCy output and annotate data with patterns.
+    # ==================
 
-    pattern_searcher = PatternSearch(
+    PatternSearch(
         path_to_data=args.wiki_dump_spacy,     # directory where the SpaCy output is stored
         path_to_patterns=args.path_to_patterns,     # file that contains the patterns that are to be found
-        path_to_output=args.path_to_retrieved_sentences     # directory where the output will be stored
+        path_to_relations=args.path_to_relations,
+        path_to_output=args.path_to_output     # directory where the output will be stored
     ).retrieve_patterns()
 
+    log_section(" !!!!!!!!!!!!!!!!!!!!!!!!!! ", logger)
+    log_section(" !!!!! Step 2 is done !!!!! ", logger)
+    log_section(" !!!!!!!!!!!!!!!!!!!!!!!!!! ", logger)
 
-# --wiki_extractor_input
-# data/enwiki-20201101-pages-articles-multistream.xml.bz2
-# --wiki_extractor_output
-# data/text
-# --path_patterns
-# data/patterns.txt
-# --path_to_output_files
-# data/output/wikidump/spacy_1
-# --path_to_retrieved_sentences
-# data/output/test
+    # ==================
+    # Step 3: annotate data with entity pairs.
+    # ==================
+
+    EntityPairsAnnotator(
+        path_to_spacy_data=args.wiki_dump_spacy,     # directory where the SpaCy output is stored
+        path_to_ent_pairs=os.path.join(args.path_to_output, "entity_pairs.csv"),
+        path_to_relations=args.path_to_relations,
+        path_to_patterns=os.path.join(args.path_to_output, "patterns.csv"),
+        path_to_output=args.path_to_output     # directory where the output will be stored
+    ).annotate_data_with_ent_pairs()
+
+
+# todo: can one entity pair correspond to different relations?

@@ -166,29 +166,29 @@ def get_multiple_patterns_sent_test_data():
 
 def test_arg_switch_patterns_sent(get_arg_switch_patterns_sent_test_data):
     for data in get_arg_switch_patterns_sent_test_data:
-        assert PatternSearch.perform_search_in_sentence(data[6], data[0], data[1], data[2], data[3], data[4], data[5],
-                                                        data[7], data[8]) == data[9]
+        assert PatternSearch._perform_search_in_sentence(data[6], data[0], data[1], data[2], data[3], data[4], data[5],
+                                                         data[7], data[8]) == data[9]
 
 
 def test_simple_pattern_sent(get_simple_patterns_sent_test_data):
     for data in get_simple_patterns_sent_test_data:
-        assert PatternSearch.perform_search_in_sentence(data[6], data[0], data[1], data[2], data[3], data[4], data[5],
-                                                        data[7], data[8]) == data[9]
+        assert PatternSearch._perform_search_in_sentence(data[6], data[0], data[1], data[2], data[3], data[4], data[5],
+                                                         data[7], data[8]) == data[9]
 
 
 def test_star_patterns_sent(get_star_patterns_sent_test_data):
     for data in get_star_patterns_sent_test_data:
-        assert PatternSearch.perform_search_in_sentence(data[6], data[0], data[1], data[2], data[3], data[4], data[5],
-                                                        data[7], data[8]) == data[9]
+        assert PatternSearch._perform_search_in_sentence(data[6], data[0], data[1], data[2], data[3], data[4], data[5],
+                                                         data[7], data[8]) == data[9]
 
 
 def test_self_patterns_sent(get_self_patterns_sent_test_data):
     for data in get_self_patterns_sent_test_data:
-        assert PatternSearch.perform_search_in_sentence(data[6], data[0], data[1], data[2], data[3], data[4], data[5],
-                                                        data[7], data[8]) == data[9]
+        assert PatternSearch._perform_search_in_sentence(data[6], data[0], data[1], data[2], data[3], data[4], data[5],
+                                                         data[7], data[8]) == data[9]
 
 
 def test_art_patterns(get_art_patterns_sent_test_data):
     for data in get_art_patterns_sent_test_data:
-        assert PatternSearch.perform_search_in_sentence(data[6], data[0], data[1], data[2], data[3], data[4], data[5],
-                                                        data[7], data[8]) == data[9]
+        assert PatternSearch._perform_search_in_sentence(data[6], data[0], data[1], data[2], data[3], data[4], data[5],
+                                                         data[7], data[8]) == data[9]
