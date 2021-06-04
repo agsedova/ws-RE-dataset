@@ -95,7 +95,6 @@ class PatternSearch:
 
     def retrieve_patterns(self):
         Path(self.path_out).mkdir(parents=True, exist_ok=True)
-        # sys.stdout = open(os.path.join(self.path_out, "console"), 'w')
 
         if self.output_format == "dygie":
             self.retrieve_patterns_n_return_dygie()
@@ -106,9 +105,6 @@ class PatternSearch:
 
         self.entity_pairs = pd.DataFrame(self.entity_pairs)
         self.entity_pairs.to_csv(os.path.join(os.path.split(self.path_out)[0], 'entity_pairs.csv'), index=False)
-
-        save_glob_stat_to_csv(self.stat_rel_matches, self.rel_id2rel, os.path.join(self.path_out, 'stat.csv'))
-        # sys.stdout.close()
 
     def retrieve_patterns_n_return_dygie(self):
 
@@ -174,6 +170,7 @@ class PatternSearch:
 
     def _search_patterns_in_file_knodle(self, curr_dir: str, files: List, out: str):
 
+        self.stat_rel_matches = dict.fromkeys(self.stat_rel_matches , 0)
         samples_cut, samples_full, arg1_poses, arg2_poses = [], [], [], []
         z_matrix = np.empty((0, len(self.pattern_id2pattern)))
         ent_pair2rel, pattern2rel, ent_pair2pattern = {}, {}, {}
@@ -205,6 +202,7 @@ class PatternSearch:
             z_matrix = np.vstack((z_matrix, curr_z_matrix))
 
             save_knodle_output(samples_cut, samples_full, arg1_poses, arg2_poses, z_matrix, self.knodle_t_matrix, curr_out)
+            save_glob_stat_to_csv(self.stat_rel_matches, self.rel_id2rel, os.path.join(curr_out, 'stat.csv'))
 
     def _find_pattern_matches_n_return_dygie(self, wiki_pages, entpair2rel, pattern2rel, entpair2pattern, out) -> List:
         dygie_output = []
