@@ -38,6 +38,15 @@ class PatternSearch:
     ):
         """
 
+        HANDLING OF KNODLE EDGE CASES. The one2many cases are handling in the following way:
+            - if several entity pairs match in one sample, this sample is saved separately for each entity pair.
+                In this case z matrix has different rows for each of the sample correspondingly; each row is one-hot.
+            - if one entity pair corresponds to different patterns, the sample is not duplicated.
+                In this case row in z matrix has more than one "1" entry.
+            - if pattern corresponds to different relations, t matrix (pattern x relation) is not one-hot
+                (not ok for knodle, will be filtered out later). Consequently, entity pair may corresdond to different
+                relations as well, what makes t matrix (entity pairs x relation) potentially not one-hot as well.
+
         :param path_to_data:
         :param path_to_patterns:
         :param path_to_output:
