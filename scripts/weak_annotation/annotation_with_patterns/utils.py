@@ -1,14 +1,14 @@
 import ast
-from pathlib import Path
+import glob
 import json
 import os
+import re
+from pathlib import Path
 from typing import Dict, Tuple, Union, List
 
 import numpy as np
 import pandas as pd
 from joblib import dump
-import re
-
 from scipy.sparse import csr_matrix
 
 
@@ -38,13 +38,65 @@ def calculate_ent_indices(ent: dict, sent: dict) -> dict:
     return ent
 
 
-def read_entities_df(path_to_ent_pairs: str):
-    ent_pairs = pd.read_csv(path_to_ent_pairs)
-    ent_pairs['pattern'] = ent_pairs['pattern'].apply(lambda x: list(set(ast.literal_eval(x))))
-    ent_pairs['pattern_id'] = ent_pairs['pattern_id'].apply(lambda x: list(set(ast.literal_eval(x))))
-    ent_pairs['relation'] = ent_pairs['relation'].apply(lambda x: list(set(ast.literal_eval(x))))
-    ent_pairs['relation_id'] = ent_pairs['relation_id'].apply(lambda x: list(set(ast.literal_eval(x))))
-    return ent_pairs
+def read_entities_df(path_to_ent_pairs: str, out: str) -> pd.DataFrame:
+    """
+    Reads info about entity pairs (from multiple files if necessary and merge it), make it processable and saves.
+    Args:
+        path_to_ent_pairs: path to a file / folder with multiple files with entity pairs.
+        out: path to a directory where merged file with entity pairs will be stored.
+    Returns:
+        Dataframe with: entities & entity_ids and corresponding pattern, pattern_id, relation, relation_id
+    """
+    if os.path.isdir(path_to_ent_pairs):
+        all_files = glob.glob(os.path.join(path_to_ent_pairs, "*", "entity_pairs.csv"))
+        ent_pairs = (pd.read_csv(f, sep=',') for f in all_files)
+        ent_pairs = pd.concat(ent_pairs, ignore_index=True).drop_duplicates(
+            subset=['entity_pair', 'pattern', 'pattern_id', 'relation', 'relation_id'], keep="first")
+
+        # read pattern, pattern_id, relation, relation_id cell values as lists not strings
+        ent_pairs['pattern'] = ent_pairs['pattern'].apply(lambda x: list(set(ast.literal_eval(x))))
+        ent_pairs['pattern_id'] = ent_pairs['pattern_id'].apply(lambda x: list(set(ast.literal_eval(x))))
+        ent_pairs['relation'] = ent_pairs['relation'].apply(lambda x: list(set(ast.literal_eval(x))))
+        ent_pairs['relation_id'] = ent_pairs['relation_id'].apply(lambda x: list(set(ast.literal_eval(x))))
+
+        # group rows where entity_pair is the same
+        ent_pairs = ent_pairs.groupby(['entity_pair']).agg(lambda x: tuple(x)).applymap(list).reset_index()
+
+        # merge list of lists in pattern, pattern_id, relation, relation_id cells; remove duplicates
+        ent_pairs['pattern'] = ent_pairs['pattern'].apply(
+            lambda x: list(set([y for sublist in x for y in sublist]))
+        )
+        ent_pairs['pattern_id'] = ent_pairs['pattern_id'].apply(
+            lambda x: list(set([int(y) for sublist in x for y in sublist]))
+        )
+        ent_pairs['relation'] = ent_pairs['relation'].apply(
+            lambda x: list(set([y for sublist in x for y in sublist]))
+        )
+        ent_pairs['relation_id'] = ent_pairs['relation_id'].apply(
+            lambda x: list(set([int(y) for sublist in x for y in sublist]))
+        )
+
+        # choose only one entity pair id if several remains after merging
+        ent_pairs['entity_pair_id'] = ent_pairs['entity_pair_id'].apply(lambda x: int(x[0]))\
+
+        ent_pairs = ent_pairs.drop(columns=["entity_pair_id"]).reset_index()
+
+        ent_pairs.to_csv(os.path.join(out, 'entity_pairs_merged.csv'), index=False)
+
+        return ent_pairs
+
+    elif os.path.isfile(path_to_ent_pairs):
+        ent_pairs = pd.read_csv(path_to_ent_pairs)
+
+        # read pattern, pattern_id, relation, relation_id cell values as lists not strings
+        ent_pairs['pattern'] = ent_pairs['pattern'].apply(lambda x: list(set(ast.literal_eval(x))))
+        ent_pairs['pattern_id'] = ent_pairs['pattern_id'].apply(lambda x: list(set(ast.literal_eval(x))))
+        ent_pairs['relation'] = ent_pairs['relation'].apply(lambda x: list(set(ast.literal_eval(x))))
+        ent_pairs['relation_id'] = ent_pairs['relation_id'].apply(lambda x: list(set(ast.literal_eval(x))))
+
+        ent_pairs = ent_pairs.drop(columns=["entity_pair_id"]).reset_index()
+
+        return ent_pairs
 
 
 def get_pattern_id(pattern: str, pattern2id: Dict, pattern_counter: int) -> Tuple[int, int]:
@@ -76,13 +128,13 @@ def save_glob_stat_to_csv(stat_dict: Dict, id2relation: Dict, out_file: str) -> 
 
 
 def save_knodle_output(
-        samples_cut: List, samples_full: List, arg1_poses: List, arg2_poses: List, z_matrix: np.ndarray,
-        t_matrix: np.ndarray, out: str, prefix: str = ""
+        samples_cut: List, samples_full: List, arg1_poses: List, arg2_poses: List, z_matrix: np.ndarray, out: str,
+        prefix: str = ""
 ) -> None:
     Path(out).mkdir(parents=True, exist_ok=True)
 
     # check matrices dimensions
-    assert z_matrix.shape[1] == t_matrix.shape[0]
+    # assert z_matrix.shape[1] == t_matrix.shape[0]
     assert z_matrix.shape[0] == len(samples_cut)
     assert len(samples_full) == len(arg1_poses) == len(arg2_poses) == len(samples_cut)
 
@@ -91,7 +143,7 @@ def save_knodle_output(
 
     # save full samples and their indices as csv
     pd.DataFrame({"sample_full": samples_full, "arg1_pos": arg1_poses, "arg2_pos": arg2_poses}).to_csv(
-        os.path.join(out, f'knodle_samples_full_indices_{prefix}.csv'), index=None#
+        os.path.join(out, f'knodle_samples_full_indices_{prefix}.csv'), index=None
     )
 
     # save z matrix

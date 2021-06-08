@@ -16,6 +16,7 @@ if __name__ == "__main__":
     parser.add_argument("--wiki_dump_extracted", help="")
     parser.add_argument("--wiki_dump_spacy", default=None, help="")
     parser.add_argument("--path_to_patterns", help="")
+    parser.add_argument("--path_to_entity_pairs", help="")
     parser.add_argument("--path_to_relations", help="")
     parser.add_argument("--path_to_output", help="")
     args = parser.parse_args()
@@ -42,16 +43,16 @@ if __name__ == "__main__":
     # Step 2: search for patterns in SpaCy output and annotate data with patterns.
     # ==================
 
-    PatternSearch(
-        path_to_data=args.wiki_dump_spacy,     # directory where the SpaCy output is stored
-        path_to_patterns=args.path_to_patterns,     # file that contains the patterns that are to be found
-        path_to_relations=args.path_to_relations,
-        path_to_output=args.path_to_output     # directory where the output will be stored
-    ).retrieve_patterns()
-
-    log_section(" !!!!!!!!!!!!!!!!!!!!!!!!!! ", logger)
-    log_section(" !!!!! Step 2 is done !!!!! ", logger)
-    log_section(" !!!!!!!!!!!!!!!!!!!!!!!!!! ", logger)
+    # PatternSearch(
+    #     path_to_data=args.wiki_dump_spacy,     # directory where the SpaCy output is stored
+    #     path_to_patterns=args.path_to_patterns,     # file that contains the patterns that are to be found
+    #     path_to_relations=args.path_to_relations,
+    #     path_to_output=args.path_to_output     # directory where the output will be stored
+    # ).retrieve_patterns()
+    #
+    # log_section(" !!!!!!!!!!!!!!!!!!!!!!!!!! ", logger)
+    # log_section(" !!!!! Step 2 is done !!!!! ", logger)
+    # log_section(" !!!!!!!!!!!!!!!!!!!!!!!!!! ", logger)
 
     # ==================
     # Step 3: annotate data with entity pairs.
@@ -59,7 +60,7 @@ if __name__ == "__main__":
 
     EntityPairsAnnotator(
         path_to_spacy_data=args.wiki_dump_spacy,     # directory where the SpaCy output is stored
-        path_to_ent_pairs=os.path.join(args.path_to_output, "entity_pairs.csv"),
+        path_to_ent_pairs=args.path_to_entity_pairs,
         path_to_relations=args.path_to_relations,
         path_to_patterns=os.path.join(args.path_to_output, "patterns.csv"),
         path_to_output=args.path_to_output     # directory where the output will be stored

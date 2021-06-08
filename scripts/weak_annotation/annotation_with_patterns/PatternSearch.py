@@ -46,6 +46,7 @@ class PatternSearch:
             - if pattern corresponds to different relations, t matrix (pattern x relation) is not one-hot
                 (not ok for knodle, will be filtered out later). Consequently, entity pair may corresdond to different
                 relations as well, what makes t matrix (entity pairs x relation) potentially not one-hot as well.
+            - if one entity pair corresponds to different relations - # todo
 
         :param path_to_data:
         :param path_to_patterns:
@@ -103,16 +104,12 @@ class PatternSearch:
         else:
             raise ValueError("Unknown output format! You can choose either knodle or dygie output.")
 
-        self.entity_pairs = pd.DataFrame(self.entity_pairs)
-        self.entity_pairs.to_csv(os.path.join(os.path.split(self.path_out)[0], 'entity_pairs.csv'), index=False)
-
     def retrieve_patterns_n_return_dygie(self):
 
         if os.path.isdir(self.path_to_data):  # if we retrieve patterns in multiple files (input is a directory)
             self._search_patterns_in_multiple_files_dygie()
         elif os.path.isfile(self.path_to_data):  # if we retrieve patterns in a single file
             _ = self._search_patterns_in_file_dygie()
-            logger.info(f'Total match: {self.matches_counter}')
         else:
             logger.info("Check your input! It's neither directory nor file")
 
@@ -170,20 +167,24 @@ class PatternSearch:
 
     def _search_patterns_in_file_knodle(self, curr_dir: str, files: List, out: str):
 
-        self.stat_rel_matches = dict.fromkeys(self.stat_rel_matches , 0)
+        # null statistics, null entity pairs
+        self.stat_rel_matches = dict.fromkeys(self.stat_rel_matches, 0)
+        self.entity_pairs = []
+
         samples_cut, samples_full, arg1_poses, arg2_poses = [], [], [], []
         z_matrix = np.empty((0, len(self.pattern_id2pattern)))
         ent_pair2rel, pattern2rel, ent_pair2pattern = {}, {}, {}
 
         for file in files:
             # load list of dictionaries containing with wiki articles
+            logging.info(file)
             wiki_pages = read_wiki_dicts_from_file(os.path.join(curr_dir, file))
             if not wiki_pages:
                 continue
 
             # create output folder
-            curr_out = os.path.join(out, file.split(".")[0])
-            Path(curr_out).mkdir(parents=True, exist_ok=True)
+            # curr_out = os.path.join(out, file.split(".")[0])
+            # Path(curr_out).mkdir(parents=True, exist_ok=True)
 
             # perform search in each wiki article & collect statistics
             stat_rel = {key: 0 for key in self.stat_rel_matches.keys()}
@@ -201,8 +202,11 @@ class PatternSearch:
             arg2_poses += arg2_poss
             z_matrix = np.vstack((z_matrix, curr_z_matrix))
 
-            save_knodle_output(samples_cut, samples_full, arg1_poses, arg2_poses, z_matrix, self.knodle_t_matrix, curr_out)
-            save_glob_stat_to_csv(self.stat_rel_matches, self.rel_id2rel, os.path.join(curr_out, 'stat.csv'))
+        save_knodle_output(samples_cut, samples_full, arg1_poses, arg2_poses, z_matrix, self.knodle_t_matrix, out)
+        save_glob_stat_to_csv(self.stat_rel_matches, self.rel_id2rel, os.path.join(out, 'stat.csv'))
+
+        self.entity_pairs = pd.DataFrame(self.entity_pairs)
+        self.entity_pairs.to_csv(os.path.join(out, 'entity_pairs.csv'), index=False)
 
     def _find_pattern_matches_n_return_dygie(self, wiki_pages, entpair2rel, pattern2rel, entpair2pattern, out) -> List:
         dygie_output = []
@@ -228,6 +232,7 @@ class PatternSearch:
     ) -> Tuple[List, List, np.ndarray, List, List]:
         samples_cut, samples_full, arg1_poses, arg2_poses = [], [], [], []
         z_matrix = np.empty((0, len(self.pattern_id2pattern)))
+
         for w_page in wiki_pages:
             matches = self._find_pattern_matches(w_page, ent_pair2rel, pattern2rel, ent_pair2pattern, stat_rel)
             if not matches:
