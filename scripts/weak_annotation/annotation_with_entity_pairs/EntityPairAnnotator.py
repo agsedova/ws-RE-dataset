@@ -57,15 +57,14 @@ class EntityPairsAnnotator:
         self.stat_ent_pair_matches = dict.fromkeys(self.ent_pair2ent_pair_id.values(), 0)  # intialize statistics
         self.stat_pattern_matches = dict.fromkeys(self.pattern2pattern_id.values(), 0)
 
-        self.t_matrix_entpairs2rel = build_t_matrix(
-            self.ent_pair_id2rel_id, (len(self.ent_pair_id2rel_id), len(self.rel_id2rel))
-        )
-        self.t_matrix_patterns2rel = build_t_matrix(
-            self.pattern_id2relation_id, (len(self.pattern_id2relation_id), len(self.rel_id2rel))
-        )
-
-        dump(self.t_matrix_entpairs2rel, os.path.join(self.path_to_output, "knodle_t_entpairs2rel.lib"))
-        dump(self.t_matrix_patterns2rel, os.path.join(self.path_to_output, "knodle_t_patterns2rel.lib"))
+        # self.t_matrix_entpairs2rel = build_t_matrix(
+        #     self.ent_pair_id2rel_id, (len(self.ent_pair_id2rel_id), len(self.rel_id2rel))
+        # )
+        # self.t_matrix_patterns2rel = build_t_matrix(
+        #     self.pattern_id2relation_id, (len(self.pattern_id2relation_id), len(self.rel_id2rel))
+        # )
+        # dump(self.t_matrix_entpairs2rel, os.path.join(self.path_to_output, "knodle_t_entpairs2rel.lib"))
+        # dump(self.t_matrix_patterns2rel, os.path.join(self.path_to_output, "knodle_t_patterns2rel.lib"))
 
     def annotate_data_with_ent_pairs(self):
 
