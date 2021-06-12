@@ -6,6 +6,7 @@ from pathlib import Path
 import sys
 import os
 from typing import List, Tuple, Dict
+from joblib import dump
 
 import numpy as np
 
@@ -62,6 +63,9 @@ class EntityPairsAnnotator:
         self.t_matrix_patterns2rel = build_t_matrix(
             self.pattern_id2relation_id, (len(self.pattern_id2relation_id), len(self.rel_id2rel))
         )
+
+        dump(self.t_matrix_entpairs2rel, os.path.join(self.path_to_output, "knodle_t_entpairs2rel.lib"))
+        dump(self.t_matrix_patterns2rel, os.path.join(self.path_to_output, "knodle_t_patterns2rel.lib"))
 
     def annotate_data_with_ent_pairs(self):
 
