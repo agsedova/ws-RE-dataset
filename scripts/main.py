@@ -62,7 +62,7 @@ if __name__ == "__main__":
         path_to_spacy_data=args.wiki_dump_spacy,     # directory where the SpaCy output is stored
         path_to_ent_pairs=args.path_to_entity_pairs,
         path_to_relations=args.path_to_relations,
-        path_to_patterns=os.path.join(args.path_to_output, "patterns.csv"),
+        path_to_patterns=args.path_to_patterns,
         path_to_output=args.path_to_output     # directory where the output will be stored
     ).annotate_data_with_ent_pairs()
 

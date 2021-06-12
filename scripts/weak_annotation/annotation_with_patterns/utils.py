@@ -110,8 +110,8 @@ def get_pattern_id(pattern: str, pattern2id: Dict, pattern_counter: int) -> Tupl
     return pattern_id, pattern_counter
 
 
-def read_wiki_dicts_from_file(inp: str) -> Union[Dict, None]:
-    with open(inp) as input_file:
+def read_wiki_dicts_from_file(inp: str) -> Union[List, None]:
+    with open(os.path.join(inp)) as input_file:
         try:
             data = json.load(input_file)
             return data
@@ -119,6 +119,19 @@ def read_wiki_dicts_from_file(inp: str) -> Union[Dict, None]:
             return None
         except UnicodeDecodeError:
             return None
+
+
+def read_wiki_dicts_from_multiple_files(files: List, curr_dir: str) -> Union[List, None]:
+    data = []
+    for file in files:
+        with open(os.path.join(curr_dir, file)) as input_file:
+            try:
+                data += json.load(input_file)
+            except json.decoder.JSONDecodeError:
+                continue
+            except UnicodeDecodeError:
+                continue
+    return data
 
 
 def save_glob_stat_to_csv(stat_dict: Dict, id2relation: Dict, out_file: str) -> None:
@@ -129,7 +142,7 @@ def save_glob_stat_to_csv(stat_dict: Dict, id2relation: Dict, out_file: str) -> 
 
 def save_knodle_output(
         samples_cut: List, samples_full: List, arg1_poses: List, arg2_poses: List, z_matrix: np.ndarray, out: str,
-        prefix: str = ""
+        prefix: str = "", entities: List = None
 ) -> None:
     Path(out).mkdir(parents=True, exist_ok=True)
 
@@ -139,12 +152,21 @@ def save_knodle_output(
     assert len(samples_full) == len(arg1_poses) == len(arg2_poses) == len(samples_cut)
 
     # save cut samples as csv
-    pd.DataFrame({"sample_cut": samples_cut}).to_csv(os.path.join(out, f'knodle_samples_cut_{prefix}.csv'), index=None)
+    path_to_samples_cut = os.path.join(out, f'knodle_samples_cut.csv')
+    if not Path(path_to_samples_cut).is_file():
+        pd.DataFrame({"sample_cut": samples_cut}).to_csv(path_to_samples_cut, index=None)
 
     # save full samples and their indices as csv
-    pd.DataFrame({"sample_full": samples_full, "arg1_pos": arg1_poses, "arg2_pos": arg2_poses}).to_csv(
-        os.path.join(out, f'knodle_samples_full_indices_{prefix}.csv'), index=None
-    )
+    path_to_samples_full_indices = os.path.join(out, f'knodle_samples_full_indices.csv')
+    if not Path(path_to_samples_full_indices).is_file():
+        if entities:
+            pd.DataFrame(
+                {"sample_full": samples_full, "arg1_pos": arg1_poses, "arg2_pos": arg2_poses, "entities": entities}
+            ).to_csv(path_to_samples_full_indices, index=None)
+        else:
+            pd.DataFrame(
+                {"sample_full": samples_full, "arg1_pos": arg1_poses, "arg2_pos": arg2_poses}
+            ).to_csv(path_to_samples_full_indices, index=None)
 
     # save z matrix
     knodle_z_matrix_sparse = csr_matrix(z_matrix)

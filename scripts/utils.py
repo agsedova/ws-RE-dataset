@@ -92,7 +92,7 @@ def prepare_output_knodle(matches: List, doc: Dict, num_patterns: int) -> Tuple[
                     rule_matches_z = np.vstack((rule_matches_z, z_row))
 
                     samples_cut_neg, z_row_neg, arg1_pos_neg, arg2_pos_neg = create_negative_entry(
-                        doc, sent, entities_start, entities_end, num_patterns
+                            doc, sent, entities_start, entities_end, num_patterns
                     )
 
                     samples_cut.append(samples_cut_neg)
@@ -108,13 +108,14 @@ def prepare_output_knodle(matches: List, doc: Dict, num_patterns: int) -> Tuple[
 
 
 def create_negative_entry(
-        doc: Dict, sent: str, forbidden_entities_start: int, forbidden_entities_end: int, num_patterns: int
+        doc: Dict, sent: Dict, forbidden_entities_start: int, forbidden_entities_end: int, z_matrix_2nd_dim: int
 ) -> Tuple[str, np.ndarray, Tuple, Tuple]:
 
     # take random tokens to make a negative sample
     negative_entities = random.sample(
         [t for t in doc["tokens"] if t["start"] >= sent["start"] and t["end"] <= sent["end"] and
-         t["start"] != forbidden_entities_start and t["end"] != forbidden_entities_end], 2
+         t["start"] != forbidden_entities_start and t["end"] != forbidden_entities_end
+         and t["start"] != t["end"]], 2
     )
 
     arg1_pos_neg = (negative_entities[0]["start"], negative_entities[0]["end"])
@@ -124,9 +125,31 @@ def create_negative_entry(
     neg_entities_end = max(negative_entities[0]["end"], negative_entities[1]["end"])
 
     samples_cut_negative = doc["text"][neg_entities_start:neg_entities_end]
-    z_row = np.zeros((1, num_patterns))
+    z_row = np.zeros((1, z_matrix_2nd_dim))
 
     return samples_cut_negative, z_row, arg1_pos_neg, arg2_pos_neg
+
+
+def create_negative_entry_without_z_row(
+        doc: Dict, sent: Dict, forbidden_entities_start: int, forbidden_entities_end: int
+) -> Tuple[str, Tuple, Tuple]:
+
+    # take random tokens to make a negative sample
+    negative_entities = random.sample(
+        [t for t in doc["tokens"] if t["start"] >= sent["start"] and t["end"] <= sent["end"] and
+         t["start"] != forbidden_entities_start and t["end"] != forbidden_entities_end
+         and t["start"] != t["end"]], 2
+    )
+
+    arg1_pos_neg = (negative_entities[0]["start"], negative_entities[0]["end"])
+    arg2_pos_neg = (negative_entities[1]["start"], negative_entities[1]["end"])
+
+    neg_entities_start = min(negative_entities[0]["start"], negative_entities[1]["start"])
+    neg_entities_end = max(negative_entities[0]["end"], negative_entities[1]["end"])
+
+    samples_cut_negative = doc["text"][neg_entities_start:neg_entities_end]
+
+    return samples_cut_negative, arg1_pos_neg, arg2_pos_neg
 
 
 def save_loc_stat_to_csv(out_file: str, stat: dict, id2relation: dict) -> None:
