@@ -5,6 +5,7 @@ from copy import copy
 from pathlib import Path
 import sys
 import os
+import multiprocessing
 from typing import List, Tuple, Dict
 from joblib import dump
 
@@ -89,30 +90,36 @@ class EntityPairsAnnotator:
             self.stat_pattern_matches, self.pattern_id2pattern, os.path.join(self.path_to_output, "stat_patterns.csv")
         )
 
-    import multiprocessing
 
     def annotate_multiple_files(self):
-
         tasks = []
 
         for curr_dir, _, files in os.walk(self.path_to_spacy_data):
             logger.info(f"Annotation of files in {curr_dir}...")
             curr_out = os.path.join(self.path_to_output, os.path.split(curr_dir)[1])
-            tasks.append({files, curr_dir, curr_out})
+            tasks.append({"files": files, "curr_dir": curr_dir, "curr_out": curr_out})
             # Path(curr_out).mkdir(parents=True, exist_ok=True)
             #
             # wiki_pages = read_wiki_dicts_from_multiple_files(files, curr_dir)
             # if len(wiki_pages) > 0:
             #     self.find_entity_pairs_match(wiki_pages, curr_out)
 
+        with multiprocessing.Pool(multiprocessing.cpu_count()) as pool:
+            logger.info(f'multiprocessing: {multiprocessing.cpu_count()}')
+            pool.map(self.execute, tasks)
+            # pool.close()
+            # pool.join()
 
-    def execute(self, files: List, curr_dir: str, curr_out: str):
-            Path(curr_out).mkdir(parents=True, exist_ok=True)
+    def execute(self, task):
+        files = task["files"]
+        curr_dir = task["curr_dir"]
+        curr_out = task["curr_out"]
+        # files: List, curr_dir: str, curr_out: str
+        Path(curr_out).mkdir(parents=True, exist_ok=True)
 
-            wiki_pages = read_wiki_dicts_from_multiple_files(files, curr_dir)
-            if len(wiki_pages) > 0:
-                self.find_entity_pairs_match(wiki_pages, curr_out)
-
+        wiki_pages = read_wiki_dicts_from_multiple_files(files, curr_dir)
+        if len(wiki_pages) > 0:
+            self.find_entity_pairs_match(wiki_pages, curr_out)
 
     def annotate_data(self, file: str, path_out: str):
         wiki_pages = read_wiki_dicts_from_file(file)
@@ -123,6 +130,8 @@ class EntityPairsAnnotator:
         samples_full, samples_cut, arg1_poses, arg2_poses, ents = [], [], [], [], []
         z_matrix_samples2entpairs = np.empty((0, len(self.ent_pair2ent_pair_id)))
         z_matrix_samples2patterns = np.empty((0, len(self.pattern2pattern_id)))
+
+        print(f'working on {curr_out}')
 
         for doc in data:
             matched_entity_pairs = []
