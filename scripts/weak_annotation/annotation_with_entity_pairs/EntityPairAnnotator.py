@@ -10,9 +10,9 @@ from joblib import dump
 
 import numpy as np
 
-from scripts.utils import return_entity_pair, create_negative_entry, create_negative_entry_without_z_row
-from scripts.weak_annotation.annotation_with_entity_pairs.utils import ents_in_sent
-from scripts.weak_annotation.annotation_with_patterns.utils import (
+from utils import return_entity_pair, create_negative_entry, create_negative_entry_without_z_row
+from weak_annotation.annotation_with_entity_pairs.utils import ents_in_sent
+from weak_annotation.annotation_with_patterns.utils import (
     read_wiki_dicts_from_file, save_knodle_output, calculate_ent_indices, save_glob_stat_to_csv,
     build_t_matrix, read_relations_df, read_patterns_df, read_entities_df, read_wiki_dicts_from_multiple_files
 )
@@ -89,15 +89,30 @@ class EntityPairsAnnotator:
             self.stat_pattern_matches, self.pattern_id2pattern, os.path.join(self.path_to_output, "stat_patterns.csv")
         )
 
+    import multiprocessing
+
     def annotate_multiple_files(self):
+
+        tasks = []
+
         for curr_dir, _, files in os.walk(self.path_to_spacy_data):
             logger.info(f"Annotation of files in {curr_dir}...")
             curr_out = os.path.join(self.path_to_output, os.path.split(curr_dir)[1])
+            tasks.append({files, curr_dir, curr_out})
+            # Path(curr_out).mkdir(parents=True, exist_ok=True)
+            #
+            # wiki_pages = read_wiki_dicts_from_multiple_files(files, curr_dir)
+            # if len(wiki_pages) > 0:
+            #     self.find_entity_pairs_match(wiki_pages, curr_out)
+
+
+    def execute(self, files: List, curr_dir: str, curr_out: str):
             Path(curr_out).mkdir(parents=True, exist_ok=True)
 
             wiki_pages = read_wiki_dicts_from_multiple_files(files, curr_dir)
             if len(wiki_pages) > 0:
                 self.find_entity_pairs_match(wiki_pages, curr_out)
+
 
     def annotate_data(self, file: str, path_out: str):
         wiki_pages = read_wiki_dicts_from_file(file)

@@ -8,17 +8,17 @@ from typing import Dict, Tuple, List, Union
 
 import pandas as pd
 import numpy as np
-from scripts.weak_annotation.commons import DYGIE_RELATIONS
+from weak_annotation.commons import DYGIE_RELATIONS
 from joblib import dump
-from scripts.utils import (
+from utils import (
     get_sentence_matches, prepare_output_dygie, save_loc_stat_to_csv, prepare_output_knodle, return_entity_pair
 )
-from scripts.weak_annotation.annotation_with_patterns.build_dicts import (
+from weak_annotation.annotation_with_patterns.build_dicts import (
     get_types2entities, get_relation_types_dict, collect_dygie_patterns, collect_knodle_patterns
 )
 
-from scripts.weak_annotation.annotation_with_patterns.text_processing import get_sent_for_comparing
-from scripts.weak_annotation.annotation_with_patterns.utils import (
+from weak_annotation.annotation_with_patterns.text_processing import get_sent_for_comparing
+from weak_annotation.annotation_with_patterns.utils import (
     calculate_ent_indices, save_glob_stat_to_csv, read_wiki_dicts_from_file, save_knodle_output,
     build_t_matrix, read_relations_df
 )

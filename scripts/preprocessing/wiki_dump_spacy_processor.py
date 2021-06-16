@@ -5,7 +5,7 @@ import logging
 import json
 import os
 
-from scripts.utils import log_section
+from utils import log_section
 
 logger = logging.getLogger(__name__)
 

@@ -1,8 +1,8 @@
 import os
 from typing import Dict, Tuple
-from scripts.weak_annotation.commons import RELATION_TO_TYPES, PROPERTY_NAMES
-from scripts.weak_annotation.annotation_with_patterns.text_processing import convert_pattern_to_regex
-from scripts.weak_annotation.annotation_with_patterns.utils import get_pattern_id
+from weak_annotation.commons import RELATION_TO_TYPES, PROPERTY_NAMES
+from weak_annotation.annotation_with_patterns.text_processing import convert_pattern_to_regex
+from weak_annotation.annotation_with_patterns.utils import get_pattern_id
 
 import pandas as pd
 
