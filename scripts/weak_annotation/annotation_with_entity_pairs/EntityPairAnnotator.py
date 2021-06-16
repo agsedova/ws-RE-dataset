@@ -126,7 +126,7 @@ class EntityPairsAnnotator:
                     curr_entities_start = min(curr_ent1["start_sent"], curr_ent2["start_sent"])
                     curr_entities_end = max(curr_ent1["end_sent"], curr_ent2["end_sent"])
 
-                    if ent_pair in list(self.ent_pair2pattern_id.keys()) and ent_pair not in matched_entity_pairs:
+                    if ent_pair in self.ent_pair2pattern_id and ent_pair not in matched_entity_pairs:
                         arg1_poses.append((curr_ent1["start_sent"], curr_ent1["end_sent"]))
                         arg2_poses.append((curr_ent2["start_sent"], curr_ent2["end_sent"]))
                         ents.append(ent_pair)
