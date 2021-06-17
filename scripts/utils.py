@@ -1,6 +1,6 @@
 import logging
 import random
-from typing import Dict, List, Tuple
+from typing import Dict, List, Tuple, Union
 import numpy as np
 
 logger = logging.getLogger(__name__)
@@ -132,7 +132,10 @@ def create_negative_entry(
 
 def create_negative_entry_without_z_row(
         doc: Dict, sent: Dict, forbidden_entities_start: int, forbidden_entities_end: int
-) -> Tuple[str, Tuple, Tuple]:
+) -> Union[Tuple[str, Tuple, Tuple], Tuple[None, None, None]]:
+
+    if len(doc["tokens"]) < 2:
+        return None, None, None
 
     # take random tokens to make a negative sample
     negative_entities = random.sample(

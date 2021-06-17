@@ -90,7 +90,6 @@ class EntityPairsAnnotator:
             self.stat_pattern_matches, self.pattern_id2pattern, os.path.join(self.path_to_output, "stat_patterns.csv")
         )
 
-
     def annotate_multiple_files(self):
         tasks = []
 
@@ -171,17 +170,20 @@ class EntityPairsAnnotator:
                         samples_cut_neg, arg1_pos_neg, arg2_pos_neg = \
                             create_negative_entry_without_z_row(doc, sent, curr_entities_start, curr_entities_end)
 
-                        samples_full.append(sent_text)
-                        samples_cut.append(samples_cut_neg)
-                        arg1_poses.append(arg1_pos_neg)
-                        arg2_poses.append(arg2_pos_neg)
-                        ents.append("")
-                        z_matrix_samples2entpairs = np.vstack(
-                            (z_matrix_samples2entpairs, z_row_samples2entpairs, np.zeros((1,  len(self.ent_pairs))))
-                        )
-                        z_matrix_samples2patterns = np.vstack(
-                            (z_matrix_samples2patterns, z_row_samples2patterns, np.zeros((1,  len(self.patterns))))
-                        )
+                        # if negative samples were created
+                        if samples_cut_neg and arg1_pos_neg and arg2_pos_neg:
+                            samples_full.append(sent_text)
+                            samples_cut.append(samples_cut_neg)
+                            arg1_poses.append(arg1_pos_neg)
+                            arg2_poses.append(arg2_pos_neg)
+                            ents.append("")
+
+                            z_matrix_samples2entpairs = np.vstack(
+                                (z_matrix_samples2entpairs, z_row_samples2entpairs, np.zeros((1,  len(self.ent_pairs))))
+                            )
+                            z_matrix_samples2patterns = np.vstack(
+                                (z_matrix_samples2patterns, z_row_samples2patterns, np.zeros((1,  len(self.patterns))))
+                            )
 
                         matched_entity_pairs.append(ent_pair)
                         self.matches_counter += 1
